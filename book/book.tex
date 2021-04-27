@@ -1,4 +1,4 @@
-% LaTeX source for ``Think Python: How to Think Like a Computer Scientist''
+% LaTeX source for ``Think Python: How to Think Like a Computer Scientist'' of Chinese version.
 % Copyright (c)  2015  Allen B. Downey.
 
 % License: Creative Commons Attribution-NonCommercial 3.0 Unported License.
@@ -7,6 +7,7 @@
 
 %\documentclass[10pt,b5paper]{book}
 \documentclass[10pt]{book}
+\usepackage[UTF8]{ctex}
 \usepackage[width=5.5in,height=8.5in,hmarginratio=3:2,vmarginratio=1:1]{geometry}
 
 % for some of these packages, you might have to install
@@ -214,522 +215,417 @@ The \LaTeX\ source for this book is available from
 % END OF THE PART WE SKIP FOR PLASTEX
 
 
-\chapter{Preface}
+\chapter{序}
 
-\section*{The strange history of this book}
+\section*{本书由来}
 
-In January 1999 I was preparing to teach an introductory programming
-class in Java.  I had taught it three times and I was getting
-frustrated.  The failure rate in the class was too high and, even for
-students who succeeded, the overall level of achievement was too low.
+1999年1月，我正准备以Java教学生编程入门，课程已讲过三次，但我沮丧依旧。因为多人无法完成目标，虽有个别人优秀，但整体效果令人难以接受。
 
-One of the problems I saw was the books.  
-They were too big, with too much unnecessary detail about Java, and
-not enough high-level guidance about how to program.  And they all
-suffered from the trap door effect: they would start out easy,
-proceed gradually, and then somewhere around Chapter 5 the bottom would
-fall out.  The students would get too much new material, too fast,
-and I would spend the rest of the semester picking up the pieces.
+依我看，问题出在书本教案上.
+书籍厚重，画蛇添足，细枝末节过多，编程思考不足。
+因此学生总是陷于困境：  起步易，行进难，半途而废。
+学生学得囫囵吞枣，老师教得步步回首。
 
-Two weeks before the first day of classes, I decided to write my
-own book.  My goals were:
+此次开课前两周，我决定自己写本书，目标如下：
 
 \begin{itemize}
 
-\item Keep it short.  It is better for students to read 10 pages
-than not read 50 pages.
+\item 少。十页易，百页难。
 
-\item Be careful with vocabulary.  I tried to minimize jargon
-and define each term at first use.
+\item 精。词汇早解释，术语早提炼。
 
-\item Build gradually. To avoid trap doors, I took the most difficult
-topics and split them into a series of small steps. 
+\item 缓。大而化小，小步慢跑。
 
-\item Focus on programming, not the programming language.  I included
-the minimum useful subset of Java and left out the rest.
+\item 专。聚焦思想，精简程序。
 
 \end{itemize}
 
-I needed a title, so on a whim I chose {\em How to Think Like
-a Computer Scientist}.
+莫名其妙地选择了个题目 {\em 像计算机专家一样思考(How to Think Like
+a Computer Scientist)}.
 
-My first version was rough, but it worked.  Students did the reading,
-and they understood enough that I could spend class time on the hard
-topics, the interesting topics and (most important) letting the
-students practice.
+首版略显粗略，但是简单有效。
+学生知其然，而知其所以然，我也
+能够聚焦课堂于难点，趣题和操作实践。
+绝知此事要躬行，实践是必须而困难的，但也是最有趣的。
 
-I released the book under the GNU Free Documentation License,
-which allows users to copy, modify, and distribute the book.
-\index{GNU Free Documentation License}
-\index{Free Documentation License, GNU}
+我基于GNU 自由文档许可证发布此书，
+也就是说，任何人都可以基于此协议，复制，修改，分享此书。
+\index{GNU自由文档许可证}
+\index{自由文档许可证, GNU}
 
-What happened next is the cool part.  Jeff Elkner, a high school
-teacher in Virginia, adopted my book and translated it into
-Python.  He sent me a copy of his translation, and I had the
-unusual experience of learning Python by reading my own book.
-As Green Tea Press, I published the first Python version in 2001.
+后续的事情就有趣了，弗吉尼亚州的Jeff Elkner高校教师采用了本书，
+并转换为了Python教材。通过他给我的Python版书籍，
+我有了一段不一样的Python学习之旅。同时基于绿茶出版商，于2001年，
+我首次发布了Python版。
 \index{Elkner, Jeff}
 
-In 2003 I started teaching at Olin College and I got to teach
-Python for the first time.  The contrast with Java was striking.
-Students struggled less, learned more, worked on more interesting
-projects, and generally had a lot more fun.
-\index{Olin College}
+2003年，我开始在欧林学院任职，并且首次教授Python。和教授Java相比，惊喜非凡，学生乐于学习并乐在其中。
+\index{欧林学院}
 
-Since then I've continued to develop the book,
-correcting errors, improving some of the examples and
-adding material, especially exercises.
+自此，我不断优化此书，校正错误，提高案例水准，
+并增加一些新的例子和练习。
 
-The result is this book, now with the less grandiose title
-{\em Think Python}.  Some of the changes are:
+因此本书有个通俗的名字
+{\em Think Python}.  部分修改如下:
 
 \begin{itemize}
 
-\item I added a section about debugging at the end of each chapter.
-  These sections present general techniques for finding and avoiding
-  bugs, and warnings about Python pitfalls.
+\item 每章结尾增加了调试部分。
+重点讲解如何发现问题，减少错误，预防漏洞。
 
-\item I added more exercises, ranging from short tests of
-  understanding to a few substantial projects.  Most exercises
-  include a link to my solution.
+\item 增加了一些习题。从简单测验到项目实操， 
+均有涉及，同时，我给出了我的解决方案。
 
-\item I added a series of case studies---longer examples with
-  exercises, solutions, and discussion.
-  
-\item I expanded the discussion of program development plans
-  and basic design patterns.
+\item 增加了一系列的案例：涵盖练习-解答-讨论三个阶段的训练。
 
-\item I added appendices about debugging and analysis of algorithms.
+\item 探讨了程序开发流程以及基础设计模式。
+
+\item 增加了关于调试和算法解析的附录。
 
 \end{itemize}
 
-The second edition of {\em Think Python} has these new features:
+第二版 {\em Think Python} 有如下变化：
 
 \begin{itemize}
 
-\item The book and all supporting code have been updated to Python 3.
+\item 本书代码均已支持 Python 3.
 
-\item I added a few sections, and more details on the web, to help
-beginners get started running Python in a browser, so you don't have
-to deal with installing Python until you want to.
+\item 网页版功能更加丰富，从而使初学者可以无需安装Python
+便可在浏览器运行。
 
-\item For Chapter~\ref{turtle} I switched from my own turtle graphics
-  package, called Swampy, to a more standard Python module, {\tt
-    turtle}, which is easier to install and more powerful.
+\item 对于章节~\ref{turtle} 我将我常用的海龟绘图包Swampy
+换成了功能更丰富，应用更广泛的 {\tt  turtle}包。
 
-\item I added a new chapter called ``The Goodies'', which introduces
-some additional Python features that are not strictly necessary, but
-sometimes handy.
+\item 增加了新章节 “利器”，主要介绍Python一些不常用但是高效的功能。
 
 \end{itemize}
 
-I hope you enjoy working with this book, and that it helps
-you learn to program and think like
-a computer scientist, at least a little bit.
+希望本书能对大家在学习编程知识，以及培养计算机专家一样思维模式
+方面有所裨益。
+
 
 
 Allen B. Downey \\
 
-Olin College \\
+欧林学院 \\
 
 
-\section*{Acknowledgments}
+\section*{致谢}
 
-Many thanks to Jeff Elkner, who
-translated my Java book into Python, which got this project
-started and introduced me to what has turned out to be my
-favorite language.
+感谢Jeff Elkner把这本Java书籍转换为Python，
+并让我爱上了Python.
 \index{Elkner, Jeff}
 
-Thanks also to Chris Meyers, who contributed several sections
-to {\em How to Think Like a Computer Scientist}.
+感谢Chris Meyers写了 {\em How to Think Like a Computer Scientist} 部分章节。
 \index{Meyers, Chris}
 
-Thanks to the Free Software Foundation for developing
-the GNU Free Documentation License, which helped make
-my collaboration with Jeff and Chris possible, and Creative
-Commons for the license I am using now.
-\index{GNU Free Documentation License}
-\index{Free Documentation License, GNU}
-\index{Creative Commons}
-
-Thanks to the editors at Lulu who worked on
-{\em How to Think Like a Computer Scientist}.
-
-Thanks to the editors at O'Reilly Media who worked on
-{\em Think Python}.
-
-Thanks to all the students who worked with earlier
-versions of this book and all the contributors (listed
-below) who sent in corrections and suggestions.
+感谢创建GNU自由文档协议以及创作共用的自由软件基金会。
+基于此协议以及知识共享协议，我才能和Jeff， Chris一起合作。
+\index{GNU自由文档许可证}
+\index{自由文档许可证, GNU}
+\index{知识共享}
 
 
-\section*{Contributor List}
+感谢整理{\em How to Think Like a Computer Scientist}的Lulu的编辑。
 
-\index{contributors}
-More than 100 sharp-eyed and thoughtful readers have sent in
-suggestions and corrections over the past few years.  Their
-contributions, and enthusiasm for this project, have been a
-huge help.
+感谢耐心编辑 {\em Think Python}的O'Reilly Media的朋友。
 
-If you have a suggestion or correction, please send email to 
-{\tt feedback@thinkpython.com}.  If I make a change based on your
-feedback, I will add you to the contributor list
-(unless you ask to be omitted).
+感谢使用本书早期版本的学生们，感谢所有提出建议和指正错误的朋友。
 
-If you include at least part of the sentence the
-error appears in, that makes it easy for me to search.  Page and
-section numbers are fine, too, but not quite as easy to work with.
-Thanks!
+
+\section*{贡献者名单}
+
+\index{贡献者}
+过去数年，上百位读者为本书献策纠误。
+他们无私的奉献，令本书意义非凡。
+
+如若您发现问题或者有好的提议，请发邮件到 
+{\tt feedback@thinkpython.com}。 一经采用，您将被加入贡献者名单
+(除非要求匿名)。 
+
+建议您最好附上详细语句而不仅仅是章节和页码，以方便快速定位，感谢。
 
 \begin{itemize}
 
 \small
-\item Lloyd Hugh Allen sent in a correction to Section 8.4.
+\item Lloyd Hugh Allen 修正了8.4节的一处错误。
 
-\item Yvon Boulianne sent in a correction of a semantic error in
-Chapter 5.
+\item Yvon Boulianne 修正了第5章的一处语义错误。
 
-\item Fred Bremmer submitted a correction in Section 2.1.
+\item Fred Bremmer  修正了2.1节的一处错误。
 
-\item Jonah Cohen wrote the Perl scripts to convert the
-LaTeX source for this book into beautiful HTML.
+\item Jonah Cohen 撰写了Perl脚本，将本书LaTex源码转成了美观的HTML。
 
-\item Michael Conlon sent in a grammar correction in Chapter 2
-and an improvement in style in Chapter 1, and he initiated discussion
-on the technical aspects of interpreters.
+\item Michael Conlon 修正了第2章的一处语法错误，并优化第一章的一处格式，
+初次提出关于口译技术的讨论。
 
-\item Beno\^{i}t Girard sent in a
-correction to a humorous mistake in Section 5.6.
+\item Beno\^{i}t Girard 修正了5.6节一个重大错误。
 
-\item Courtney Gleason and Katherine Smith wrote {\tt horsebet.py},
-which was used as a case study in an earlier version of the book.  Their
-program can now be found on the website.
+\item Courtney Gleason 和 Katherine Smith 编写了 {\tt horsebet.py}，
+这是本书早期版本的一个案例脚本，此程序现在仍然可以在网站找到。
 
-\item Lee Harr submitted more corrections than we have room to list
-here, and indeed he should be listed as one of the principal editors
-of the text.
+\item Lee Harr 修正了多个错误，所以应该把他列为主要编辑者。
 
-\item James Kaylin is a student using the text. He has submitted
-numerous corrections.
+\item James Kaylin 作为学生，修正了大量错误。
 
-\item David Kershaw fixed the broken {\tt catTwice} function in Section
-3.10.
+\item David Kershaw 修正了3.10节的 {\tt catTwice} 函数错误。
 
-\item Eddie Lam has sent in numerous corrections to Chapters 
-1, 2, and 3.
-He also fixed the Makefile so that it creates an index the first time it is
-run and helped us set up a versioning scheme.  
+\item Eddie Lam修正了第1,2,3章大量错误，同时修复了Makefile文件，
+从而我们可以创建索引。同时帮助我们建立了版本库。
 
-\item Man-Yong Lee sent in a correction to the example code in
-Section 2.4.  
+\item Man-Yong 修正了2.4节的一个样例。
 
-\item David Mayo pointed out that the word ``unconsciously"
-in Chapter 1 needed
-to be changed to ``subconsciously".
+\item David Mayo 指出第1章的某个词语 “unconsciously”
+应该替换为“subconsciously”。
 
-\item Chris McAloon sent in several corrections to Sections 3.9 and
-3.10.
+\item Chris McAloon  修正了3.9和3.10节的错误。
 
-\item Matthew J. Moelter has been a long-time contributor who sent
-in numerous corrections and suggestions to the book.  
+\item Matthew J. Moelter 作为一个长期贡献者，为本书提供了大量修订和建议。
 
-\item Simon Dicon Montford reported a missing function definition and
-several typos in Chapter 3.  He also found errors in the {\tt increment}
-function in Chapter 13.
+\item Simon Dicon Montford 发现了第3章的一个函数定义遗失和几个变量的命名错误。
+同时指出第13章的{\tt increment}函数错误。
 
-\item John Ouzts corrected the definition of ``return value"
-in Chapter 3.
+\item John Ouzts 修正了第三章的 “return value” 的定义。
 
-\item Kevin Parks sent in valuable comments and suggestions as to how
-to improve the distribution of the book.
+\item Kevin Parks 为本书的发行优化提供了宝贵的意见。
 
-\item David Pool sent in a typo in the glossary of Chapter 1, as well
-as kind words of encouragement.
+\item David Pool 对本书给了善意的鼓励，并指出了第一章词汇表中的一个错字。
 
-\item Michael Schmitt sent in a correction to the chapter on files
-and exceptions.
+\item Michael Schmitt 修正了文件和异常章节的一个错误。
 
-\item Robin Shaw pointed out an error in Section 13.1, where the
-printTime function was used in an example without being defined.
+\item Robin Shaw 指出13.1节中，使用了没有预先定义的printTime函数。
 
-\item Paul Sleigh found an error in Chapter 7 and a bug in Jonah Cohen's
-Perl script that generates HTML from LaTeX.
+\item Paul Sleigh 指出了第7章的一个错误，
+以及Jonah Cohen's 的生成HTML的Prel脚本中的一个错误。
 
-\item Craig T. Snydal is testing the text in a course at Drew
-University.  He has contributed several valuable suggestions and corrections.
+\item Craig T. Snydal 在 Drew University 使用本书教学，
+并给变量命名和修正提供了宝贵意见。
 
-\item Ian Thomas and his students are using the text in a programming
-course.  They are the first ones to test the chapters in the latter half
-of the book, and they have made numerous corrections and suggestions.
+\item Ian Thomas 和他的学生在编程课程中使用本书，
+他们是首批检验本书后半部分的贡献者，同时他们修订了大量错误，提供了大量建议。
 
-\item Keith Verheyden sent in a correction in Chapter 3.
+\item Keith Verheyden 修正了第3章的一个错误。
 
-\item Peter Winstanley let us know about a longstanding error in
-our Latin in Chapter 3.
+\item Peter Winstanley 指出了拉丁版第3章的一个长期存在的错误。
 
-\item Chris Wrobel made corrections to the code in the chapter on
-file I/O and exceptions. 
+\item Chris Wrobel l修正了I/O和异常章节的一个错误。
 
-\item Moshe Zadka has made invaluable contributions to this project.
-In addition to writing the first draft of the chapter on Dictionaries, he
-provided continual guidance in the early stages of the book.
+\item Moshe Zadka 撰写了字典章节的早期草稿，为本书早期工作做出了杰出贡献。
 
-\item Christoph Zwerschke sent several corrections and
-pedagogic suggestions, and explained the difference between {\em gleich}
-and {\em selbe}.
+\item Christoph Zwerschke 指出多个修正和教学建议，并解释了
+ {\em gleich}和 {\em selbe}的不同。
 
-\item James Mayer sent us a whole slew of spelling and
-typographical errors, including two in the contributor list.
+\item James Mayer 修正了一堆拼写和排版问题，甚至包括贡献列表中的两个问题。
 
-\item Hayden McAfee caught a potentially confusing inconsistency
-between two examples.
+\item Hayden McAfee  解决了一个在两个例子之间令人困惑的差异。
 
-\item Angel Arnal is part of an international team of translators
-working on the Spanish version of the text.  He has also found several
-errors in the English version.
+\item Angel Arnal 作为国际翻译组织的一员，参与了西班牙语的翻译，
+并在翻译过程中修正了英语版的一些错误。
 
-\item Tauhidul Hoque and Lex Berezhny created the illustrations
-in Chapter 1 and improved many of the other illustrations.
+\item Tauhidul Hoque 和 Lex Berezhny 绘制了第一章的插图，并优化了其他章节插图。
 
-\item Dr. Michele Alzetta caught an error in Chapter 8 and sent
-some interesting pedagogic comments and suggestions about Fibonacci
-and Old Maid.
+\item Michele Alzetta 博士修正了第8章的一个错误，
+并指出了Fibonacci and Old Maid案例的一些问题。
 
-\item Andy Mitchell caught a typo in Chapter 1 and a broken example
-in Chapter 2.
+\item Andy Mitchell 指出了第1章的一个错字，第2章的一个错误例子。
 
-\item Kalin Harvey suggested a clarification in Chapter 7 and
-caught some typos.
+\item Kalin Harvey 辨析了第7章的一个歧义，并修正了几个错字。
 
-\item Christopher P. Smith caught several typos and helped us
-update the book for Python 2.2.
+\item Christopher P. Smith 修正了错字，并给予Python2.2进行了修改。
 
-\item David Hutchins caught a typo in the Foreword.
+\item David Hutchins 修正了序中的一个错词。
 
-\item Gregor Lingl is teaching Python at a high school in Vienna,
-Austria.  He is working on a German translation of the book,
-and he caught a couple of bad errors in Chapter 5.
+\item Gregor Lingl 在奥地利的维也纳的一个高校教授Python，他翻译了德语版，并在翻译过程中，修正了第5章的多个错误。
 
-\item Julie Peters caught a typo in the Preface.
+\item Julie Peters 修正了序中的一个错字。
 
-\item Florin Oprina sent in an improvement in {\tt makeTime},
-a correction in {\tt printTime}, and a nice typo.
+\item Florin Oprina 优化了 {\tt makeTime}，修正了 {\tt printTime} 的错误，以及一个错字。 
 
-\item D.~J.~Webre suggested a clarification in Chapter 3.
+\item D.~J.~Webre 辨析了第3章的一个歧义词。
 
-\item Ken found a fistful of errors in Chapters 8, 9 and 11.
+\item Ken 修正了8,9,11章的一堆错误。
 
-\item Ivo Wever caught a typo in Chapter 5 and suggested a clarification
-in Chapter 3.
+\item Ivo Wever 修正了第3章的错字和第5章的歧义词。
 
-\item Curtis Yanko suggested a clarification in Chapter 2.
+\item Curtis Yanko 辨析了第2章一个歧义。
 
-\item Ben Logan sent in a number of typos and problems with translating
-the book into HTML.
+\item Ben Logan 修正了本书HTML版的大量错误。
 
-\item Jason Armstrong saw the missing word in Chapter 2.
+\item Jason Armstrong 发现第2章遗漏的一个词汇。
 
-\item Louis Cordier noticed a spot in Chapter 16 where the code
-didn't match the text.
+\item Louis Cordier 指出了第16章的一个描述和代码不一致的问题。
 
-\item Brian Cain suggested several clarifications in Chapters 2 and 3.
 
-\item Rob Black sent in a passel of corrections, including some
-changes for Python 2.2.
+\item Brian Cain 修正了第2,3章的数个错误。
 
-\item Jean-Philippe Rey at \'{E}cole Centrale
-Paris sent a number of patches, including some updates for Python 2.2
-and other thoughtful improvements.
+\item Rob Black 修正了一系列错误，以及优化了Python2.2版部分内容。
 
-\item Jason Mader at George Washington University made a number
-of useful suggestions and corrections.
+\item Jean-Philippe Rey [巴黎中央理工学院]针对Python2.2进行了部分优化。
 
-\item Jan Gundtofte-Bruun reminded us that ``a error'' is an error.
+\item Jason Mader [乔治华盛顿大学]提供了大量修改意见。
 
-\item Abel David and Alexis Dinno reminded us that the plural of
-``matrix'' is ``matrices'', not ``matrixes''.  This error was in the
-book for years, but two readers with the same initials reported it on
-the same day.  Weird.
+\item Jan Gundtofte-Bruun 指出 "a error" 错误。
 
-\item Charles Thayer encouraged us to get rid of the semi-colons
-we had put at the ends of some statements and to clean up our
-use of ``argument'' and ``parameter''.
+\item Abel David 和 Alexis Dinno 指出 "matrix" 的复数是 "matrices"，
+而不是 "matrixes"。这个错误存在多年，但是两人在同一天指出此错误，神奇啊！
 
-\item Roger Sperberg pointed out a twisted piece of logic in Chapter 3.
+\item Charles Thayer 建议我们在一些声明末尾勿用分号，以及避免使用"argument"和"parameter"。
 
-\item Sam Bull pointed out a confusing paragraph in Chapter 2.
+\item Roger Sperberg 指出了第3章的一个逻辑问题。
 
-\item Andrew Cheung pointed out two instances of ``use before def''.
+\item Sam Bull 指出第2章的一处歧义表述。
 
-\item C. Corey Capel spotted the missing word in the Third Theorem
-of Debugging and a typo in Chapter 4.
+\item Andrew Cheung 修正了"use before def."的两个实例。
 
-\item Alessandra helped clear up some Turtle confusion.
+\item C. Corey Capel 指出“Third Theorem
+of Debugging”章节的遗漏词汇，以及第4章的一个错词。
 
-\item Wim Champagne found a brain-o in a dictionary example.
+\item Alessandra 澄清了一些"Turtle"歧义。
 
-\item Douglas Wright pointed out a problem with floor division in
-{\tt arc}.
+\item Wim Champagne  修正了字典例子中的一个"brain-o"错误。
 
-\item Jared Spindor found some jetsam at the end of a sentence.
+\item Douglas Wright 修正了 {\tt arc} 中的一个"floor"错误。
 
-\item Lin Peiheng sent a number of very helpful suggestions.
+\item Jared Spindor 清理了数个画蛇添足。
 
-\item Ray Hagtvedt sent in two errors and a not-quite-error.
+\item Lin Peiheng 提供了多个建议。
 
-\item Torsten H\"{u}bsch pointed out an inconsistency in Swampy.
+\item Ray Hagtvedt 修正了两个错误，提出一个优化。
 
-\item Inga Petuhhov corrected an example in Chapter 14.
+\item Torsten H\"{u}bsch 指出Swampy中的一处不一致。
 
-\item Arne Babenhauserheide sent several helpful corrections.
+\item Inga Petuhhov 修正了第14章的一个案例问题。
 
-\item Mark E. Casida is is good at spotting repeated words.
+\item Arne Babenhauserheide修正了数个错误。
 
-\item Scott Tyler filled in a that was missing.  And then sent in
-a heap of corrections.
+\item Mark E. Casida 敏锐发现了多个重复词汇。
 
-\item Gordon Shephard sent in several corrections, all in separate
-emails.
+\item Scott Tyler 补充了一处遗漏词汇，并修正了大量错误。
 
-\item Andrew Turner {\tt spot}ted an error in Chapter 8.
+\item Gordon Shephard 多次发送邮件，指出错误。
 
-\item Adam Hobart fixed a problem with floor division in {\tt arc}.
+\item Andrew Turner指出第8章的一处错误。
 
-\item Daryl Hammond and Sarah Zimmerman pointed out that I served
-up {\tt math.pi} too early.  And Zim spotted a typo.
+\item Adam Hobart 修正了 {\tt arc} 中的一处错误。
 
-\item George Sass found a bug in a Debugging section.
+\item Daryl Hammond 和 Sarah Zimmerman 指出我太早使用 {\tt math.pi}，
+ 同时 Zim 修正了一个拼写错误。
 
-\item Brian Bingham suggested Exercise~\ref{exrotatepairs}.
+\item George Sass 修复了调试一章的一处错误。
 
-\item Leah Engelbert-Fenton pointed out that I used {\tt tuple}
-as a variable name, contrary to my own advice.  And then found
-a bunch of typos and a ``use before def''.
+\item Brian Bingham 提供~\ref{exrotatepairs}习题。
 
-\item Joe Funke spotted a typo.
+\item Leah Engelbert-Fenton 指出我误用  {\tt tuple} 为变量名的问题，
+以至于发现大量类似问题 ”use before def“。
 
-\item Chao-chao Chen found an inconsistency in the Fibonacci example.
+\item Joe Funke 指出一个拼写错误。
 
-\item Jeff Paine knows the difference between space and spam.
+\item Chao-chao Chen 指出 Fibonacci 例子中的一处不一致。
 
-\item Lubos Pintes sent in a typo.
+\item Jeff Paine 指出了 space 和 spam 之间的不同。
 
-\item Gregg Lind and Abigail Heithoff suggested Exercise~\ref{checksum}.
+\item Lubos Pintes 指出了一处拼写错误。
 
-\item Max Hailperin has sent in a number of corrections and
-  suggestions.  Max is one of the authors of the extraordinary {\em
-    Concrete Abstractions}, which you might want to read when you are
-  done with this book.
+\item Gregg Lind 和 Abigail Heithoff 提供~\ref{checksum}习题。
 
-\item Chotipat Pornavalai found an error in an error message.
+\item Max Hailperin 修正了大量错误，同时提供了大量建议。 
+Max 是  {\em  Concrete Abstractions} 一书的作者之一，读完此书，
+你可以阅读这本非凡之作。
 
-\item Stanislaw Antol sent a list of very helpful suggestions.
+\item Chotipat Pornavalai 修正了错误信息中的一处问题。
 
-\item Eric Pashman sent a number of corrections for Chapters 4--11.
+\item Stanislaw Antol 提供了大量建议。
 
-\item Miguel Azevedo found some typos.
+\item Eric Pashman 修正了4-11章的大量错误。
 
-\item Jianhua Liu sent in a long list of corrections.
 
-\item Nick King found a missing word.
+\item Miguel Azevedo 发现了多个拼写错误。
 
-\item Martin Zuther sent a long list of suggestions.
+\item Jianhua Liu 修正了大量错误。
 
-\item Adam Zimmerman found an inconsistency in my instance
-of an ``instance'' and several other errors.
+\item Nick King 发现了一处词汇遗漏。
 
-\item Ratnakar Tiwari suggested a footnote explaining degenerate
-triangles.
+\item Martin Zuther 提供了大量建议。
 
-\item Anurag Goel suggested another solution for \verb"is_abecedarian"
-and sent some additional corrections.  And he knows how to
-spell Jane Austen.
+\item Adam Zimmerman 指出了 "instance"中的一处不一致问题，以及数个错误。
 
-\item Kelli Kratzer spotted one of the typos.
+\item Ratnakar Tiwari 提供了退化三角形说明脚注。
 
-\item Mark Griffiths pointed out a confusing example in Chapter 3.
+\item Anurag Goel 提供了 \verb"is_abecedarian"
+的另外一种方案，并修正了多个错误。同时他知晓如何拼写Jane Austen。
 
-\item Roydan Ongie found an error in my Newton's method.
+\item Kelli Kratzer 指出了一处拼写错误。
 
-\item Patryk Wolowiec helped me with a problem in the HTML version.
+\item Mark Griffiths 澄清了第3章的一个令人困惑的案例。
 
-\item Mark Chonofsky told me about a new keyword in Python 3.
+\item Roydan Ongie 指出了Newton方法的一处错误。
 
-\item Russell Coleman helped me with my geometry.
+\item Patryk Wolowiec  修正了HTML版中的一个错误。
 
-\item Nam Nguyen found a typo and pointed out that I used the Decorator
-pattern but didn't mention it by name.
+\item Mark Chonofsky 让我知晓了Python3的一个关键字。
 
-\item St\'{e}phane Morin sent in several corrections and suggestions.
+\item Russell Coleman 让我增长了几何知识。
 
-\item Paul Stoop corrected a typo in \verb+uses_only+.
+\item Nam Nguyen 指出了一个拼写错误，并指出我用装饰器模式前，未有说明。
 
-\item Eric Bronner pointed out a confusion in the discussion of the
-order of operations.
+\item St\'{e}phane Morin 修正了数个错误，并提供了多个建议。
 
-\item Alexandros Gezerlis set a new standard for the number and
-quality of suggestions he submitted.  We are deeply grateful!
+\item Paul Stoop  修正了  \verb+uses_only+ 中的一处拼写错误。
+
+\item Eric Bronner  指出了关于操作顺序的撰文中的一处歧义。
+
+\item Alexandros Gezerlis 为他提交的建议数量和质量设定了新的标准，深表谢意。
 
 \item Gray Thomas knows his right from his left.
 
-\item Giovanni Escobar Sosa sent a long list of corrections and
-suggestions.
+\item Giovanni Escobar Sosa 提供了大量修订。
 
-\item Daniel Neilson corrected an error about the order of operations.
+\item Daniel Neilson 修正了操作顺序处的一个错误。
 
-\item Will McGinnis pointed out that {\tt polyline} was defined
-differently in two places.
+\item Will McGinnis 指出 {\tt polyline} 在两处定义不同。 
 
-\item Frank Hecker pointed out an exercise that was under-specified, and
-some broken links.
+\item Frank Hecker 指出某个习题异于规定，同时发现了多个异常链接。
 
-\item Animesh B helped me clean up a confusing example.
+\item Animesh B 澄清了一个令人困惑的案例。
 
-\item Martin Caspersen found two round-off errors.
+\item Martin Caspersen 发现两处四舍五入的错误。
 
-\item Gregor Ulm sent several corrections and suggestions.
+\item Gregor Ulm 提供多个修订和建议。
 
-\item Dimitrios Tsirigkas suggested I clarify an exercise.
+\item Dimitrios Tsirigkas  建议我修正一个练习。
 
-\item Carlos Tafur sent a page of corrections and suggestions.
+\item Carlos Tafur  提供了大量修订和建议。
 
-\item Martin Nordsletten found a bug in an exercise solution.
+\item Martin Nordsletten 发现了习题答案中的一处异常。
 
-\item Sven Hoexter pointed out that a variable named {\tt input}
-shadows a build-in function.
+\item Sven Hoexter 指出某处误用  {\tt input} 这一内置函数。
 
-\item Stephen Gregory pointed out the problem with {\tt cmp}
-in Python 3.
+\item Stephen Gregory 指出 Python3 中的 {\tt cmp} 的问题。
 
-\item Ishwar Bhat corrected my statement of Fermat's last theorem.
+\item Ishwar Bhat 修订了关于费马大定理的描述。
 
-\item Andrea Zanella translated the book into Italian, and sent a
-number of corrections along the way.
+\item Andrea Zanella 将此书翻译为意大利文，同时修正了多个错误。
 
-\item Many, many thanks to Melissa Lewis and Luciano Ramalho for
-  excellent comments and suggestions on the second edition.
 
-\item Thanks to Harry Percival from PythonAnywhere for his help
-getting people started running Python in a browser.
+\item 感谢Melissa Lewis 和 Luciano Ramalho对第二版提供的建议和帮助。
 
-\item Xavier Van Aubel made several useful corrections in the second
-edition.
+\item 感谢 来自 PythonAnywhere的Harry Percival  的帮助，使读者可以在浏览器运行Python。
 
-\item William Murray corrected my definition of floor division.
+\item Xavier Van Aubel 为第二版提供了多次修正。
 
-\item Per Starb{\"a}ck brought me up to date on universal newlines in Python 3. 
+\item William Murray 纠正了取整的定义。
 
-\item Laurent Rosenfeld and Mihaela Rotaru translated this book into French.  Along the way, they sent many corrections and suggestions.
+\item Per Starb{\"a}ck 令我了解了Python3中的通用换行符。
+
+\item Laurent Rosenfeld 和 Mihaela Rotaru 将本书翻译为了法文，并纠正了诸多错误。
 
 % ENDCONTRIB
 
-In addition, people who spotted typos or made corrections include
+另外为本书献策纠误的人包括：
 Czeslaw Czapla, Dale Wilson, Francesco Carlo Cimini,
 Richard Fursa, Brian McGhie, Lokesh Kumar Makani, Matthew Shultz, Viet
 Le, Victor Simeone, Lars O.D. Christensen, Swarup Sahoo, Alix Etienne,
-Kuang He, Wei Huang, Karen Barber, and Eric Ransom.
-
+Kuang He, Wei Huang, Karen Barber, and Eric Ransom。
 
 
 
@@ -14893,7 +14789,7 @@ Solution: \url{http://thinkpython2.com/code/PokerHandSoln.py}.
 \end{exercise}
 
 
-\chapter{The Goodies}
+\chapter{利器}
 
 One of my goals for this book has been to teach you as little Python
 as possible.  When there were two ways to do something, I picked 
