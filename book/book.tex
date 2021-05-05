@@ -29,6 +29,9 @@
 \usepackage{upquote}
 \usepackage{appendix}
 \usepackage[bookmarks]{hyperref}
+\usepackage[center]{titlesec}
+\titleformat{\chapter}{\raggedright\Huge\bfseries}{第\,\thechapter\,章}{1em}{}
+
 
 \title{Think Python}
 \author{Allen B. Downey}
@@ -250,8 +253,8 @@ a Computer Scientist)}.
 
 我基于GNU 自由文档许可证发布此书，
 也就是说，任何人都可以基于此协议，复制，修改，分享此书。
-\index{GNU自由文档许可证}
-\index{自由文档许可证, GNU}
+\index{GNU Free Documentation License}
+\index{Free Documentation License, GNU}
 
 后续的事情就有趣了，弗吉尼亚州的Jeff Elkner高校教师采用了本书，
 并转换为了Python教材。通过他给我的Python版书籍，
@@ -260,7 +263,7 @@ a Computer Scientist)}.
 \index{Elkner, Jeff}
 
 2003年，我开始在欧林学院任职，并且首次教授Python。和教授Java相比，惊喜非凡，学生乐于学习并乐在其中。
-\index{欧林学院}
+\index{Olin College}
 
 自此，我不断优化此书，校正错误，提高案例水准，
 并增加一些新的例子和练习。
@@ -321,9 +324,9 @@ Allen B. Downey \\
 
 感谢创建GNU自由文档协议以及创作共用的自由软件基金会。
 基于此协议以及知识共享协议，我才能和Jeff， Chris一起合作。
-\index{GNU自由文档许可证}
-\index{自由文档许可证, GNU}
-\index{知识共享}
+\index{GNU Free Documentation License}
+\index{Free Documentation License, GNU}
+\index{Creative Commons}
 
 
 感谢整理{\em How to Think Like a Computer Scientist}的Lulu的编辑。
@@ -335,7 +338,7 @@ Allen B. Downey \\
 
 \section*{贡献者名单}
 
-\index{贡献者}
+\index{contributors}
 过去数年，上百位读者为本书献策纠误。
 他们无私的奉献，令本书意义非凡。
 
@@ -646,106 +649,78 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom。
 % START THE BOOK
 \mainmatter
 
-\chapter{The way of the program}
+\chapter{程序思维}
 
-The goal of this book is to teach you to think like a computer
-scientist.  This way of thinking combines some of the best features of
-mathematics, engineering, and natural science.  Like mathematicians,
-computer scientists use formal languages to denote ideas (specifically
-computations).  Like engineers, they design things, assembling
-components into systems and evaluating tradeoffs among alternatives.
-Like scientists, they observe the behavior of complex systems, form
-hypotheses, and test predictions.  \index{problem solving}
+本书期望能带你做到像计算机专家一样思考。
+这意味着你要整合数学，工程和自然科学的知识去综合思考。
+比如数学，计算机专家用专业语言去表达观点(尤其关于计算)。
+比如工程师，他们设计原件，组装组件，构建系统，权衡各种方案。
+比如科学家，他们观察复杂系统行为，小心假设，积极求证。
+\index{problem solving}
 
-The single most important skill for a computer scientist is {\bf
-  problem solving}.  Problem solving means the ability to formulate
-problems, think creatively about solutions, and express a solution
-clearly and accurately.  As it turns out, the process of learning to
-program is an excellent opportunity to practice problem-solving
-skills.  That's why this chapter is called, ``The way of the
-program''.
+计算机专家最重要的能力是{\bf 解决问题}。
+解决问题意味着要分析问题，提出创造性解决方案，并能清晰准确表述。
+事实证明，学习编程是锻炼解决问题能力的极好机会。
+这也是本章叫做程序思维的缘由。
+ 
+一方面，我们将学习编程这一技能，另一方面，我们将利用编程技能来实现目标。
+随着不断进步，前景将越来越明朗。
 
-On one level, you will be learning to program, a useful skill by
-itself.  On another level, you will use programming as a means to an
-end.  As we go along, that end will become clearer.
+\section{何为程序？}
 
-
-\section{What is a program?}
-
-A {\bf program} is a sequence of instructions that specifies how to
-perform a computation.  The computation might be something
-mathematical, such as solving a system of equations or finding the
-roots of a polynomial, but it can also be a symbolic computation, such
-as searching and replacing text in a document or something
-graphical, like processing an image or playing a video.
+{\bf 程序} 简而言之，就是一堆执行运算的指令。
+运算可以是数学计算，例如求解方程或多项式。
+也可以是符号运算，例如检索或者替换文档中的语句词汇。
+也可以是图形运算，比如处理图片，播放视频。
 \index{program}
 
-The details look different in different languages, but a few basic
-instructions appear in just about every language:
+不同语言虽各有特色，但基础指令相差无几：
 
 \begin{description}
 
-\item[input:] Get data from the keyboard, a file, the network, or some
-other device.
+\item[输入:] 从键盘，文件，网络或者其他设备中获取数据。
 
-\item[output:] Display data on the screen, save it in a
-file, send it over the network, etc.
+\item[输出:] 将数据显示于屏幕，保存至文件，发送到网络等。
 
-\item[math:] Perform basic mathematical operations like addition and
-multiplication.
+\item[数学计算:] 加减乘除等数学运算。
 
-\item[conditional execution:] Check for certain conditions and
-run the appropriate code.
+\item[条件选择:] 只能在命运分支的安排下，被推动前进。
 
-\item[repetition:] Perform some action repeatedly, usually with
-some variation.
+\item[循环执行:] 在宿命轮回中不断改变，以摆脱命运的枷锁。
 
 \end{description}
 
-Believe it or not, that's pretty much all there is to it.  Every
-program you've ever used, no matter how complicated, is made up of
-instructions that look pretty much like these.  So you can think of
-programming as the process of breaking a large, complex task
-into smaller and smaller subtasks until the subtasks are
-simple enough to be performed with one of these basic instructions.
+无论相信与否，基础指令不过这些。
+不管是哪种编程语言，
+也无论何等复杂，都由这些基础指令构成。
+所以你便了解了何为编程，那
+便是将庞大复杂的任务不断分解，不断细化，
+直至细化为这几个基础指令为止。
 
 
-\section{Running Python}
+\section{运行 Python}
 
-One of the challenges of getting started with Python is that you
-might have to install Python and related software on your computer.
-If you are familiar with your operating system, and especially
-if you are comfortable with the command-line interface, you will
-have no trouble installing Python.  But for beginners, it can be
-painful to learn about system administration and programming at the
-same time.
+巧妇难为无米之炊，运行Python程序必然需要先安装Python和其他软件，
+熟悉操作系统和命令行的人还好，对于初学者，同时学习操作系统和编程，
+必然是件痛苦万分的事情。
 \index{running Python}
 \index{Python!running}
 
-To avoid that problem, I recommend that you start out running Python
-in a browser.  Later, when you are comfortable with Python, I'll
-make suggestions for installing Python on your computer.
+我建议先在浏览器上进行Python编程学习，后续再按步骤进行Python安装。
 \index{Python in a browser}
 
-There are a number of web pages you can use to run Python.  If you
-already have a favorite, go ahead and use it.  Otherwise I recommend
-PythonAnywhere.  I provide detailed instructions for getting started
-at \url{http://tinyurl.com/thinkpython2e}.  
+在线运行Python代码的网站很多，如果无从下手，我推荐PythonAnywhere。
+入门指导可以查阅\url{http://tinyurl.com/thinkpython2e}
 \index{PythonAnywhere}
 
-There are two versions of Python, called Python 2 and Python 3.
-They are very similar, so if you learn one, it is easy to switch
-to the other.  In fact, there are only a few differences you will
-encounter as a beginner.
-This book is written for Python 3, but I include some notes
-about Python 2.
+本书有两个版本，分别是 Python 2 和 Python 3, 内容相似，
+可以互相借鉴。细微差异，初学时需要关注。
+本书主要面向 Python 3，同时包括了一些关于Python 2的内容。
 \index{Python 2}
 
-The Python {\bf interpreter} is a program that reads and executes
-Python code.  Depending on your environment, you might start the
-interpreter by clicking on an icon, or by typing {\tt python} on
-a command line. 
-When it starts, you should see output like this:
+运行Python代码的程序叫做 Python {\bf 解释器} 。通常点击图标
+或者在命令行输入{\tt python} 来启动程序。启动后，可以看到如下
+输出：
 \index{interpreter}
 
 \begin{verbatim}
@@ -755,17 +730,13 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> 
 \end{verbatim}
 %
-The first three lines contain information about the interpreter
-and the operating system it's running on, so it might be different for
-you.  But you should check that the version number, which is
-{\tt 3.4.0} in this example, begins with 3, which indicates that
-you are running Python 3.  If it begins with 2, you are running
-(you guessed it) Python 2.
 
-The last line is a {\bf prompt} that indicates that the interpreter is
-ready for you to enter code.
-If you type a line of code and hit Enter, the interpreter displays the
-result: 
+前三行主要是 Python 解释器信息以及操作系统信息，内容因人而异。
+注意版本信息，比如 {\tt 3.4.0}， 第一位的3表示此解释器版本是Python 3，
+如果是2, 则表示Pyhton 2。
+
+最后一行是个  {\bf 提示符}，表示一切就绪，只待代码。
+如果输入一行代码，并敲击 Enter键，解释器就会显示运行结果。
 \index{prompt}
 
 \begin{verbatim}
@@ -773,63 +744,56 @@ result:
 2
 \end{verbatim}
 %
-Now you're ready to get started.
-From here on, I assume that you know how to start the Python
-interpreter and run code.
 
+到此，你应该学会了如何启动Python解释器，并运行代码了。
 
-\section{The first program}
+\section{初识}
 \label{hello}
 \index{Hello, World}
 
-Traditionally, the first program you write in a new language
-is called ``Hello, World!'' because all it does is display the
-words ``Hello, World!''.  In Python, it looks like this:
+通常，学习一门新的编程语言，遇到的第一个程序就是 "Hello, World!"。
+Python语言这样表示：
 
 \begin{verbatim}
 >>> print('Hello, World!')
 \end{verbatim}
 %
-This is an example of a {\bf print statement}, although it
-doesn't actually print anything on paper.  It displays a result on the
-screen.  In this case, the result is the words
+
+这就是{\bf print 语法}， 不要误会是打印到纸上，而是显示在屏幕上，
+结果就是这个语句：
 
 \begin{verbatim}
 Hello, World!
 \end{verbatim}
 %
-The quotation marks in the program mark the beginning and end
-of the text to be displayed; they don't appear in the result.
+
+单引号表示语句的开始和结束，并不会显示在输出上。
 \index{quotation mark}
 \index{print statement}
 \index{statement!print}
 
-The parentheses indicate that {\tt print} is a function.  We'll get
-to functions in Chapter~\ref{funcchap}.
+括号表示 {\tt print}是个函数，后续章节~\ref{funcchap}介绍。
 \index{function} \index{print function}
 
-In Python 2, the print statement is slightly different; it is not
-a function, so it doesn't use parentheses.
+Python 2中，print 语法明显不同，它不是函数，所以后边不会有括号。
 \index{Python 2}
 
 \begin{verbatim}
 >>> print 'Hello, World!'
 \end{verbatim}
 %
-This distinction will make more sense soon, but that's enough to
-get started.
+这种语言版本之间的差异需要注意，
+但是当前，我们可以开始学习Python编程了。
 
 
-\section{Arithmetic operators}
+\section{算术运算}
 \index{operator!arithmetic}
 \index{arithmetic operator}
 
-After ``Hello, World'', the next step is arithmetic.  Python provides
-{\bf operators}, which are special symbols that represent computations
-like addition and multiplication.  
+讲完了“Hello, World”， 我们讲讲算术。Python 通过 {\bf 运算符} 
+实现加减乘除等计算。
 
-The operators {\tt +}, {\tt -}, and {\tt *} perform addition,
-subtraction, and multiplication, as in the following examples:
+运算符 {\tt +}, {\tt -}, 和 {\tt *} 分别表示加，减和乘法，参看以下样例：
 
 \begin{verbatim}
 >>> 40 + 2
@@ -840,58 +804,56 @@ subtraction, and multiplication, as in the following examples:
 42
 \end{verbatim}
 %
-The operator {\tt /} performs division:
+运算符 {\tt /} 表示除法:
 
 \begin{verbatim}
 >>> 84 / 2
 42.0
 \end{verbatim}
 %
-You might wonder why the result is {\tt 42.0} instead of {\tt 42}.
-I'll explain in the next section.
 
-Finally, the operator {\tt **} performs exponentiation; that is,
-it raises a number to a power:
+对于结果为 {\tt 42.0}， 而不是{\tt 42}的疑惑，下章解释。
+
+运算符{\tt **} 表示幂运算，表示一个数字的次方。
 
 \begin{verbatim}
 >>> 6**2 + 6
 42
 \end{verbatim}
 %
-In some other languages, \verb"^" is used for exponentiation, but
-in Python it is a bitwise operator called XOR.  If you are not
-familiar with bitwise operators, the result will surprise you:
+
+运算符 \verb"^"  在某些编程语言中表示幂运算，但是Python中，表示位运算的
+“异或”操作。如果不了解位运算，那下面的例子只会让你困惑万分。
 
 \begin{verbatim}
 >>> 6 ^ 2
 4
 \end{verbatim}
 %
-I won't cover
-bitwise operators in this book, but you can read about
-them at \url{http://wiki.python.org/moin/BitwiseOperators}.
+
+本书不准备讲解位运算，如果想了解，可以前往  
+\url{http://wiki.python.org/moin/BitwiseOperators}。
 \index{bitwise operator}
 \index{operator!bitwise}
 
 
-\section{Values and types}
+\section{值和类型}
 \index{value}
 \index{type}
 \index{string}
 
-A {\bf value} is one of the basic things a program works with, like a
-letter or a number.  Some values we have seen so far are {\tt 2},
-{\tt 42.0}, and \verb"'Hello, World!'".
 
-These values belong to different {\bf types}:
-{\tt 2} is an {\bf integer}, {\tt 42.0} is a {\bf floating-point number},
-and \verb"'Hello, World!'" is a {\bf string},
-so-called because the letters it contains are strung together.
+ {\bf 值} 是程序的基本要素，例如字母，数字。前文看到的
+ {\tt 2}， {\tt 42.0}， 以及  \verb"'Hello, World!'"，都属于值。
+
+而这些值分属不同 {\bf 类型}:
+{\tt 2} 是 {\bf 整树}，
+{\tt 42.0} 是 {\bf 浮点数}， 
+而 \verb"'Hello, World!'" 是 {\bf 字符串}，也就是一堆字符的集合。
 \index{integer}
 \index{floating-point}
 
-If you are not sure what type a value has, the interpreter can
-tell you:
+想知道值是何种类型，输入命令：
 
 \begin{verbatim}
 >>> type(2)
@@ -902,13 +864,12 @@ tell you:
 <class 'str'>
 \end{verbatim}
 %
-In these results, the word ``class'' is used in the sense of
-a category; a type is a category of values.
+
+”class“ 表示类别，值的类别就是类型。
+
 \index{class}
 
-Not surprisingly, integers belong to the type {\tt int},
-strings belong to {\tt str} and floating-point
-numbers belong to {\tt float}.  
+所以整数属于 {\tt 整型}，字符串属于{\tt 字符型} ，浮点数属于{\tt 浮点型} 。
 \index{type}
 \index{string type}
 \index{type!str}
@@ -917,9 +878,8 @@ numbers belong to {\tt float}.
 \index{float type}
 \index{type!float}
 
-What about values like \verb"'2'" and \verb"'42.0'"?
-They look like numbers, but they are in quotation marks like
-strings.
+ \verb"'2'" 和 \verb"'42.0'"是什么类型呢？看似是数字，其实是
+被引号括起来的字符串。
 \index{quotation mark}
 
 \begin{verbatim}
@@ -929,20 +889,19 @@ strings.
 <class 'str'>
 \end{verbatim}
 %
-They're strings.
+哈哈，是字符串吧。
 
-When you type a large integer, you might be tempted to use commas
-between groups of digits, as in {\tt 1,000,000}.  This is not a
-legal {\em integer} in Python, but it is legal:
+当我们想使用很大的整数时，一般会在数字间加逗号分隔，类似 {\tt 1,000,000}。
+在Python中，这虽然不合{\tt 整型} 之规，却容易理解：
 
 \begin{verbatim}
 >>> 1,000,000
 (1, 0, 0)
 \end{verbatim}
 %
-That's not what we expected at all!  Python interprets {\tt
-  1,000,000} as a comma-separated sequence of integers.  We'll learn
-more about this kind of sequence later.
+
+很神奇！ Python 解释器把 {\tt 1,000,000} 当作了
+一串逗号分隔的整数。后续我们还会多次接触这种格式。
 \index{sequence}
 
 %This is the first example we have seen of a semantic error: the code
@@ -955,287 +914,224 @@ more about this kind of sequence later.
 
 
 
-\section{Formal and natural languages}
+\section{规范语言和自然语言}
 \index{formal language}
 \index{natural language}
 \index{language!formal}
 \index{language!natural}
 
-{\bf Natural languages} are the languages people speak,
-such as English, Spanish, and French.  They were not designed
-by people (although people try to impose some order on them);
-they evolved naturally.
+{\bf 自然语言} 指人们沟通需要的语言，比如英语，西班牙语，法语。
+这通常是人类自然进化而来，并不是出于特定目的而创造的。
 
-{\bf Formal languages} are languages that are designed by people for
-specific applications.  For example, the notation that mathematicians
-use is a formal language that is particularly good at denoting
-relationships among numbers and symbols.  Chemists use a formal
-language to represent the chemical structure of molecules.  And
-most importantly:
+
+{\bf 规范语言} 指人们为了特定目的而创造的特定格式的语言，
+比如数学家们发明的数学符号，
+可以很方便表示数字和符号的关系。
+而化学家们发明的分子结构式也是一种规范语言，更重要的是：
 
 \begin{quote}
-{\bf Programming languages are formal languages that have been
-designed to express computations.}
+{\bf 人们为了表示机器运算而创造的规范语言就是编程语言。}
 \end{quote}
 
-Formal languages tend to have strict {\bf syntax} rules that
-govern the structure of statements.
-For example, in mathematics the statement
-$3 + 3 = 6$ has correct syntax, but
-$3 + = 3 \$ 6$ does not.  In chemistry
-$H_2O$ is a syntactically correct formula, but $_2Zz$ is not.
+规范语言一般有严格的{\bf 句法} 来管理语句的结构。例如，
+数学表示， $3 + 3 = 6$  是正确的，而 $3 + = 3 \$ 6$ 则不正确。
+又比如在化学中，$H_2O$ 正确，而 $_2Zz$ 则明显有问题。
 \index{syntax}
 
-Syntax rules come in two flavors, pertaining to {\bf tokens} and
-structure.  Tokens are the basic elements of the language, such as
-words, numbers, and chemical elements.  One of the problems with
-$3 += 3 \$ 6$ is that \( \$ \) is not a legal token in mathematics
-(at least as far as I know).  Similarly, $_2Zz$ is not legal because
-there is no element with the abbreviation $Zz$.
+句法包括两部分，{\bf 词汇} 和 规则。
+词汇是语言的基本，比如单词，数字和化学元素等。
+$3 += 3 \$ 6$的问题在于， \(\$\) 在数学中不是一个合法的词汇(据我所知)。
+同样，$_2Zz$ 在化学领域不正确，也是因为$Zz$ 无法对应相应的元素。
 \index{token}
 \index{structure}
 
-The second type of syntax rule pertains to the way tokens are
-combined.  The equation $3 +/ 3$ is illegal because even though $+$
-and $/$ are legal tokens, you can't have one right after the other.
-Similarly, in a chemical formula the subscript comes after the element
-name, not before.
+句法的另外一个要素是{\bf 规则}，即把词汇有效组织起来所遵循的结构。
+公式$3 +/ 3$ 不合句法，不是因为$+$ 和$/$ 不正确，而是因为先后顺序问题。
+同样，上述化学公式不仅仅是词汇胡编乱造，其规则也有问题，元素下标不能在元素之前，
+而应放在后边。
 
 This is @ well-structured Engli\$h
-sentence with invalid t*kens in it.  This sentence all valid tokens
-has, but invalid structure with.
+sentence with invalid t*kens in it.  这句话每个字母（词汇）都正确，
+但是拼在一起，就不正确了。
 
-When you read a sentence in English or a statement in a formal
-language, you have to figure out the structure
-(although in a natural language you do this subconsciously).  This
-process is called {\bf parsing}.
+我们读一句话或者一个公式的时候，会自觉地分析句子结构
+（自然语言中往往是潜意识行为）。这个分析的过程，叫做 {\bf 解析}。
 \index{parse}
 
-Although formal and natural languages have many features in
-common---tokens, structure, and syntax---there are some
-differences:
+规范语言和自然语言在词汇，规则以及句法等方面较为相似，但是也有
+很多不同之处：
 \index{ambiguity}
 \index{redundancy}
 \index{literalness}
 
 \begin{description}
 
-\item[ambiguity:] Natural languages are full of ambiguity, which
-people deal with by using contextual clues and other information.
-Formal languages are designed to be nearly or completely unambiguous,
-which means that any statement has exactly one meaning,
-regardless of context.
+\item[歧义:] 自然语言的表述不太精确，人人往往需要上下文
+和相关情境确定对方的意思。但是规范语言中，句法确定，意思清晰，
+不会出现同一句话表示不同意思的情况。
 
-\item[redundancy:] In order to make up for ambiguity and reduce
-misunderstandings, natural languages employ lots of
-redundancy.  As a result, they are often verbose.  Formal languages
-are less redundant and more concise.
+\item[冗余:] 为了让对方捕捉到自己的真实意思，避免误会，
+自然语言中往往需要补充更多相关信息，来辅助沟通。
+而规范语言则更加简炼而精确。
 
-\item[literalness:] Natural languages are full of idiom and metaphor.
-If I say, ``The penny dropped'', there is probably no penny and
-nothing dropping (this idiom means that someone understood something
-after a period of confusion).  Formal languages
-mean exactly what they say.
+\item[比喻:] 自然语言中充满了俗语和比喻，我说 "The penny dropped"， 
+不是说谁钱掉了(比喻恍然大悟)。规范语言则没有类似的表述。
 
 \end{description}
 
-Because we all grow up speaking natural languages, it is sometimes
-hard to adjust to formal languages.  The difference between formal and
-natural language is like the difference between poetry and prose, but
-more so: \index{poetry} \index{prose}
+我们生活在自然语言的环境下，突然要适应规范语言，有很多困难需要克服。
+而两者的不同，就好比诗词和散文： \index{poetry} \index{prose}
 
 \begin{description}
 
-\item[Poetry:] Words are used for their sounds as well as for
-their meaning, and the whole poem together creates an effect or
-emotional response.  Ambiguity is not only common but often
-deliberate.
+\item[诗词:] 关注平仄，并用大量表意来渲染中心思想，从而引起情感共鸣。
 
-\item[Prose:] The literal meaning of words is more important,
-and the structure contributes more meaning.  Prose is more amenable to
-analysis than poetry but still often ambiguous.
+\item[散文:] 用词浅显直白，行文多有章法，表意使用较少，相比于诗词，易于理解。
 
-\item[Programs:] The meaning of a computer program is unambiguous
-and literal, and can be understood entirely by analysis of the
-tokens and structure.
+\item[程序:] 电脑程序的编写不允许有任何比喻象征等手法，必须
+遵照句法结构，不可逾矩一丝。
+
 
 \end{description}
 
-Formal languages are more dense
-than natural languages, so it takes longer to read them.  Also, the
-structure is important, so it is not always best to read
-from top to bottom, left to right.  Instead, learn to parse the
-program in your head, identifying the tokens and interpreting the
-structure.  Finally, the details matter.  Small errors in
-spelling and punctuation, which you can get away
-with in natural languages, can make a big difference in a formal
-language.
+规范语言相比自然语言，更加细致繁密，所以需要花更多时间
+阅读理解。其次，句法结构也很重要，所以不要总是从上往下，从左往右
+地阅读，而要在大脑中分析代码，识别特有词汇，解读句法规则。
+最后，要格外关注细节，单词错误，标点缺失，这些问题在自然语言的使用中
+可能影响不大，但在规范语言中，却是致命错误。
 
-
-\section{Debugging}
+\section{调试}
 \index{debugging}
 
-Programmers make mistakes.  For whimsical reasons, programming errors
-are called {\bf bugs} and the process of tracking them down is called
-{\bf debugging}.
+是人就会犯错。由于一些历史原因，编程中的异常或者错误，叫做 {\bf bugs(臭虫)}，
+这里用到了比喻，一般解释为 {\bf bugs(异常)}。
+而跟踪异常，定位问题的过程叫做 {\bf debugging(调试)}。
 \index{debugging}
 \index{bug}
 
-Programming, and especially debugging, sometimes brings out strong
-emotions.  If you are struggling with a difficult bug, you might 
-feel angry, despondent, or embarrassed.
+编程，尤其是调试，往往会刺激你。如果你困扰于一个难题，那
+往往会经历愤怒，沮丧和绝望。
 
-There is evidence that people naturally respond to computers as if
-they were people.  When they work well, we think
-of them as teammates, and when they are obstinate or rude, we
-respond to them the same way we respond to rude,
-obstinate people (Reeves and Nass, {\it The Media
+已有证据表明，人们对待计算机的方式，和对待他人的方式一样。
+计算机运行正常，我们就当其为伙伴，助手，如果运行异常了，就待其为无礼之人。
+ (Reeves and Nass, {\it The Media
     Equation: How People Treat Computers, Television, and New Media
     Like Real People and Places}).
 \index{debugging!emotional response}
 \index{emotional debugging}
 
-Preparing for these reactions might help you deal with them.
-One approach is to think of the computer as an employee with
-certain strengths, like speed and precision, and
-particular weaknesses, like lack of empathy and inability
-to grasp the big picture.
+对于计算机要有一定心理准备，把它当作一个算术快速而精确，
+但是缺乏同理心以及大局观的雇员。
 
-Your job is to be a good manager: find ways to take advantage
-of the strengths and mitigate the weaknesses.  And find ways
-to use your emotions to engage with the problem,
-without letting your reactions interfere with your ability
-to work effectively.
+你需要做好管理之责：扬机器之长而避其短，做情绪的主人，而非仆人。
 
-Learning to debug can be frustrating, but it is a valuable skill
-that is useful for many activities beyond programming.  At the
-end of each chapter there is a section, like this one,
-with my suggestions for debugging.  I hope they help!
+调试过程是令人无比沮丧的，但这又是编程路上最有用的技能。
+每章末尾都会有关于调试的一些建议，希望有所帮助。
 
 
-\section{Glossary}
+\section{术语表}
 
 \begin{description}
 
-\item[problem solving:]  The process of formulating a problem, finding
-a solution, and expressing it.
+\item[解决问题:]  提出问题，分析问题，解决问题的过程。
 \index{problem solving}
 
-\item[high-level language:]  A programming language like Python that
-is designed to be easy for humans to read and write.
+\item[高阶语言:]  类似Python这种便于人类读写，对人友好的编程语言。
 \index{high-level language}
 
-\item[low-level language:]  A programming language that is designed
-to be easy for a computer to run; also called ``machine language'' or
-``assembly language''.
+\item[底层语言:]  便于计算机运行的语言，也叫 “机器语言” 或者 “汇编语言”。
 \index{low-level language}
 
-\item[portability:]  A property of a program that can run on more
-than one kind of computer.
+\item[可移植:]  一个程序可运行于多种设备的特性。
 \index{portability}
 
-\item[interpreter:]  A program that reads another program and executes
-it
+\item[解释器:]  读取并执行代码的程序。
 \index{interpret}
 
-\item[prompt:] Characters displayed by the interpreter to indicate
-that it is ready to take input from the user.
+\item[提示符:] 解释器声明准备接收输入信息的提示。
 \index{prompt}
 
-\item[program:] A set of instructions that specifies a computation.
+\item[程序:] 运算指令集。
 \index{program}
 
-\item[print statement:]  An instruction that causes the Python
-interpreter to display a value on the screen.
+\item[print 语法:]  Python中输出到屏幕的指令。
 \index{print statement}
 \index{statement!print}
 
-\item[operator:]  A special symbol that represents a simple computation like
-addition, multiplication, or string concatenation.
+\item[运算符:]  类似加减乘除的符号。
 \index{operator}
 
-\item[value:]  One of the basic units of data, like a number or string, 
-that a program manipulates.
+\item[值:]  程序操作的基本元素，例如数字或者字符串。
 \index{value}
 
-\item[type:] A category of values.  The types we have seen so far
-are integers (type {\tt int}), floating-point numbers (type {\tt
-float}), and strings (type {\tt str}).
+\item[类型:] 值的集合。目前遇到的有整数集合 (type {\tt int})， 
+浮点数集合 (type {\tt float})以及字符串集合 (type {\tt str}).
 \index{type}
 
-\item[integer:] A type that represents whole numbers.
+\item[整型:] 整数类型。
 \index{integer}
 
-\item[floating-point:] A type that represents numbers with fractional
-parts.
+\item[浮点型] 小数表示的数字类型。
 \index{floating-point}
 
-\item[string:] A type that represents sequences of characters.
+\item[字符串:] 字符序列类型
 \index{string}
 
-\item[natural language:]  Any one of the languages that people speak that
-evolved naturally.
+\item[自然语言:]  人类沟通用的语言。
 \index{natural language}
 
-\item[formal language:]  Any one of the languages that people have designed
-for specific purposes, such as representing mathematical ideas or
-computer programs; all programming languages are formal languages.
+\item[规范语言:]  人类因特定目标而创造的语言。
+例如数学语言，编程语言; 所有的编程语言都是规范语言。
 \index{formal language}
 
-\item[token:]  One of the basic elements of the syntactic structure of
-a program, analogous to a word in a natural language.
+\item[词汇:]  程序中的基本元素，类似自然语言中的单词。
 \index{token}
 
-\item[syntax:] The rules that govern the structure of a program.
+\item[句法:] 程序的结构规范。
 \index{syntax}
 
-\item[parse:] To examine a program and analyze the syntactic structure.
+\item[解析:] 分析句法结构并检验程序。
 \index{parse}
 
-\item[bug:] An error in a program.
+\item[异常:] 程序中的错误。
 \index{bug}
 
-\item[debugging:] The process of finding and correcting bugs.
+\item[调试:] 定位异常并解决的过程。
 \index{debugging}
 
 \end{description}
 
 
-\section{Exercises}
+\section{习题}
 
 \begin{exercise}
 
-It is a good idea to read this book in front of a computer so you can
-try out the examples as you go.
+工欲善其事，必先利其器，搭配电脑实操来学习本书，效果更好。
 
-Whenever you are experimenting with a new feature, you should try
-to make mistakes.  For example, in the ``Hello, world!'' program,
-what happens if you leave out one of the quotation marks?  What
-if you leave out both?  What if you spell {\tt print} wrong?
+学习新知识更有效的方式是不断试错，不断思考。比如 "Hello, World" 的程序，
+试一试双引号只写一半是否可以？
+不写双引号，会怎么样？
+以及 {\tt print} 拼错了，又会如何？
 \index{error message}
 
-This kind of experiment helps you remember what you read; it also
-helps when you are programming, because you get to know what the error
-messages mean.  It is better to make mistakes now and on purpose than
-later and accidentally.
+这种学习过程中的大胆假设，小心求证，助益颇多。
+同时能够快速了解编程中的各种错误信息。
+所以，当下有准备地试错，远胜过将来意外犯错。
 
 \begin{enumerate}
 
-\item In a print statement, what happens if you leave out one
-of the parentheses, or both?
+\item print使用时，如果丢掉了半个括号，甚至全部括号， 会怎样？
 
-\item If you are trying to print a string, what happens if you
-leave out one of the quotation marks, or both?
+\item 当输出字符串时，遗落了半个双引号，或者全部双引号，会如何？
 
-\item You can use a minus sign to make a negative number like
-{\tt -2}.  What happens if you put a plus sign before a number?
-What about {\tt 2++2}?
+\item 我们可以用{\tt 负号} 表示负数 {\tt -2}。
+如果像 {\tt 2+-2}在数字前又加上一个加号呢？
 
-\item In math notation, leading zeros are ok, as in {\tt 09}.
-What happens if you try this in Python?  What about {\tt 011}?
 
-\item What happens if you have two values with no operator
-between them?
+\item 数学表示中，首位补零很正常，比如 {\tt09}。
+但是在Python世界中，如果输入 {\tt 011} 会出来什么结果呢？
+
+\item 如果两个值之间没有运算符会如何？
 
 \end{enumerate}
 
@@ -1245,18 +1141,16 @@ between them?
 
 \begin{exercise}
 
-Start the Python interpreter and use it as a calculator.
+启动Python解释器，进行以下运算：
 
 \begin{enumerate}
 
-\item How many seconds are there in 42 minutes 42 seconds?
+\item 42分42秒总共有多少秒？
 
-\item How many miles are there in 10 kilometers?  Hint: there are 1.61
-  kilometers in a mile.
+\item 10千米是多少英里？提示：1英里=1.61千米。
 
-\item If you run a 10 kilometer race in 42 minutes 42 seconds, what is
-  your average pace (time per mile in minutes and seconds)?  What is
-  your average speed in miles per hour?
+\item 如果用42分42秒跑了10千米，那平均速度是多少（每英里的耗时）？
+平均速度又是多少（每小时英里数）？
 
 \index{calculator}
 \index{running pace}
@@ -1266,23 +1160,19 @@ Start the Python interpreter and use it as a calculator.
 \end{exercise}
 
 
+\chapter{变量、表达式和语句}
 
-
-\chapter{Variables, expressions and statements}
-
-One of the most powerful features of a programming language is the
-ability to manipulate {\bf variables}.  A variable is a name that
-refers to a value.
+编程语言的强大和高效，其中一方面便体现在 操作{\bf 变量}。
+变量名是指向值的一个名字。
 \index{variable}
 
 
-\section{Assignment statements}
+\section{变量赋值}
 \label{variables}
 \index{assignment statement}
 \index{statement!assignment}
 
-An {\bf assignment statement} creates a new variable and gives
-it a value:
+创建新的变量，并给其一个值，叫做{\bf 赋值}: 
 
 \begin{verbatim}
 >>> message = 'And now for something completely different'
@@ -1290,18 +1180,16 @@ it a value:
 >>> pi = 3.1415926535897932
 \end{verbatim}
 %
-This example makes three assignments.  The first assigns a string
-to a new variable named {\tt message};
-the second gives the integer {\tt 17} to {\tt n}; the third
-assigns the (approximate) value of $\pi$ to {\tt pi}.
+上面的例子提供了三个赋值语句。
+第一个是将一句话赋值给了名为 {\tt message}的变量；
+第二个是将整数  {\tt 17} 赋值给了 {\tt n}；
+第三个是将$\pi$  的近似值赋给了  {\tt pi}。
 \index{state diagram}
 \index{diagram!state}
 
-A common way to represent variables on paper is to write the name with
-an arrow pointing to its value.  This kind of figure is
-called a {\bf state diagram} because it shows what state each of the
-variables is in (think of it as the variable's state of mind).
-Figure~\ref{fig.state2} shows the result of the previous example.
+形象表示变量的一个常用手段是，写好变量，然后画个箭头执行对应的值。
+这种形象展示变量所处的状态(所对应的值)的图叫做 {\bf 状态图}, 
+图~\ref{fig.state2} 便是上面示例的状态图。
 
 \begin{figure}
 \centerline
@@ -1312,20 +1200,18 @@ Figure~\ref{fig.state2} shows the result of the previous example.
 
 
 
-\section{Variable names}
+\section{变量名}
 \index{variable}
 
-Programmers generally choose names for their variables that
-are meaningful---they document what the variable is used for.
+程序工程师一般会为变量起个容易理解记忆的名字，使人一看即知用途。
 
-Variable names can be as long as you like.  They can contain
-both letters and numbers, but they can't begin with a number.
-It is legal to use uppercase letters, but it is conventional
-to use only lower case for variables names.
+变量名可长可短，包含字母和数字，但不能以数字开头，
+大小写均可用，但是方便起见，建议只用小写字母。
+
 
 The underscore character, \verb"_", can appear in a name.
 It is often used in names with multiple words, such as
-\verb"your_name" or \verb"airspeed_of_unladen_swallow".
+\verb"your_name" 或 \verb"airspeed_of_unladen_swallow"。
 \index{underscore character}
 
 If you give a variable an illegal name, you get a syntax error:
