@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.2.4)  10 MAY 2021 16:57
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.2.4)  13 MAY 2021 16:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1851,33 +1851,34 @@ File: figs/stack.pdf Graphic file (type pdf)
 Chapter 4.
 [23
 
-] [24] [25] [26] [27] [28] [29] [30]
-File: figs/flowers.pdf Graphic file (type pdf)
-<use figs/flowers.pdf>
-
-Underfull \hbox (badness 10000) in paragraph at lines 3049--3051
-[]\T1/ppl/m/it/10 Solution: []$\T1/lmtt/m/it/10 http : / / thinkpython2 . com /
- code / flower . py$[]\T1/ppl/m/it/10 , also re-quires []$\T1/lmtt/m/it/10 http
- :
+] [24]
+Underfull \hbox (badness 2941) in paragraph at lines 2593--2596
+\TU/FandolSong-Regular(0)/m/n/10 函 数 内 的 \T1/lmtt/m/n/10 fd \TU/FandolSong-Regu
+lar(0)/m/n/10 和 \T1/lmtt/m/n/10 lt \TU/FandolSong-Regular(0)/m/n/10 缩 进 两 次，|  
+表 示 运 行 于 函 数 定 义 里 面 的 \T1/lmtt/m/n/10 for \TU/FandolSong-Regular(0)/m/n/10 循 
+环 中。|  下 一 行
  []
 
+[25] [26] [27] [28]
+File: figs/flowers.pdf Graphic file (type pdf)
+<use figs/flowers.pdf>
 File: figs/pies.pdf Graphic file (type pdf)
 <use figs/pies.pdf>
-[31] [32]
+ [29] [30]
 Chapter 5.
-[33
+[31
 
-] [34] [35] [36] [37]
+] [32] [33] [34] [35]
 File: figs/stack2.pdf Graphic file (type pdf)
 <use figs/stack2.pdf>
- [38]
+ [36]
 *************************************************
 * fontspec warning: "script-not-exist"
 * 
 * Font 'FandolHei-Regular' does not contain script 'CJK'.
 *************************************************
 \g__fontspec_family_FandolHei-Regular_int=\count315
-LaTeX Font Info:    Try loading font information for T1+lmss on input line 3630
+LaTeX Font Info:    Try loading font information for T1+lmss on input line 3514
 .
 (/usr/share/texmf/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1895,230 +1896,230 @@ File: t1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 . - 'bold' (bx/n) with NFSS spec.: <->"[FandolHei-Bold.otf]/OT"
 . - 'bold small caps'  (bx/sc) with NFSS spec.: 
 .................................................
- [39] [40] [41]
+ [37] [38] [39]
 File: figs/koch.pdf Graphic file (type pdf)
 <use figs/koch.pdf>
- [42] [43] [44
+ [40] [41] [42
 
 ]
 Chapter 6.
-[45] [46] [47]
-Underfull \hbox (badness 1490) in paragraph at lines 4351--4354
+[43] [44] [45]
+Underfull \hbox (badness 1490) in paragraph at lines 4235--4238
 \T1/ppl/m/n/10 It is com-mon to give boolean func-tions names that sound like y
 es/no ques-tions;
  []
 
-[48] [49]
+[46] [47]
 File: figs/stack3.pdf Graphic file (type pdf)
 <use figs/stack3.pdf>
- [50] [51] [52] [53] [54] [55] [56
+ [48] [49] [50] [51] [52] [53] [54
 
 ]
 Chapter 7.
-[57]
+[55]
 File: figs/assign2.pdf Graphic file (type pdf)
 <use figs/assign2.pdf>
- [58] [59] [60] [61] [62] [63] [64]
+ [56] [57] [58] [59] [60] [61] [62]
 Chapter 8.
-[65
+[63
 
-] [66]
+] [64]
 File: figs/banana.pdf Graphic file (type pdf)
 <use figs/banana.pdf>
- [67] [68] [69] [70] [71]
+ [65] [66] [67] [68] [69]
 File: figs/state4.pdf Graphic file (type pdf)
 <use figs/state4.pdf>
- [72]
-Underfull \hbox (badness 10000) in paragraph at lines 6230--6237
+ [70]
+Underfull \hbox (badness 10000) in paragraph at lines 6114--6121
 []\T1/ppl/m/it/10 The doc-u-men-ta-tion uses a syn-tax that might be con-fus-in
 g. For ex-am-ple, in
  []
 
-[73] [74]
+[71] [72]
 Chapter 9.
-[75
+[73
 
-] [76] [77] [78] [79]
-Underfull \hbox (badness 1968) in paragraph at lines 6822--6828
+] [74] [75] [76] [77]
+Underfull \hbox (badness 1968) in paragraph at lines 6706--6712
 []\T1/ppl/b/n/10 Exercise 9.8. \T1/ppl/m/it/10 Here's an-other \T1/ppl/m/n/10 C
 ar Talk \T1/ppl/m/it/10 Puz-zler ([]$\T1/lmtt/m/it/10 http : / / www . cartalk 
 . com / content /
  []
 
-[80]
+[78]
 Chapter 10.
-[81
+[79
 
 ]
 File: figs/liststate.pdf Graphic file (type pdf)
 <use figs/liststate.pdf>
- [82] [83] [84] [85] [86]
+ [80] [81] [82] [83] [84]
 File: figs/list1.pdf Graphic file (type pdf)
 <use figs/list1.pdf>
- [87]
+ [85]
 File: figs/list2.pdf Graphic file (type pdf)
 <use figs/list2.pdf>
 File: figs/list3.pdf Graphic file (type pdf)
 <use figs/list3.pdf>
- [88]
+ [86]
 File: figs/stack5.pdf Graphic file (type pdf)
 <use figs/stack5.pdf>
- [89] [90] [91] [92] [93] [94]
+ [87] [88] [89] [90] [91] [92]
 Chapter 11.
-[95
+[93
 
-] [96] [97] [98] [99]
+] [94] [95] [96] [97]
 File: figs/dict1.pdf Graphic file (type pdf)
 <use figs/dict1.pdf>
- [100]
+ [98]
 File: figs/fibonacci.pdf Graphic file (type pdf)
 <use figs/fibonacci.pdf>
 
 Underfull \vbox (badness 2310) has occurred while \output is active []
 
- [101]
-[102] [103] [104] [105] [106
+ [99]
+[100] [101] [102] [103] [104
 
 ]
 Chapter 12.
-[107] [108] [109] [110] [111]
+[105] [106] [107] [108] [109]
 File: figs/tuple1.pdf Graphic file (type pdf)
 <use figs/tuple1.pdf>
 File: figs/dict2.pdf Graphic file (type pdf)
 <use figs/dict2.pdf>
- [112] [113] [114]
-Underfull \hbox (badness 1571) in paragraph at lines 9877--9879
+ [110] [111] [112]
+Underfull \hbox (badness 1571) in paragraph at lines 9761--9763
 []\T1/ppl/b/n/10 Exercise 12.4. \T1/ppl/m/it/10 Here's an-other Car Talk Puz-zl
 er ([]$\T1/lmtt/m/it/10 http : / / www . cartalk . com / content /
  []
 
-[115] [116]
+[113] [114]
 Chapter 13.
-[117
+[115
 
-] [118]
-Underfull \hbox (badness 1430) in paragraph at lines 10161--10166
+] [116]
+Underfull \hbox (badness 1430) in paragraph at lines 10045--10050
 [][]\T1/lmtt/m/n/10 process_file \T1/ppl/m/n/10 loops through the lines of the 
 file, pass-ing them one at a time to
  []
 
-[119] [120] [121]
-Underfull \hbox (badness 10000) in paragraph at lines 10455--10464
+[117] [118] [119]
+Underfull \hbox (badness 10000) in paragraph at lines 10339--10348
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 10455--10464
+Underfull \hbox (badness 10000) in paragraph at lines 10339--10348
 
  []
 
-[122] [123] [124] [125] [126] [127] [128
+[120] [121] [122] [123] [124] [125] [126
 
 ]
 Chapter 14.
-[129] [130]
-Underfull \hbox (badness 1112) in paragraph at lines 10963--10967
+[127] [128]
+Underfull \hbox (badness 1112) in paragraph at lines 10847--10851
 \T1/lmtt/m/n/10 stdtypes . html # printf-[]style-[]string-[]formatting$[]\T1/pp
 l/m/n/10 . A more pow-er-ful al-ter-na-tive is
  []
 
-[131] [132] [133] [134] [135] [136] [137] [138]
+[129] [130] [131] [132] [133] [134] [135] [136]
 Chapter 15.
-[139
+[137
 
 ]
 File: figs/point.pdf Graphic file (type pdf)
 <use figs/point.pdf>
- [140] [141]
+ [138] [139]
 File: figs/rectangle.pdf Graphic file (type pdf)
 <use figs/rectangle.pdf>
- [142] [143]
+ [140] [141]
 File: figs/rectangle2.pdf Graphic file (type pdf)
 <use figs/rectangle2.pdf>
 
-Underfull \hbox (badness 2818) in paragraph at lines 12082--12088
+Underfull \hbox (badness 2818) in paragraph at lines 11967--11973
 []\T1/ppl/m/n/10 For most ap-pli-ca-tions, this is not what you want. In this e
 x-am-ple, in-vok-ing
  []
 
-[144] [145] [146]
+[142] [143] [144]
 Chapter 16.
 File: figs/time.pdf Graphic file (type pdf)
 <use figs/time.pdf>
-[147
+[145
 
-] [148] [149] [150] [151] [152]
+] [146] [147] [148] [149] [150]
 Chapter 17.
-[153
+[151
 
-] [154] [155] [156]
-Underfull \hbox (badness 1502) in paragraph at lines 13126--13132
+] [152] [153] [154]
+Underfull \hbox (badness 1502) in paragraph at lines 13011--13017
 []\T1/ppl/m/n/10 By defin-ing other spe-cial meth-ods, you can spec-ify the be-
 hav-ior of op-er-a-tors on
  []
 
-[157] [158] [159] [160]
-Underfull \hbox (badness 1590) in paragraph at lines 13428--13432
+[155] [156] [157] [158]
+Underfull \hbox (badness 1590) in paragraph at lines 13313--13317
 []\T1/ppl/m/n/10 A lan-guage that pro-vides fea-tures, such as programmer-
  []
 
-[161]
-Underfull \hbox (badness 1817) in paragraph at lines 13501--13503
+[159]
+Underfull \hbox (badness 1817) in paragraph at lines 13386--13388
 []\T1/ppl/m/it/10 A method named []\T1/lmtt/m/n/10 put_in_pouch \T1/ppl/m/it/10
  that takes an ob-ject of any type and adds it to
  []
 
-[162]
+[160]
 Chapter 18.
-[163
+[161
 
-] [164]
+] [162]
 File: figs/card1.pdf Graphic file (type pdf)
 <use figs/card1.pdf>
- [165] [166] [167] [168]
+ [163] [164] [165] [166]
 File: figs/class1.pdf Graphic file (type pdf)
 <use figs/class1.pdf>
- [169] [170] [171]
-Underfull \hbox (badness 1173) in paragraph at lines 14267--14272
+ [167] [168] [169]
+Underfull \hbox (badness 1173) in paragraph at lines 14152--14157
 []\T1/ppl/m/n/10 As an ex-er-cise, down-load my Markov code from []$\T1/lmtt/m/
 n/10 http : / / thinkpython2 . com / code /
  []
 
-[172] [173] [174]
+[170] [171] [172]
 Chapter 19.
-[175
+[173
 
-] [176] [177] [178] [179] [180] [181] [182] [183] [184]
+] [174] [175] [176] [177] [178] [179] [180] [181] [182]
 附录 A.
-[185
+[183
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 15370.
- [186] [187] [188] [189] [190] [191] [192]
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 15255.
+ [184] [185] [186] [187] [188] [189] [190]
 附录 B.
-[193
+[191
 
-] [194] [195] [196] [197] [198] [199]
+] [192] [193] [194] [195] [196] [197]
 File: figs/towers.pdf Graphic file (type pdf)
 <use figs/towers.pdf>
- [200] [201]
+ [198] [199]
 No file book.ind.
-[202]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16615.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 16615.
+[200]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16500.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 16500.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 16615.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 16615.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16615.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 16500.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 16500.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16500.
  ) 
 Here is how much of TeX's memory you used:
  29387 strings out of 493007
  577274 string characters out of 6136720
- 651499 words of memory out of 5000000
+ 650832 words of memory out of 5000000
  33030 multiletter control sequences out of 15000+600000
  567488 words of font info for 103 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,12n,74p,10491b,1022s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (224 pages).
+Output written on book.pdf (222 pages).

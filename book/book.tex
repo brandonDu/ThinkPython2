@@ -2392,40 +2392,34 @@ print('-')
 \chapter{案例分析: 接口设计}
 \label{turtlechap}
 
-This chapter presents a case study that demonstrates a process for
-designing functions that work together.
+本章采用案例来讲述如何设计可以协同运行的函数。
 
-It introduces the {\tt turtle} module, which allows you to
-create images using turtle graphics.  The {\tt turtle} module is
-included in most Python installations, but if you are running Python
-using PythonAnywhere, you won't be able to run the turtle examples (at
-least you couldn't when I wrote this).
+通过介绍 {\tt turtle(乌龟)}模块，从而利用其绘图功能，制作图片。
+大部分本地Python版 会预装{\tt turtle} 模块，如果你使用的是PythonAnywhere网站，
+现在还无法执行turtle示例(至少写作本书时还不能)。
 
-If you have already installed Python on your computer, you should
-be able to run the examples.  Otherwise, now is a good time
-to install.  I have posted instructions at
-\url{http://tinyurl.com/thinkpython2e}.
+如果计算机安装了Python， 便可以直接运行这些实例。
+如果还没有，那么最好现在安装吧，可以参看我写的
+步骤\url{http://tinyurl.com/thinkpython2e}。
 
-Code examples from this chapter are available from
-\url{http://thinkpython2.com/code/polygon.py}.
+本章的代码样例可以从\url{http://thinkpython2.com/code/polygon.py}
+获取。
 
 
-\section{The turtle module}
+\section{turtle模块}
 \label{turtle}
 
-To check whether you have the {\tt turtle} module, open the Python
-interpreter and type
+打开Python解释器，键入以下命令，以检查是否安装 {\tt turtle}模块:
 
 \begin{verbatim}
 >>> import turtle
 >>> bob = turtle.Turtle()
 \end{verbatim}
 
-When you run this code, it should create a new window
-with small arrow that represents the turtle.  Close the window.
+运行此代码，会创建一个窗口，此窗口包含一个箭头，代表一只小乌龟。
+关闭窗口。
 
-Create a file named {\tt mypolygon.py} and type in the following
-code:
+创建名为{\tt mypolygon.py} 的文件，并输入以下代码:
 
 \begin{verbatim}
 import turtle
@@ -2434,51 +2428,41 @@ print(bob)
 turtle.mainloop()
 \end{verbatim}
 %
-The {\tt turtle} module (with a lowercase 't') provides a function
-called {\tt Turtle} (with an uppercase 'T') that creates a Turtle
-object, which we assign to a variable named {\tt bob}.
-Printing {\tt bob} displays something like:
+ {\tt turtle}模块(小写字母 't')调用函数{\tt Turtle} (大写字母 'T') ，
+创建Turtle 对象，并将其赋值给 {\tt bob}变量。
+输出{\tt bob}信息:
 
 \begin{verbatim}
 <turtle.Turtle object at 0xb7bfbf4c>
 \end{verbatim}
 %
-This means that {\tt bob} refers to an object with type
-{\tt Turtle}
-as defined in module {\tt turtle}.
+这意味着{\tt bob}了指向{\tt turtle}模块中{\tt Turtle}类型的对象.
 
-\verb"mainloop" tells the window to wait for the user
-to do something, although in this case there's not much for
-the user to do except close the window.
+\verb"mainloop" 会令窗口等待，以执行其他操作。但是本例
+只需关闭窗口，暂不进行其他操作。
 
-Once you create a Turtle, you can call a {\bf method} to move it
-around the window.  A method is similar to a function, but it
-uses slightly different syntax.  For example, to move the turtle
-forward:
+一旦建立Turtle对象，便可以调用{\bf 方法}在窗口中移动它。
+方法和函数类似，但是略有不同。比如，令小乌龟前进:
 
 \begin{verbatim}
 bob.fd(100)
 \end{verbatim}
 %
-The method, {\tt fd}, is associated with the turtle
-object we're calling {\tt bob}.  
-Calling a method is like making a request: you are asking {\tt bob}
-to move forward.
+方法{\tt fd}来自于乌龟对象{\tt bob}。
+调用方法就好比递交申请：请求{\tt bob}向前移动。
 
-The argument of {\tt fd} is a distance in pixels, so the actual
-size depends on your display.
+{\tt fd} 的参数是像素距离，实际距离要看屏幕尺寸。
 
-Other methods you can call on a Turtle are {\tt bk} to move
-backward, {\tt lt} for left turn, and {\tt rt} right turn.  The
-argument for {\tt lt} and {\tt rt} is an angle in degrees.
+其他可以调用的方法有{\tt bk}，实现向后移动，
+{\tt lt}实现左转，{\tt rt}实现右转。
+{\tt lt} 和 {\tt rt}的参数都是角度。
 
-Also, each Turtle is holding a pen, which is
-either down or up; if the pen is down, the Turtle leaves
-a trail when it moves.  The methods {\tt pu} and {\tt pd}
-stand for ``pen up'' and ``pen down''.
+同时，每个乌龟都带着笔，可以抬起或落下;
+如果笔落下，乌龟移动时会留下痕迹。
+{\tt pu}和{\tt pd}方法分别代表``抬笔"和``落笔".
 
-To draw a right angle, add these lines to the program
-(after creating {\tt bob} and before calling \verb"mainloop"):
+将下面代码加入程序，以实现绘制直角(
+创建{\tt bob}对象后，调用\verb"mainloop"前):
 
 \begin{verbatim}
 bob.fd(100)
@@ -2486,19 +2470,17 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-When you run this program, you should see {\tt bob} move east and then
-north, leaving two line segments behind.
+运行程序，可以看到{\tt bob}对象会向东移动，然后向北移动，并留下两根垂直线段。
 
-Now modify the program to draw a square.  Don't go on until
-you've got it working!
+现在尝试绘制个正方形，先不要着急学习下面的内容。
 
 %\newpage
 
-\section{Simple repetition}
+\section{简单重复}
 \label{repetition}
 \index{repetition}
 
-Chances are you wrote something like this:
+我猜你会写成下面的样子：
 
 \begin{verbatim}
 bob.fd(100)
@@ -2513,8 +2495,8 @@ bob.lt(90)
 bob.fd(100)
 \end{verbatim}
 %
-We can do the same thing more concisely with a {\tt for} statement.
-Add this example to {\tt mypolygon.py} and run it again:
+用 {\tt for} 语句可以更加简单地实现同样的效果。
+将下面代码写入 {\tt mypolygon.py} 并运行：:
 \index{for loop}
 \index{loop!for}
 \index{statement!for}
@@ -2524,7 +2506,7 @@ for i in range(4):
     print('Hello!')
 \end{verbatim}
 %
-You should see something like this:
+所见如下:
 
 \begin{verbatim}
 Hello!
@@ -2533,11 +2515,11 @@ Hello!
 Hello!
 \end{verbatim}
 %
-This is the simplest use of the {\tt for} statement; we will see
-more later.  But that should be enough to let you rewrite your
-square-drawing program.  Don't go on until you do.
+这是{\tt for}语句的简单使用，后面会讲更多用法。
+但这些已经足够令我们重写绘制方块的程序了。
+暂时不要看下面内容，先尝试一下。
 
-Here is a {\tt for} statement that draws a square:
+以下用{\tt for}语句实现绘制正方形:
 
 \begin{verbatim}
 for i in range(4):
@@ -2545,78 +2527,59 @@ for i in range(4):
     bob.lt(90)
 \end{verbatim}
 %
-The syntax of a {\tt for} statement is similar to a function
-definition.  It has a header that ends with a colon and an indented
-body.  The body can contain any number of statements.
+{\tt for} 的句法使用类似函数定义。
+以冒号结尾的语句为函数头，
+以缩进内容为函数体。
+函数体可以是任意行语句。
 
-A {\tt for} statement is also called a {\bf loop} because
-the flow of execution runs through the body and then loops back
-to the top.  In this case, it runs the body four times.
+ {\tt for} 语句也叫 {\bf 循环}，因为代码执行流程会重复执行循环体，
+此例中，会执行四次循环体.
 \index{loop}
 
-This version is actually a little different from the previous
-square-drawing code because it makes another turn after
-drawing the last side of the square.  The extra turn takes
-more time, but it simplifies the code if we do the same thing
-every time through the loop.  This version also has the effect
-of leaving the turtle back in the starting position, facing in
-the starting direction.
+这一版代码和上一版略有不同，绘制完最后一条线后，会多一次转向。
+虽然多的这一步操作增加了耗时，但是利用循环，使重复操作更加简单。
+当然，这也令小乌龟回到了开始的地方，朝向了开始的方向。
 
-\section{Exercises}
+\section{习题集}
+以下为一系列操作{\tt turtle} 模块的练习。
+虽然是为了让大家高兴一下，但是也有别有用心的地方，
+做练习的时候，要好好思考一下醉翁之意。
 
-The following is a series of exercises using the {\tt turtle} module.  They
-are meant to be fun, but they have a point, too.  While you are
-working on them, think about what the point is.
-
-The following sections have solutions to the exercises, so
-don't look until you have finished (or at least tried).
+习题后面有答案，但是尽量在完成或者尽力尝试后再看。
 
 \begin{enumerate}
 
-\item Write a function called {\tt square} that takes a parameter
-named {\tt t}, which is a turtle.  It should use the turtle to draw
-a square.
+\item 编写{\tt square}函数，参数是个turtle对象{\tt t}, 用turtle绘制正方形。
 
-Write a function call that passes {\tt bob} as an argument to
-{\tt square}, and then run the program again.
+编写函数，将{\tt bob} 作为参数传给{\tt square}，然后运行程序。
 
-\item Add another parameter, named {\tt length}, to {\tt square}.
-Modify the body so length of the sides is {\tt length}, and then
-modify the function call to provide a second argument.  Run the
-program again.  Test your program with a range of values for {\tt
-length}.
+\item 给 {\tt square}添加参数{\tt length}，令边的长度为{\tt length}，
+同时修改函数，令其调用第二个实参。再次运行程序，给{\tt length} 赋不同的值进行测试。
 
-\item Make a copy of {\tt square} and change the name to {\tt
-  polygon}.  Add another parameter named {\tt n} and modify the body
-  so it draws an n-sided regular polygon.  Hint: The exterior angles
-  of an n-sided regular polygon are $360/n$ degrees.  \index{polygon
-    function} \index{function!polygon}
+\item 复制{\tt square}并命名为 {\tt polygon} 。添加参数{\tt n},
+令其绘制正n边形。提示：正n边形外角角度为$360/n$度。
+\index{polygon function} 
+\index{function!polygon}
 
-\item Write a function called {\tt circle} that takes a turtle, 
-{\tt t}, and radius, {\tt r}, as parameters and that draws an
-approximate circle by calling {\tt polygon} with an appropriate
-length and number of sides.  Test your function with a range of values
-of {\tt r}.  \index{circle function} \index{function!circle}
+\item 编写{\tt circle} 函数，以turtle类型的{\tt t}, 以及半径{\tt r}为参数，
+通过调用{\tt polygon}函数，输入适当长度和边数，绘制一个近似的圆形。
+用不同的 {\tt r}值，测试程序。\index{circle function} \index{function!circle}
 
-Hint: figure out the circumference of the circle and make sure that
-{\tt length * n = circumference}.
+提示: 确定园的周长，使其满足{\tt 边长 * 边数 = 周长}.
 
-\item Make a more general version of {\tt circle} called {\tt arc}
-that takes an additional parameter {\tt angle}, which determines
-what fraction of a circle to draw.  {\tt angle} is in units of
-degrees, so when {\tt angle=360}, {\tt arc} should draw a complete
-circle.
+\item 升级{\tt circle}版本，命名为{\tt arc}，新增参数 {\tt angle}，
+用此值确定所绘制的圆弧的大小。
+ {\tt angle}是角度的单位，当 {\tt angle=360}，  {\tt arc}会绘制一个完整的圆。
 \index{arc function}
 \index{function!arc}
 
 \end{enumerate}
 
 
-\section{Encapsulation}
+\section{封装}
 
-The first exercise asks you to put your square-drawing code
-into a function definition and then call the function, passing
-the turtle as a parameter.  Here is a solution:
+第一道题是编写绘制正方形的函数代码，调用函数，传递turtle参数。
+代码见下:
 
 \begin{verbatim}
 def square(t):
@@ -2627,36 +2590,31 @@ def square(t):
 square(bob)
 \end{verbatim}
 %
-The innermost statements, {\tt fd} and {\tt lt} are indented twice to
-show that they are inside the {\tt for} loop, which is inside the
-function definition.  The next line, {\tt square(bob)}, is flush with
-the left margin, which indicates the end of both the {\tt for} loop
-and the function definition.
+函数内的 {\tt fd} 和 {\tt lt}缩进两次，表示运行于函数定义里面的{\tt for} 循环中。
+下一行 {\tt square(bob)}，左边距对齐同时没有缩进，
+表示上面的 {\tt for} 循环以及函数定义都已结束。
 
-Inside the function, {\tt t} refers to the same turtle {\tt bob}, so
-{\tt t.lt(90)} has the same effect as {\tt bob.lt(90)}.  In that
-case, why not
-call the parameter {\tt bob}?  The idea is that {\tt t} can be any
-turtle, not just {\tt bob}, so you could create a second turtle and
-pass it as an argument to {\tt square}:
+函数内的 {\tt t} 和 {\tt bob}指向的是同一个乌龟对象，
+因此{\tt t.lt(90)}就好比 {\tt bob.lt(90)}。
+那么为何不直接用变量 {\tt bob}呢？
+这是因为{\tt t}可以代指任意乌龟对象，而不仅仅是 {\tt bob}，
+因此便可以再创建一个乌龟对象，并作为参数传入 {\tt square}:
 
 \begin{verbatim}
 alice = turtle.Turtle()
 square(alice)
 \end{verbatim}
 %
-Wrapping a piece of code up in a function is called {\bf
-encapsulation}.  One of the benefits of encapsulation is that it
-attaches a name to the code, which serves as a kind of documentation.
-Another advantage is that if you re-use the code, it is more concise
-to call a function twice than to copy and paste the body!
+将一段代码写在函数中，叫做{\bf 封装}。
+封装的好处之一在于用一个简单的名字来指代一段代码，好比文档说明。
+令一个好处是可以复用代码，复制粘贴大段代码，总是
+不如调用重复调用函数来的方便!
 \index{encapsulation}
 
 
-\section{Generalization}
+\section{泛化}
 
-The next step is to add a {\tt length} parameter to {\tt square}.
-Here is a solution:
+下一步是给{\tt square}增加参数 {\tt length} ，详见样例:
 
 \begin{verbatim}
 def square(t, length):
@@ -2667,15 +2625,14 @@ def square(t, length):
 square(bob, 100)
 \end{verbatim}
 %
-Adding a parameter to a function is called {\bf generalization}
-because it makes the function more general: in the previous
-version, the square is always the same size; in this version
-it can be any size.
+给函数增加参数，叫做{\bf 泛化}。
+因为可以令函数使用场景更加广泛：
+上版代码中，调用函数，正方形变长总是同一个值，
+而此版，边长可以是任意值.
 \index{generalization}
 
-The next step is also a generalization.  Instead of drawing
-squares, {\tt polygon} draws regular polygons with any number of
-sides.  Here is a solution:
+下一步也是泛化。
+不再是只绘制正方形，{\tt polygon} 可以绘制任意多边形，详见示例:
 
 \begin{verbatim}
 def polygon(t, n, length):
@@ -2687,39 +2644,32 @@ def polygon(t, n, length):
 polygon(bob, 7, 70)
 \end{verbatim}
 %
-This example draws a 7-sided polygon with side length 70.
+上例绘制了边长70的正7边形。
 
-If you are using Python 2, the value of {\tt angle} might be off
-because of integer division.  A simple solution is to compute
-{\tt angle = 360.0 / n}.  Because the numerator is a floating-point
-number, the result is floating point.
+如果你使用的是Python 2, {\tt angle} 的值可能因为整除而出现偏差。
+有个简单的办法，便是{\tt angle = 360.0 / n}。分子为浮点数，结果便为浮点数了。
 \index{Python 2}
 
-When a function has more than a few numeric arguments, it is easy to
-forget what they are, or what order they should be in.  In that case
-it is often a good idea to include the names of the parameters in the
-argument list:
+当函数有多个数值参数时，很容易混淆各代表什么，以及参数顺序。
+所以比较好的办法，便是在传递实参列表时，附上形参的名字:
 
 \begin{verbatim}
 polygon(bob, n=7, length=70)
 \end{verbatim}
 %
-These are called {\bf keyword arguments} because they include
-the parameter names as ``keywords'' (not to be confused with
-Python keywords like {\tt while} and {\tt def}).
+这也叫做{\bf 关键字参数}，因为是把形参的名字作为``关键字"包含进来。
+(不要同Python中 {\tt while}和{\tt def}这种内置关键字混淆)。
 \index{keyword argument}
 \index{argument!keyword}
 
-This syntax makes the program more readable.  It is also a reminder
-about how arguments and parameters work: when you call a function, the
-arguments are assigned to the parameters.
+这种句法令程序可读性更强。同时也提示了实参和形参如何作用：
+调用函数时，实参赋值给了形参。
 
 
-\section{Interface design}
+\section{接口设计}
 
-The next step is to write {\tt circle}, which takes a radius,
-{\tt r}, as a parameter.  Here is a simple solution that uses
-{\tt polygon} to draw a 50-sided polygon:
+下一步要编写 {\tt circle}，此函数以半径{\tt r}为参数。
+以下是采用{\tt polygon}来绘制正50边形的简单代码：
 
 \begin{verbatim}
 import math
@@ -2731,36 +2681,26 @@ def circle(t, r):
     polygon(t, n, length)
 \end{verbatim}
 %
-The first line computes the circumference of a circle with radius
-{\tt r} using the formula $2 \pi r$.  Since we use {\tt math.pi}, we
-have to import {\tt math}.  By convention, {\tt import} statements
-are usually at the beginning of the script.
+首行根据公式 $2 \pi r$和半径{\tt r} 计算圆的周长。
+要使用{\tt math.pi}， 需要先导入{\tt math}。
+通常把 {\tt import}语句当作脚本的开头。
 
-{\tt n} is the number of line segments in our approximation of a circle,
-so {\tt length} is the length of each segment.  Thus, {\tt polygon}
-draws a 50-sided polygon that approximates a circle with radius {\tt r}.
+{\tt n}是要逼近圆的正多边形的边数，{\tt length} 表示边长。
+最后， {\tt polygon}通过绘制正50边形，来逼近半径 {\tt r}的圆。
 
-One limitation of this solution is that {\tt n} is a constant, which
-means that for very big circles, the line segments are too long, and
-for small circles, we waste time drawing very small segments.  One
-solution would be to generalize the function by taking {\tt n} as
-a parameter.  This would give the user (whoever calls {\tt circle})
-more control, but the interface would be less clean.
+此代码的局限性在于，{\tt n} 是一个常量，绘制大的圆时，不得不采用长线段。
+同时绘制小圆时，却要浪费时间绘制小线段。
+要想使此函数通用，可以将{\tt n}作为函数的参数。
+这样用户( {\tt circle}的调用者)便更加方便使用，但是接口便显得不那么简洁了。
 \index{interface}
 
-The {\bf interface} of a function is a summary of how it is used: what
-are the parameters?  What does the function do?  And what is the return
-value?  An interface is ``clean'' if it allows the caller to do
-what they want without dealing with unnecessary details.
+函数{\bf 接口} 是函数用途的简介: 参数是什么？函数做什么？返回什么？
+如果一个接口聚焦于特定功能，而非无关细节，那么这个接口就是``简洁"的。
 
-In this example, {\tt r} belongs in the interface because it
-specifies the circle to be drawn.  {\tt n} is less appropriate
-because it pertains to the details of {\em how} the circle should
-be rendered.
+这个案例中，{\tt r}放在接口中合适，是因为要用它来确定圆的大小。
+而{\tt n}放进接口则显得不太友好，是因为它只与{\em 如何}绘制圆的细节有关。
 
-Rather than clutter up the interface, it is better
-to choose an appropriate value of {\tt n}
-depending on {\tt circumference}:
+与其令接口复杂，不如根据{\tt 周长}来定义一个合适的{\tt n}:
 
 \begin{verbatim}
 def circle(t, r):
@@ -2770,26 +2710,20 @@ def circle(t, r):
     polygon(t, n, length)
 \end{verbatim}
 %
-Now the number of segments is an integer near {\tt circumference/3},
-so the length of each segment is approximately 3, which is small
-enough that the circles look good, but big enough to be efficient,
-and acceptable for any size circle.
+现在边的个数便是近似 {\tt circumference/3}的整数，
+每个边的长度也就近似于3了，用这个长度，绘制大圆快速，小圆好看，
+对任意尺寸的圆都适用。
 
-Adding 3 to {\tt n} guarantees that the polygon has at least 3 sides.
+给{\tt n}加3是为了保证多边形至少有3条边。
 
-
-\section{Refactoring}
+\section{重构}
 \label{refactoring}
 \index{refactoring}
 
-When I wrote {\tt circle}, I was able to re-use {\tt polygon}
-because a many-sided polygon is a good approximation of a circle.
-But {\tt arc} is not as cooperative; we can't use {\tt polygon}
-or {\tt circle} to draw an arc.
+我们可以复用{\tt polygon}来构造{\tt circle}，是因为边足够多的正多边形近似于圆。
+但是，构造 {\tt arc}就不适合了，因为没有办法用 {\tt polygon}或者{\tt circle}来绘制一段弧线。
 
-One alternative is to start with a copy
-of {\tt polygon} and transform it into {\tt arc}.  The result
-might look like this:
+一个替代策略是复制{\tt polygon} ， 修改为{\tt arc}，代码如下:
 
 \begin{verbatim}
 def arc(t, r, angle):
@@ -2803,11 +2737,9 @@ def arc(t, r, angle):
         t.lt(step_angle)
 \end{verbatim}
 %
-The second half of this function looks like {\tt polygon}, but we
-can't re-use {\tt polygon} without changing the interface.  We could
-generalize {\tt polygon} to take an angle as a third argument,
-but then {\tt polygon} would no longer be an appropriate name!
-Instead, let's call the more general function {\tt polyline}:
+函数后半段和 {\tt polygon}很像，但如果我们不调整接口，便无法复用 {\tt polygon}。
+我们需要给 {\tt polygon} 加入角度作为第三参数，来令其通用，
+那么也不能继续用 {\tt polygon}作为名字了！相应的，叫{\tt polyline}会更合适些:
 
 \begin{verbatim}
 def polyline(t, n, length, angle):
@@ -2816,7 +2748,7 @@ def polyline(t, n, length, angle):
         t.lt(angle)
 \end{verbatim}
 %
-Now we can rewrite {\tt polygon} and {\tt arc} to use {\tt polyline}:
+现在我们可以用 {\tt polyline}来重写{\tt polygon} 和 {\tt arc}了:
 
 \begin{verbatim}
 def polygon(t, n, length):
@@ -2831,64 +2763,53 @@ def arc(t, r, angle):
     polyline(t, n, step_length, step_angle)
 \end{verbatim}
 %
-Finally, we can rewrite {\tt circle} to use {\tt arc}:
+最后，我们再用{\tt arc}来优化 {\tt circle} :
 
 \begin{verbatim}
 def circle(t, r):
     arc(t, r, 360)
 \end{verbatim}
 %
-This process---rearranging a program to improve
-interfaces and facilitate code re-use---is called {\bf refactoring}.
-In this case, we noticed that there was similar code in {\tt arc} and
-{\tt polygon}, so we ``factored it out'' into {\tt polyline}.
+此过程---调整代码，优化接口，方便复用---叫做{\bf 重构}。
+此案例中，我们发现{\tt arc}和{\tt polygon}具有一些相似代码，
+所以将其``抽离"为{\tt polyline}.\
 \index{refactoring}
 
-If we had planned ahead, we might have written {\tt polyline} first
-and avoided refactoring, but often you don't know enough at the
-beginning of a project to design all the interfaces.  Once you start
-coding, you understand the problem better.  Sometimes refactoring is a
-sign that you have learned something.
+如果早有规划，我们可能会优先编写{\tt polyline}，避免后续耗时重构。
+但一般你很难在项目开始的时候，便深入了解一切，规划好所有接口。
+只有开始编码，你才会更好地研究并理解个中辛酸。
+所以，有时候重构的过程也是你学习新知识的历程。
 
 
-\section{A development plan}
+\section{开发计划}
 \index{development plan!encapsulation and generalization}
 
-A {\bf development plan} is a process for writing programs.  The
-process we used in this case study is ``encapsulation and
-generalization''.  The steps of this process are:
+{\bf 开发计划}便是指编码的流程。以上案例中，我们采用的流程便是
+``封装和泛化"，详细步骤如下:
 
 \begin{enumerate}
 
-\item Start by writing a small program with no function definitions.
+\item 先不考虑函数定义，写段小程序.
 
-\item Once you get the program working, identify a coherent piece of
-  it, encapsulate the piece in a function and give it a name.
+\item 如果代码可用，抽离相关代码，封装进函数，并命名.
 
-\item Generalize the function by adding appropriate parameters.
+\item 增加合适参数，泛化函数.
 
-\item Repeat steps 1--3 until you have a set of working functions.
-Copy and paste working code to avoid retyping (and re-debugging).
+\item 重复步骤1-3, 尽量抽离各个函数，尽量复制粘贴，减少打字(以及重复调试).
 
-\item Look for opportunities to improve the program by refactoring.
-For example, if you have similar code in several places, consider
-factoring it into an appropriately general function.
+\item 尝试重构程序。比如，在多个地方有相似代码，试试能否将其
+分解为适当的通用函数.
 
 \end{enumerate}
 
-This process has some drawbacks---we will see alternatives later---but
-it can be useful if you don't know ahead of time how to divide the
-program into functions.  This approach lets you design as you go
-along.
+这种流程存在一定的缺点---后续会讲述一些替代方案---但是在你无法提前规划，
+哪些代码需要抽离为函数时，这种方法可以让你在做的同时可以合理优化代码。
 
-
-\section{docstring}
+\section{帮助文档}
 \label{docstring}
 \index{docstring}
-
-A {\bf docstring} is a string at the beginning of a function that
-explains the interface (``doc'' is short for ``documentation'').  Here
-is an example:
+{\bf 帮助文档}是指函数开头部分，用来对接口(``doc"是``documentation"的简称)
+进行解释说明的文档。下面是个例子:
 
 \begin{verbatim}
 def polyline(t, n, length, angle):
@@ -2900,131 +2821,103 @@ def polyline(t, n, length, angle):
         t.lt(angle)
 \end{verbatim}
 %
-By convention, all docstrings are triple-quoted strings, also known
-as multiline strings because the triple quotes allow the string
-to span more than one line.
+一般帮助文档都要用三引号引起来，也叫多行字符串，
+因为三引号允许字符串跨行。
 \index{quotation mark}
 \index{triple-quoted string}
 \index{string!triple-quoted}
 \index{multiline string}
 \index{string!multiline}
 
-It is terse, but it contains the essential information
-someone would need to use this function.  It explains concisely what
-the function does (without getting into the details of how it does
-it).  It explains what effect each parameter has on the behavior of
-the function and what type each parameter should be (if it is not
-obvious).
+帮助文档虽然简洁，但是重要，因为它包含函数使用的相关说明。
+同时简要概括了函数的功能(无需探查函数细节实现)，
+以及各个参数的类型和作用，以及应用场景。
 
-Writing this kind of documentation is an important part of interface
-design.  A well-designed interface should be simple to explain;
-if you have a hard time explaining one of your functions,
-maybe the interface could be improved.
+设计接口，重要的一步，便是编写友好的帮助文档。
+一个设计优良的接口，应该是易于理解的;
+如果需要耗费大量口舌讲解，那么这个接口还有待优化。
 
 
-\section{Debugging}
+\section{调试}
 \index{debugging}
 \index{interface}
 
-An interface is like a contract between a function and a caller.
-The caller agrees to provide certain parameters and the function
-agrees to do certain work.
+接口类似于调用方和函数之间的中间人。
+调用方提供特定参数，函数执行特定操作。
 
-For example, {\tt polyline} requires four arguments: {\tt t} has to be
-a Turtle; {\tt n} has to be an
-integer; {\tt length} should be a positive number; and {\tt
-  angle} has to be a number, which is understood to be in degrees.
+例如， {\tt polyline}需要四个参数 : Turtle对象{\tt t}， 整数{\tt n}，
+正数{\tt length}， 以及以度为单位的数字{\tt angle}.
 
-These requirements are called {\bf preconditions} because they
-are supposed to be true before the function starts executing.
-Conversely, conditions at the end of the function are
-{\bf postconditions}.  Postconditions include the intended
-effect of the function (like drawing line segments) and any
-side effects (like moving the Turtle or making other changes).
+这些条件，叫做 {\bf 前置条件}， 因为这些条件满足了，函数才能执行。
+相反，函数结尾的内容叫做{\bf 后置条件}。后置条件包括函数预期效果
+(比如绘制线段)， 以及意外情况(移动Turtle或其他影响).
 \index{precondition}
 \index{postcondition}
 
-Preconditions are the responsibility of the caller.  If the caller
-violates a (properly documented!) precondition and the function
-doesn't work correctly, the bug is in the caller, not the function.
+前置条件是调用方的任务。如果调用方违背(标注详细的)前置条件，导致函数异常，
+那么责任在于调用方，而不是函数。
 
-If the preconditions are satisfied and the postconditions are
-not, the bug is in the function.  If your pre- and postconditions
-are clear, they can help with debugging.
-
+如果前置条件都满足而后置条件未达到预期，那问题便出在函数中。
+如果前置和后置条件都清晰明了，那么调试会方便很多。
 
 \section{术语表}
 
 \begin{description}
 
-\item[method:] A function that is associated with an object and called
-using dot notation.
+\item[方法(method):] 用句点于对象连接的函数。
 \index{method}
 
-\item[loop:] A part of a program that can run repeatedly.
+\item[循环(loop):] 程序中可以重复执行的部分。
 \index{loop}
 
-\item[encapsulation:] The process of transforming a sequence of
-statements into a function definition.
+\item[封装(encapsulation):] 将一堆语句放入函数中的流程。
 \index{encapsulation}
 
-\item[generalization:] The process of replacing something
-unnecessarily specific (like a number) with something appropriately
-general (like a variable or parameter).
+\item[泛化(generalization):] 将无需特定的内容(比如特定数字)更换为通用内容(变量或参数)的过程。
 \index{generalization}
 
-\item[keyword argument:] An argument that includes the name of
-the parameter as a ``keyword''.
+\item[关键字参数(keyword argument):] 一种实参格式，将形参名字作为``关键字"包含在内。
 \index{keyword argument}
 \index{argument!keyword}
 
-\item[interface:] A description of how to use a function, including
-the name and descriptions of the arguments and return value.
+\item[接口(interface):] 关于如何使用函数的描述，包括函数名，实参，以及返回值信息。
 \index{interface}
 
-\item[refactoring:] The process of modifying a working program to
-  improve function interfaces and other qualities of the code.
+\item[重构(refactoring):] 修改代码，以优化函数接口，提升代码质量的流程.
 \index{refactoring}
 
-\item[development plan:] A process for writing programs.
+\item[开发计划(development plan):] 编码预订安排.
 \index{development plan}
 
-\item[docstring:] A string that appears at the top of a function
-  definition to document the function's interface. 
+\item[帮助文档(docstring):] 函数开头部分的文档，用来描述函数接口. 
 \index{docstring}
 
-\item[precondition:] A requirement that should be satisfied by
-the caller before a function starts.
+\item[前置条件(precondition):] 函数运行前，调用方需满足的条件。
 \index{precondition}
 
-\item[postcondition:] A requirement that should be satisfied by
-the function before it ends.
+\item[后置条件(postcondition):] 函数结束前，需要满足的要求.
 \index{precondition}
 
 \end{description}
 
 
-\section{Exercises}
+\section{习题集}
 
 \begin{exercise}
 
-Download the code in this chapter from
-\url{http://thinkpython2.com/code/polygon.py}.
+从\url{http://thinkpython2.com/code/polygon.py}下载本章代码。
 
 \begin{enumerate}
 
-\item Draw a stack diagram that shows the state of the program
-while executing {\tt circle(bob, radius)}.  You can do the
-arithmetic by hand or add {\tt print} statements to the code.
+\item 绘制栈图，描述{\tt circle(bob, radius)}运行时的程序状态。
+可以手算，或者在代码中加入 {\tt print}语句.
 \index{stack diagram}
 
-\item The version of {\tt arc} in Section~\ref{refactoring} is not
-very accurate because the linear approximation of the
-circle is always outside the true circle.  As a result,
-the Turtle ends up a few pixels away from the correct
-destination.  My solution shows a way to reduce
-the effect of this error.  Read the code and see if it makes
-sense to you.  If you draw a diagram, you might see how it works.
+\item 章节~\ref{refactoring} 中的那版{\tt arc}并不是很精确，
+因为用来逼近圆的线段总会在圆的外侧。
+所以Turtle的最终位置总会和真实位置有偏差。
+我的方案可以有效降低误差。阅读代码，看看是否有所帮助。
+画个栈图，也许便明白了其原理。
 
 \end{enumerate}
 
@@ -3040,11 +2933,10 @@ sense to you.  If you draw a diagram, you might see how it works.
 \begin{exercise}
 \index{flower}
 
-Write an appropriately general set of functions that
-can draw flowers as in Figure~\ref{fig.flowers}.
+尝试编写函数，绘制图~\ref{fig.flowers}中的花朵。
 
-Solution: \url{http://thinkpython2.com/code/flower.py},
-also requires \url{http://thinkpython2.com/code/polygon.py}.
+参阅: \url{http://thinkpython2.com/code/flower.py},
+以及 \url{http://thinkpython2.com/code/polygon.py}.
 
 \end{exercise}
 
@@ -3059,10 +2951,9 @@ also requires \url{http://thinkpython2.com/code/polygon.py}.
 \begin{exercise}
 \index{pie}
 
-Write an appropriately general set of functions that
-can draw shapes as in Figure~\ref{fig.pies}.
+编写函数，绘制 图~\ref{fig.pies}中图形。
 
-Solution: \url{http://thinkpython2.com/code/pie.py}.
+参阅: \url{http://thinkpython2.com/code/pie.py}.
 
 \end{exercise}
 
@@ -3071,35 +2962,31 @@ Solution: \url{http://thinkpython2.com/code/pie.py}.
 \index{turtle typewriter}
 \index{typewriter, turtle}
 
-The letters of the alphabet can be constructed from a moderate number
-of basic elements, like vertical and horizontal lines and a few
-curves.  Design an alphabet that can be drawn with a minimal
-number of basic elements and then write functions that draw the letters.
+字母表中的字母都是由几个基础元素构成，比如垂直线和水平线，以及曲线。
+设计个字母表，使用的基本元素种类最少，然后编写函数绘制字母。
 
-You should write one function for each letter, with names
-\verb"draw_a", \verb"draw_b", etc., and put your functions
-in a file named {\tt letters.py}.  You can download a
-``turtle typewriter'' from \url{http://thinkpython2.com/code/typewriter.py}
-to help you test your code.
+你要为每个字母开发函数，比如 \verb"draw_a", \verb"draw_b",等等，
+将这些函数放在名为{\tt letters.py}的文件中。
+你可以从 \url{http://thinkpython2.com/code/typewriter.py}下载个``turtle typewriter'' ，
+来检验代码。
 
-You can get a solution from \url{http://thinkpython2.com/code/letters.py};
-it also requires
+可参阅 \url{http://thinkpython2.com/code/letters.py};以及
 \url{http://thinkpython2.com/code/polygon.py}.
 
 \end{exercise}
 
 \begin{exercise}
 
-Read about spirals at \url{http://en.wikipedia.org/wiki/Spiral}; then
-write a program that draws an Archimedian spiral (or one of the other
-kinds).  Solution: \url{http://thinkpython2.com/code/spiral.py}.
+去\url{http://en.wikipedia.org/wiki/Spiral}了解一下螺旋线;
+然后编码实现一个阿基米德螺线(或其他种类)。
+参阅: \url{http://thinkpython2.com/code/spiral.py}.
 \index{spiral}
 \index{Archimedian spiral} 
 
 \end{exercise}
 
 
-\chapter{Conditionals and recursion}
+\chapter{条件和递归}
 
 The main topic of this chapter is the {\tt if} statement, which
 executes different code depending on the state of the program.

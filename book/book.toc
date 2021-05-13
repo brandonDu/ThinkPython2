@@ -35,219 +35,219 @@
 \contentsline {section}{\numberline {3.12}调试}{19}{section.3.12}
 \contentsline {section}{\numberline {3.13}术语表}{20}{section.3.13}
 \contentsline {section}{\numberline {3.14}习题}{21}{section.3.14}
-\contentsline {chapter}{\numberline {4}Case study: interface design}{23}{chapter.4}
-\contentsline {section}{\numberline {4.1}The turtle module}{23}{section.4.1}
-\contentsline {section}{\numberline {4.2}Simple repetition}{24}{section.4.2}
-\contentsline {section}{\numberline {4.3}Exercises}{25}{section.4.3}
-\contentsline {section}{\numberline {4.4}Encapsulation}{26}{section.4.4}
-\contentsline {section}{\numberline {4.5}Generalization}{26}{section.4.5}
-\contentsline {section}{\numberline {4.6}Interface design}{27}{section.4.6}
-\contentsline {section}{\numberline {4.7}Refactoring}{28}{section.4.7}
-\contentsline {section}{\numberline {4.8}A development plan}{29}{section.4.8}
-\contentsline {section}{\numberline {4.9}docstring}{29}{section.4.9}
-\contentsline {section}{\numberline {4.10}Debugging}{30}{section.4.10}
-\contentsline {section}{\numberline {4.11}术语表}{30}{section.4.11}
-\contentsline {section}{\numberline {4.12}Exercises}{31}{section.4.12}
-\contentsline {chapter}{\numberline {5}Conditionals and recursion}{33}{chapter.5}
-\contentsline {section}{\numberline {5.1}Floor division and modulus}{33}{section.5.1}
-\contentsline {section}{\numberline {5.2}Boolean expressions}{34}{section.5.2}
-\contentsline {section}{\numberline {5.3}Logical operators}{34}{section.5.3}
-\contentsline {section}{\numberline {5.4}Conditional execution}{35}{section.5.4}
-\contentsline {section}{\numberline {5.5}Alternative execution}{35}{section.5.5}
-\contentsline {section}{\numberline {5.6}Chained conditionals}{35}{section.5.6}
-\contentsline {section}{\numberline {5.7}Nested conditionals}{36}{section.5.7}
-\contentsline {section}{\numberline {5.8}Recursion}{36}{section.5.8}
-\contentsline {section}{\numberline {5.9}Stack diagrams for recursive functions}{38}{section.5.9}
-\contentsline {section}{\numberline {5.10}Infinite recursion}{38}{section.5.10}
-\contentsline {section}{\numberline {5.11}Keyboard input}{39}{section.5.11}
-\contentsline {section}{\numberline {5.12}Debugging}{40}{section.5.12}
-\contentsline {section}{\numberline {5.13}Glossary}{40}{section.5.13}
-\contentsline {section}{\numberline {5.14}Exercises}{41}{section.5.14}
-\contentsline {chapter}{\numberline {6}Fruitful functions}{45}{chapter.6}
-\contentsline {section}{\numberline {6.1}Return values}{45}{section.6.1}
-\contentsline {section}{\numberline {6.2}Incremental development}{46}{section.6.2}
-\contentsline {section}{\numberline {6.3}Composition}{48}{section.6.3}
-\contentsline {section}{\numberline {6.4}Boolean functions}{48}{section.6.4}
-\contentsline {section}{\numberline {6.5}More recursion}{49}{section.6.5}
-\contentsline {section}{\numberline {6.6}Leap of faith}{51}{section.6.6}
-\contentsline {section}{\numberline {6.7}One more example}{51}{section.6.7}
-\contentsline {section}{\numberline {6.8}Checking types}{52}{section.6.8}
-\contentsline {section}{\numberline {6.9}Debugging}{53}{section.6.9}
-\contentsline {section}{\numberline {6.10}Glossary}{54}{section.6.10}
-\contentsline {section}{\numberline {6.11}Exercises}{54}{section.6.11}
-\contentsline {chapter}{\numberline {7}Iteration}{57}{chapter.7}
-\contentsline {section}{\numberline {7.1}Reassignment}{57}{section.7.1}
-\contentsline {section}{\numberline {7.2}Updating variables}{58}{section.7.2}
-\contentsline {section}{\numberline {7.3}The {\tt while} statement}{58}{section.7.3}
-\contentsline {section}{\numberline {7.4}{\tt break}}{60}{section.7.4}
-\contentsline {section}{\numberline {7.5}Square roots}{60}{section.7.5}
-\contentsline {section}{\numberline {7.6}Algorithms}{61}{section.7.6}
-\contentsline {section}{\numberline {7.7}Debugging}{62}{section.7.7}
-\contentsline {section}{\numberline {7.8}Glossary}{62}{section.7.8}
-\contentsline {section}{\numberline {7.9}Exercises}{63}{section.7.9}
-\contentsline {chapter}{\numberline {8}Strings}{65}{chapter.8}
-\contentsline {section}{\numberline {8.1}A string is a sequence}{65}{section.8.1}
-\contentsline {section}{\numberline {8.2}{\tt len}}{66}{section.8.2}
-\contentsline {section}{\numberline {8.3}Traversal with a {\tt for} loop}{66}{section.8.3}
-\contentsline {section}{\numberline {8.4}String slices}{67}{section.8.4}
-\contentsline {section}{\numberline {8.5}Strings are immutable}{68}{section.8.5}
-\contentsline {section}{\numberline {8.6}Searching}{68}{section.8.6}
-\contentsline {section}{\numberline {8.7}Looping and counting}{69}{section.8.7}
-\contentsline {section}{\numberline {8.8}String methods}{69}{section.8.8}
-\contentsline {section}{\numberline {8.9}The {\tt in} operator}{70}{section.8.9}
-\contentsline {section}{\numberline {8.10}String comparison}{70}{section.8.10}
-\contentsline {section}{\numberline {8.11}Debugging}{71}{section.8.11}
-\contentsline {section}{\numberline {8.12}Glossary}{72}{section.8.12}
-\contentsline {section}{\numberline {8.13}Exercises}{73}{section.8.13}
-\contentsline {chapter}{\numberline {9}Case study: word play}{75}{chapter.9}
-\contentsline {section}{\numberline {9.1}Reading word lists}{75}{section.9.1}
-\contentsline {section}{\numberline {9.2}Exercises}{76}{section.9.2}
-\contentsline {section}{\numberline {9.3}Search}{76}{section.9.3}
-\contentsline {section}{\numberline {9.4}Looping with indices}{78}{section.9.4}
-\contentsline {section}{\numberline {9.5}Debugging}{79}{section.9.5}
-\contentsline {section}{\numberline {9.6}Glossary}{79}{section.9.6}
-\contentsline {section}{\numberline {9.7}Exercises}{80}{section.9.7}
-\contentsline {chapter}{\numberline {10}Lists}{81}{chapter.10}
-\contentsline {section}{\numberline {10.1}A list is a sequence}{81}{section.10.1}
-\contentsline {section}{\numberline {10.2}Lists are mutable}{81}{section.10.2}
-\contentsline {section}{\numberline {10.3}Traversing a list}{83}{section.10.3}
-\contentsline {section}{\numberline {10.4}List operations}{83}{section.10.4}
-\contentsline {section}{\numberline {10.5}List slices}{83}{section.10.5}
-\contentsline {section}{\numberline {10.6}List methods}{84}{section.10.6}
-\contentsline {section}{\numberline {10.7}Map, filter and reduce}{85}{section.10.7}
-\contentsline {section}{\numberline {10.8}Deleting elements}{86}{section.10.8}
-\contentsline {section}{\numberline {10.9}Lists and strings}{86}{section.10.9}
-\contentsline {section}{\numberline {10.10}Objects and values}{87}{section.10.10}
-\contentsline {section}{\numberline {10.11}Aliasing}{88}{section.10.11}
-\contentsline {section}{\numberline {10.12}List arguments}{89}{section.10.12}
-\contentsline {section}{\numberline {10.13}Debugging}{90}{section.10.13}
-\contentsline {section}{\numberline {10.14}Glossary}{92}{section.10.14}
-\contentsline {section}{\numberline {10.15}Exercises}{92}{section.10.15}
-\contentsline {chapter}{\numberline {11}Dictionaries}{95}{chapter.11}
-\contentsline {section}{\numberline {11.1}A dictionary is a mapping}{95}{section.11.1}
-\contentsline {section}{\numberline {11.2}Dictionary as a collection of counters}{96}{section.11.2}
-\contentsline {section}{\numberline {11.3}Looping and dictionaries}{98}{section.11.3}
-\contentsline {section}{\numberline {11.4}Reverse lookup}{98}{section.11.4}
-\contentsline {section}{\numberline {11.5}Dictionaries and lists}{99}{section.11.5}
-\contentsline {section}{\numberline {11.6}Memos}{100}{section.11.6}
-\contentsline {section}{\numberline {11.7}Global variables}{102}{section.11.7}
-\contentsline {section}{\numberline {11.8}Debugging}{103}{section.11.8}
-\contentsline {section}{\numberline {11.9}Glossary}{104}{section.11.9}
-\contentsline {section}{\numberline {11.10}Exercises}{104}{section.11.10}
-\contentsline {chapter}{\numberline {12}Tuples}{107}{chapter.12}
-\contentsline {section}{\numberline {12.1}Tuples are immutable}{107}{section.12.1}
-\contentsline {section}{\numberline {12.2}Tuple assignment}{108}{section.12.2}
-\contentsline {section}{\numberline {12.3}Tuples as return values}{109}{section.12.3}
-\contentsline {section}{\numberline {12.4}Variable-length argument tuples}{109}{section.12.4}
-\contentsline {section}{\numberline {12.5}Lists and tuples}{110}{section.12.5}
-\contentsline {section}{\numberline {12.6}Dictionaries and tuples}{111}{section.12.6}
-\contentsline {section}{\numberline {12.7}Sequences of sequences}{113}{section.12.7}
-\contentsline {section}{\numberline {12.8}Debugging}{113}{section.12.8}
-\contentsline {section}{\numberline {12.9}Glossary}{114}{section.12.9}
-\contentsline {section}{\numberline {12.10}Exercises}{115}{section.12.10}
-\contentsline {chapter}{\numberline {13}Case study: data structure selection}{117}{chapter.13}
-\contentsline {section}{\numberline {13.1}Word frequency analysis}{117}{section.13.1}
-\contentsline {section}{\numberline {13.2}Random numbers}{118}{section.13.2}
-\contentsline {section}{\numberline {13.3}Word histogram}{119}{section.13.3}
-\contentsline {section}{\numberline {13.4}Most common words}{120}{section.13.4}
-\contentsline {section}{\numberline {13.5}Optional parameters}{120}{section.13.5}
-\contentsline {section}{\numberline {13.6}Dictionary subtraction}{121}{section.13.6}
-\contentsline {section}{\numberline {13.7}Random words}{122}{section.13.7}
-\contentsline {section}{\numberline {13.8}Markov analysis}{122}{section.13.8}
-\contentsline {section}{\numberline {13.9}Data structures}{124}{section.13.9}
-\contentsline {section}{\numberline {13.10}Debugging}{125}{section.13.10}
-\contentsline {section}{\numberline {13.11}Glossary}{126}{section.13.11}
-\contentsline {section}{\numberline {13.12}Exercises}{126}{section.13.12}
-\contentsline {chapter}{\numberline {14}Files}{129}{chapter.14}
-\contentsline {section}{\numberline {14.1}Persistence}{129}{section.14.1}
-\contentsline {section}{\numberline {14.2}Reading and writing}{129}{section.14.2}
-\contentsline {section}{\numberline {14.3}Format operator}{130}{section.14.3}
-\contentsline {section}{\numberline {14.4}Filenames and paths}{131}{section.14.4}
-\contentsline {section}{\numberline {14.5}Catching exceptions}{132}{section.14.5}
-\contentsline {section}{\numberline {14.6}Databases}{133}{section.14.6}
-\contentsline {section}{\numberline {14.7}Pickling}{133}{section.14.7}
-\contentsline {section}{\numberline {14.8}Pipes}{134}{section.14.8}
-\contentsline {section}{\numberline {14.9}Writing modules}{135}{section.14.9}
-\contentsline {section}{\numberline {14.10}Debugging}{136}{section.14.10}
-\contentsline {section}{\numberline {14.11}Glossary}{136}{section.14.11}
-\contentsline {section}{\numberline {14.12}Exercises}{137}{section.14.12}
-\contentsline {chapter}{\numberline {15}Classes and objects}{139}{chapter.15}
-\contentsline {section}{\numberline {15.1}Programmer-defined types}{139}{section.15.1}
-\contentsline {section}{\numberline {15.2}Attributes}{140}{section.15.2}
-\contentsline {section}{\numberline {15.3}Rectangles}{141}{section.15.3}
-\contentsline {section}{\numberline {15.4}Instances as return values}{142}{section.15.4}
-\contentsline {section}{\numberline {15.5}Objects are mutable}{142}{section.15.5}
-\contentsline {section}{\numberline {15.6}Copying}{143}{section.15.6}
-\contentsline {section}{\numberline {15.7}Debugging}{144}{section.15.7}
-\contentsline {section}{\numberline {15.8}Glossary}{145}{section.15.8}
-\contentsline {section}{\numberline {15.9}Exercises}{145}{section.15.9}
-\contentsline {chapter}{\numberline {16}Classes and functions}{147}{chapter.16}
-\contentsline {section}{\numberline {16.1}Time}{147}{section.16.1}
-\contentsline {section}{\numberline {16.2}Pure functions}{147}{section.16.2}
-\contentsline {section}{\numberline {16.3}Modifiers}{149}{section.16.3}
-\contentsline {section}{\numberline {16.4}Prototyping versus planning}{150}{section.16.4}
-\contentsline {section}{\numberline {16.5}Debugging}{151}{section.16.5}
-\contentsline {section}{\numberline {16.6}Glossary}{152}{section.16.6}
-\contentsline {section}{\numberline {16.7}Exercises}{152}{section.16.7}
-\contentsline {chapter}{\numberline {17}Classes and methods}{153}{chapter.17}
-\contentsline {section}{\numberline {17.1}Object-oriented features}{153}{section.17.1}
-\contentsline {section}{\numberline {17.2}Printing objects}{154}{section.17.2}
-\contentsline {section}{\numberline {17.3}Another example}{155}{section.17.3}
-\contentsline {section}{\numberline {17.4}A more complicated example}{156}{section.17.4}
-\contentsline {section}{\numberline {17.5}The init method}{156}{section.17.5}
-\contentsline {section}{\numberline {17.6}The {\tt \_\_str\_\_} method}{157}{section.17.6}
-\contentsline {section}{\numberline {17.7}Operator overloading}{157}{section.17.7}
-\contentsline {section}{\numberline {17.8}Type-based dispatch}{158}{section.17.8}
-\contentsline {section}{\numberline {17.9}Polymorphism}{159}{section.17.9}
-\contentsline {section}{\numberline {17.10}Debugging}{160}{section.17.10}
-\contentsline {section}{\numberline {17.11}Interface and implementation}{161}{section.17.11}
-\contentsline {section}{\numberline {17.12}Glossary}{161}{section.17.12}
-\contentsline {section}{\numberline {17.13}Exercises}{162}{section.17.13}
-\contentsline {chapter}{\numberline {18}Inheritance}{163}{chapter.18}
-\contentsline {section}{\numberline {18.1}Card objects}{163}{section.18.1}
-\contentsline {section}{\numberline {18.2}Class attributes}{164}{section.18.2}
-\contentsline {section}{\numberline {18.3}Comparing cards}{165}{section.18.3}
-\contentsline {section}{\numberline {18.4}Decks}{166}{section.18.4}
-\contentsline {section}{\numberline {18.5}Printing the deck}{166}{section.18.5}
-\contentsline {section}{\numberline {18.6}Add, remove, shuffle and sort}{167}{section.18.6}
-\contentsline {section}{\numberline {18.7}Inheritance}{168}{section.18.7}
-\contentsline {section}{\numberline {18.8}Class diagrams}{169}{section.18.8}
-\contentsline {section}{\numberline {18.9}Debugging}{170}{section.18.9}
-\contentsline {section}{\numberline {18.10}Data encapsulation}{171}{section.18.10}
-\contentsline {section}{\numberline {18.11}Glossary}{172}{section.18.11}
-\contentsline {section}{\numberline {18.12}Exercises}{173}{section.18.12}
-\contentsline {chapter}{\numberline {19}利器}{175}{chapter.19}
-\contentsline {section}{\numberline {19.1}Conditional expressions}{175}{section.19.1}
-\contentsline {section}{\numberline {19.2}List comprehensions}{176}{section.19.2}
-\contentsline {section}{\numberline {19.3}Generator expressions}{177}{section.19.3}
-\contentsline {section}{\numberline {19.4}{\tt any} and {\tt all}}{177}{section.19.4}
-\contentsline {section}{\numberline {19.5}Sets}{178}{section.19.5}
-\contentsline {section}{\numberline {19.6}Counters}{179}{section.19.6}
-\contentsline {section}{\numberline {19.7}defaultdict}{180}{section.19.7}
-\contentsline {section}{\numberline {19.8}Named tuples}{181}{section.19.8}
-\contentsline {section}{\numberline {19.9}Gathering keyword args}{182}{section.19.9}
-\contentsline {section}{\numberline {19.10}Glossary}{183}{section.19.10}
-\contentsline {section}{\numberline {19.11}Exercises}{183}{section.19.11}
-\contentsline {chapter}{\numberline {A}Debugging}{185}{appendix.A}
-\contentsline {section}{\numberline {A.1}Syntax errors}{185}{section.A.1}
-\contentsline {subsection}{\numberline {A.1.1}I keep making changes and it makes no difference.}{186}{subsection.A.1.1}
-\contentsline {section}{\numberline {A.2}Runtime errors}{187}{section.A.2}
-\contentsline {subsection}{\numberline {A.2.1}My program does absolutely nothing.}{187}{subsection.A.2.1}
-\contentsline {subsection}{\numberline {A.2.2}My program hangs.}{187}{subsection.A.2.2}
-\contentsline {subsubsection}{Infinite Loop}{188}{section*.6}
-\contentsline {subsubsection}{Infinite Recursion}{188}{section*.7}
-\contentsline {subsubsection}{Flow of Execution}{188}{section*.8}
-\contentsline {subsection}{\numberline {A.2.3}When I run the program I get an exception.}{188}{subsection.A.2.3}
-\contentsline {subsection}{\numberline {A.2.4}I added so many {\tt print} statements I get inundated with output.}{189}{subsection.A.2.4}
-\contentsline {section}{\numberline {A.3}Semantic errors}{190}{section.A.3}
-\contentsline {subsection}{\numberline {A.3.1}My program doesn't work.}{190}{subsection.A.3.1}
-\contentsline {subsection}{\numberline {A.3.2}I've got a big hairy expression and it doesn't do what I expect.}{191}{subsection.A.3.2}
-\contentsline {subsection}{\numberline {A.3.3}I've got a function that doesn't return what I expect.}{191}{subsection.A.3.3}
-\contentsline {subsection}{\numberline {A.3.4}I'm really, really stuck and I need help.}{192}{subsection.A.3.4}
-\contentsline {subsection}{\numberline {A.3.5}No, I really need help.}{192}{subsection.A.3.5}
-\contentsline {chapter}{\numberline {B}Analysis of Algorithms}{193}{appendix.B}
-\contentsline {section}{\numberline {B.1}Order of growth}{194}{section.B.1}
-\contentsline {section}{\numberline {B.2}Analysis of basic Python operations}{196}{section.B.2}
-\contentsline {section}{\numberline {B.3}Analysis of search algorithms}{197}{section.B.3}
-\contentsline {section}{\numberline {B.4}Hashtables}{198}{section.B.4}
-\contentsline {section}{\numberline {B.5}Glossary}{201}{section.B.5}
+\contentsline {chapter}{\numberline {4}案例分析: 接口设计}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}turtle模块}{23}{section.4.1}
+\contentsline {section}{\numberline {4.2}简单重复}{24}{section.4.2}
+\contentsline {section}{\numberline {4.3}习题集}{25}{section.4.3}
+\contentsline {section}{\numberline {4.4}封装}{25}{section.4.4}
+\contentsline {section}{\numberline {4.5}泛化}{25}{section.4.5}
+\contentsline {section}{\numberline {4.6}接口设计}{26}{section.4.6}
+\contentsline {section}{\numberline {4.7}重构}{27}{section.4.7}
+\contentsline {section}{\numberline {4.8}开发计划}{28}{section.4.8}
+\contentsline {section}{\numberline {4.9}帮助文档}{28}{section.4.9}
+\contentsline {section}{\numberline {4.10}调试}{29}{section.4.10}
+\contentsline {section}{\numberline {4.11}术语表}{29}{section.4.11}
+\contentsline {section}{\numberline {4.12}习题集}{29}{section.4.12}
+\contentsline {chapter}{\numberline {5}条件和递归}{31}{chapter.5}
+\contentsline {section}{\numberline {5.1}Floor division and modulus}{31}{section.5.1}
+\contentsline {section}{\numberline {5.2}Boolean expressions}{32}{section.5.2}
+\contentsline {section}{\numberline {5.3}Logical operators}{32}{section.5.3}
+\contentsline {section}{\numberline {5.4}Conditional execution}{33}{section.5.4}
+\contentsline {section}{\numberline {5.5}Alternative execution}{33}{section.5.5}
+\contentsline {section}{\numberline {5.6}Chained conditionals}{33}{section.5.6}
+\contentsline {section}{\numberline {5.7}Nested conditionals}{34}{section.5.7}
+\contentsline {section}{\numberline {5.8}Recursion}{34}{section.5.8}
+\contentsline {section}{\numberline {5.9}Stack diagrams for recursive functions}{36}{section.5.9}
+\contentsline {section}{\numberline {5.10}Infinite recursion}{36}{section.5.10}
+\contentsline {section}{\numberline {5.11}Keyboard input}{37}{section.5.11}
+\contentsline {section}{\numberline {5.12}Debugging}{38}{section.5.12}
+\contentsline {section}{\numberline {5.13}Glossary}{38}{section.5.13}
+\contentsline {section}{\numberline {5.14}Exercises}{39}{section.5.14}
+\contentsline {chapter}{\numberline {6}Fruitful functions}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Return values}{43}{section.6.1}
+\contentsline {section}{\numberline {6.2}Incremental development}{44}{section.6.2}
+\contentsline {section}{\numberline {6.3}Composition}{46}{section.6.3}
+\contentsline {section}{\numberline {6.4}Boolean functions}{46}{section.6.4}
+\contentsline {section}{\numberline {6.5}More recursion}{47}{section.6.5}
+\contentsline {section}{\numberline {6.6}Leap of faith}{49}{section.6.6}
+\contentsline {section}{\numberline {6.7}One more example}{49}{section.6.7}
+\contentsline {section}{\numberline {6.8}Checking types}{50}{section.6.8}
+\contentsline {section}{\numberline {6.9}Debugging}{51}{section.6.9}
+\contentsline {section}{\numberline {6.10}Glossary}{52}{section.6.10}
+\contentsline {section}{\numberline {6.11}Exercises}{52}{section.6.11}
+\contentsline {chapter}{\numberline {7}Iteration}{55}{chapter.7}
+\contentsline {section}{\numberline {7.1}Reassignment}{55}{section.7.1}
+\contentsline {section}{\numberline {7.2}Updating variables}{56}{section.7.2}
+\contentsline {section}{\numberline {7.3}The {\tt while} statement}{56}{section.7.3}
+\contentsline {section}{\numberline {7.4}{\tt break}}{58}{section.7.4}
+\contentsline {section}{\numberline {7.5}Square roots}{58}{section.7.5}
+\contentsline {section}{\numberline {7.6}Algorithms}{59}{section.7.6}
+\contentsline {section}{\numberline {7.7}Debugging}{60}{section.7.7}
+\contentsline {section}{\numberline {7.8}Glossary}{60}{section.7.8}
+\contentsline {section}{\numberline {7.9}Exercises}{61}{section.7.9}
+\contentsline {chapter}{\numberline {8}Strings}{63}{chapter.8}
+\contentsline {section}{\numberline {8.1}A string is a sequence}{63}{section.8.1}
+\contentsline {section}{\numberline {8.2}{\tt len}}{64}{section.8.2}
+\contentsline {section}{\numberline {8.3}Traversal with a {\tt for} loop}{64}{section.8.3}
+\contentsline {section}{\numberline {8.4}String slices}{65}{section.8.4}
+\contentsline {section}{\numberline {8.5}Strings are immutable}{66}{section.8.5}
+\contentsline {section}{\numberline {8.6}Searching}{66}{section.8.6}
+\contentsline {section}{\numberline {8.7}Looping and counting}{67}{section.8.7}
+\contentsline {section}{\numberline {8.8}String methods}{67}{section.8.8}
+\contentsline {section}{\numberline {8.9}The {\tt in} operator}{68}{section.8.9}
+\contentsline {section}{\numberline {8.10}String comparison}{68}{section.8.10}
+\contentsline {section}{\numberline {8.11}Debugging}{69}{section.8.11}
+\contentsline {section}{\numberline {8.12}Glossary}{70}{section.8.12}
+\contentsline {section}{\numberline {8.13}Exercises}{71}{section.8.13}
+\contentsline {chapter}{\numberline {9}Case study: word play}{73}{chapter.9}
+\contentsline {section}{\numberline {9.1}Reading word lists}{73}{section.9.1}
+\contentsline {section}{\numberline {9.2}Exercises}{74}{section.9.2}
+\contentsline {section}{\numberline {9.3}Search}{74}{section.9.3}
+\contentsline {section}{\numberline {9.4}Looping with indices}{76}{section.9.4}
+\contentsline {section}{\numberline {9.5}Debugging}{77}{section.9.5}
+\contentsline {section}{\numberline {9.6}Glossary}{77}{section.9.6}
+\contentsline {section}{\numberline {9.7}Exercises}{78}{section.9.7}
+\contentsline {chapter}{\numberline {10}Lists}{79}{chapter.10}
+\contentsline {section}{\numberline {10.1}A list is a sequence}{79}{section.10.1}
+\contentsline {section}{\numberline {10.2}Lists are mutable}{79}{section.10.2}
+\contentsline {section}{\numberline {10.3}Traversing a list}{81}{section.10.3}
+\contentsline {section}{\numberline {10.4}List operations}{81}{section.10.4}
+\contentsline {section}{\numberline {10.5}List slices}{81}{section.10.5}
+\contentsline {section}{\numberline {10.6}List methods}{82}{section.10.6}
+\contentsline {section}{\numberline {10.7}Map, filter and reduce}{83}{section.10.7}
+\contentsline {section}{\numberline {10.8}Deleting elements}{84}{section.10.8}
+\contentsline {section}{\numberline {10.9}Lists and strings}{84}{section.10.9}
+\contentsline {section}{\numberline {10.10}Objects and values}{85}{section.10.10}
+\contentsline {section}{\numberline {10.11}Aliasing}{86}{section.10.11}
+\contentsline {section}{\numberline {10.12}List arguments}{87}{section.10.12}
+\contentsline {section}{\numberline {10.13}Debugging}{88}{section.10.13}
+\contentsline {section}{\numberline {10.14}Glossary}{90}{section.10.14}
+\contentsline {section}{\numberline {10.15}Exercises}{90}{section.10.15}
+\contentsline {chapter}{\numberline {11}Dictionaries}{93}{chapter.11}
+\contentsline {section}{\numberline {11.1}A dictionary is a mapping}{93}{section.11.1}
+\contentsline {section}{\numberline {11.2}Dictionary as a collection of counters}{94}{section.11.2}
+\contentsline {section}{\numberline {11.3}Looping and dictionaries}{96}{section.11.3}
+\contentsline {section}{\numberline {11.4}Reverse lookup}{96}{section.11.4}
+\contentsline {section}{\numberline {11.5}Dictionaries and lists}{97}{section.11.5}
+\contentsline {section}{\numberline {11.6}Memos}{98}{section.11.6}
+\contentsline {section}{\numberline {11.7}Global variables}{100}{section.11.7}
+\contentsline {section}{\numberline {11.8}Debugging}{101}{section.11.8}
+\contentsline {section}{\numberline {11.9}Glossary}{102}{section.11.9}
+\contentsline {section}{\numberline {11.10}Exercises}{102}{section.11.10}
+\contentsline {chapter}{\numberline {12}Tuples}{105}{chapter.12}
+\contentsline {section}{\numberline {12.1}Tuples are immutable}{105}{section.12.1}
+\contentsline {section}{\numberline {12.2}Tuple assignment}{106}{section.12.2}
+\contentsline {section}{\numberline {12.3}Tuples as return values}{107}{section.12.3}
+\contentsline {section}{\numberline {12.4}Variable-length argument tuples}{107}{section.12.4}
+\contentsline {section}{\numberline {12.5}Lists and tuples}{108}{section.12.5}
+\contentsline {section}{\numberline {12.6}Dictionaries and tuples}{109}{section.12.6}
+\contentsline {section}{\numberline {12.7}Sequences of sequences}{111}{section.12.7}
+\contentsline {section}{\numberline {12.8}Debugging}{111}{section.12.8}
+\contentsline {section}{\numberline {12.9}Glossary}{112}{section.12.9}
+\contentsline {section}{\numberline {12.10}Exercises}{113}{section.12.10}
+\contentsline {chapter}{\numberline {13}Case study: data structure selection}{115}{chapter.13}
+\contentsline {section}{\numberline {13.1}Word frequency analysis}{115}{section.13.1}
+\contentsline {section}{\numberline {13.2}Random numbers}{116}{section.13.2}
+\contentsline {section}{\numberline {13.3}Word histogram}{117}{section.13.3}
+\contentsline {section}{\numberline {13.4}Most common words}{118}{section.13.4}
+\contentsline {section}{\numberline {13.5}Optional parameters}{118}{section.13.5}
+\contentsline {section}{\numberline {13.6}Dictionary subtraction}{119}{section.13.6}
+\contentsline {section}{\numberline {13.7}Random words}{120}{section.13.7}
+\contentsline {section}{\numberline {13.8}Markov analysis}{120}{section.13.8}
+\contentsline {section}{\numberline {13.9}Data structures}{122}{section.13.9}
+\contentsline {section}{\numberline {13.10}Debugging}{123}{section.13.10}
+\contentsline {section}{\numberline {13.11}Glossary}{124}{section.13.11}
+\contentsline {section}{\numberline {13.12}Exercises}{124}{section.13.12}
+\contentsline {chapter}{\numberline {14}Files}{127}{chapter.14}
+\contentsline {section}{\numberline {14.1}Persistence}{127}{section.14.1}
+\contentsline {section}{\numberline {14.2}Reading and writing}{127}{section.14.2}
+\contentsline {section}{\numberline {14.3}Format operator}{128}{section.14.3}
+\contentsline {section}{\numberline {14.4}Filenames and paths}{129}{section.14.4}
+\contentsline {section}{\numberline {14.5}Catching exceptions}{130}{section.14.5}
+\contentsline {section}{\numberline {14.6}Databases}{131}{section.14.6}
+\contentsline {section}{\numberline {14.7}Pickling}{131}{section.14.7}
+\contentsline {section}{\numberline {14.8}Pipes}{132}{section.14.8}
+\contentsline {section}{\numberline {14.9}Writing modules}{133}{section.14.9}
+\contentsline {section}{\numberline {14.10}Debugging}{134}{section.14.10}
+\contentsline {section}{\numberline {14.11}Glossary}{134}{section.14.11}
+\contentsline {section}{\numberline {14.12}Exercises}{135}{section.14.12}
+\contentsline {chapter}{\numberline {15}Classes and objects}{137}{chapter.15}
+\contentsline {section}{\numberline {15.1}Programmer-defined types}{137}{section.15.1}
+\contentsline {section}{\numberline {15.2}Attributes}{138}{section.15.2}
+\contentsline {section}{\numberline {15.3}Rectangles}{139}{section.15.3}
+\contentsline {section}{\numberline {15.4}Instances as return values}{140}{section.15.4}
+\contentsline {section}{\numberline {15.5}Objects are mutable}{140}{section.15.5}
+\contentsline {section}{\numberline {15.6}Copying}{141}{section.15.6}
+\contentsline {section}{\numberline {15.7}Debugging}{142}{section.15.7}
+\contentsline {section}{\numberline {15.8}Glossary}{143}{section.15.8}
+\contentsline {section}{\numberline {15.9}Exercises}{143}{section.15.9}
+\contentsline {chapter}{\numberline {16}Classes and functions}{145}{chapter.16}
+\contentsline {section}{\numberline {16.1}Time}{145}{section.16.1}
+\contentsline {section}{\numberline {16.2}Pure functions}{145}{section.16.2}
+\contentsline {section}{\numberline {16.3}Modifiers}{147}{section.16.3}
+\contentsline {section}{\numberline {16.4}Prototyping versus planning}{148}{section.16.4}
+\contentsline {section}{\numberline {16.5}Debugging}{149}{section.16.5}
+\contentsline {section}{\numberline {16.6}Glossary}{150}{section.16.6}
+\contentsline {section}{\numberline {16.7}Exercises}{150}{section.16.7}
+\contentsline {chapter}{\numberline {17}Classes and methods}{151}{chapter.17}
+\contentsline {section}{\numberline {17.1}Object-oriented features}{151}{section.17.1}
+\contentsline {section}{\numberline {17.2}Printing objects}{152}{section.17.2}
+\contentsline {section}{\numberline {17.3}Another example}{153}{section.17.3}
+\contentsline {section}{\numberline {17.4}A more complicated example}{154}{section.17.4}
+\contentsline {section}{\numberline {17.5}The init method}{154}{section.17.5}
+\contentsline {section}{\numberline {17.6}The {\tt \_\_str\_\_} method}{155}{section.17.6}
+\contentsline {section}{\numberline {17.7}Operator overloading}{155}{section.17.7}
+\contentsline {section}{\numberline {17.8}Type-based dispatch}{156}{section.17.8}
+\contentsline {section}{\numberline {17.9}Polymorphism}{157}{section.17.9}
+\contentsline {section}{\numberline {17.10}Debugging}{158}{section.17.10}
+\contentsline {section}{\numberline {17.11}Interface and implementation}{159}{section.17.11}
+\contentsline {section}{\numberline {17.12}Glossary}{159}{section.17.12}
+\contentsline {section}{\numberline {17.13}Exercises}{160}{section.17.13}
+\contentsline {chapter}{\numberline {18}Inheritance}{161}{chapter.18}
+\contentsline {section}{\numberline {18.1}Card objects}{161}{section.18.1}
+\contentsline {section}{\numberline {18.2}Class attributes}{162}{section.18.2}
+\contentsline {section}{\numberline {18.3}Comparing cards}{163}{section.18.3}
+\contentsline {section}{\numberline {18.4}Decks}{164}{section.18.4}
+\contentsline {section}{\numberline {18.5}Printing the deck}{164}{section.18.5}
+\contentsline {section}{\numberline {18.6}Add, remove, shuffle and sort}{165}{section.18.6}
+\contentsline {section}{\numberline {18.7}Inheritance}{166}{section.18.7}
+\contentsline {section}{\numberline {18.8}Class diagrams}{167}{section.18.8}
+\contentsline {section}{\numberline {18.9}Debugging}{168}{section.18.9}
+\contentsline {section}{\numberline {18.10}Data encapsulation}{169}{section.18.10}
+\contentsline {section}{\numberline {18.11}Glossary}{170}{section.18.11}
+\contentsline {section}{\numberline {18.12}Exercises}{171}{section.18.12}
+\contentsline {chapter}{\numberline {19}利器}{173}{chapter.19}
+\contentsline {section}{\numberline {19.1}Conditional expressions}{173}{section.19.1}
+\contentsline {section}{\numberline {19.2}List comprehensions}{174}{section.19.2}
+\contentsline {section}{\numberline {19.3}Generator expressions}{175}{section.19.3}
+\contentsline {section}{\numberline {19.4}{\tt any} and {\tt all}}{175}{section.19.4}
+\contentsline {section}{\numberline {19.5}Sets}{176}{section.19.5}
+\contentsline {section}{\numberline {19.6}Counters}{177}{section.19.6}
+\contentsline {section}{\numberline {19.7}defaultdict}{178}{section.19.7}
+\contentsline {section}{\numberline {19.8}Named tuples}{179}{section.19.8}
+\contentsline {section}{\numberline {19.9}Gathering keyword args}{180}{section.19.9}
+\contentsline {section}{\numberline {19.10}Glossary}{181}{section.19.10}
+\contentsline {section}{\numberline {19.11}Exercises}{181}{section.19.11}
+\contentsline {chapter}{\numberline {A}Debugging}{183}{appendix.A}
+\contentsline {section}{\numberline {A.1}Syntax errors}{183}{section.A.1}
+\contentsline {subsection}{\numberline {A.1.1}I keep making changes and it makes no difference.}{184}{subsection.A.1.1}
+\contentsline {section}{\numberline {A.2}Runtime errors}{185}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}My program does absolutely nothing.}{185}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}My program hangs.}{185}{subsection.A.2.2}
+\contentsline {subsubsection}{Infinite Loop}{186}{section*.6}
+\contentsline {subsubsection}{Infinite Recursion}{186}{section*.7}
+\contentsline {subsubsection}{Flow of Execution}{186}{section*.8}
+\contentsline {subsection}{\numberline {A.2.3}When I run the program I get an exception.}{186}{subsection.A.2.3}
+\contentsline {subsection}{\numberline {A.2.4}I added so many {\tt print} statements I get inundated with output.}{187}{subsection.A.2.4}
+\contentsline {section}{\numberline {A.3}Semantic errors}{188}{section.A.3}
+\contentsline {subsection}{\numberline {A.3.1}My program doesn't work.}{188}{subsection.A.3.1}
+\contentsline {subsection}{\numberline {A.3.2}I've got a big hairy expression and it doesn't do what I expect.}{189}{subsection.A.3.2}
+\contentsline {subsection}{\numberline {A.3.3}I've got a function that doesn't return what I expect.}{189}{subsection.A.3.3}
+\contentsline {subsection}{\numberline {A.3.4}I'm really, really stuck and I need help.}{190}{subsection.A.3.4}
+\contentsline {subsection}{\numberline {A.3.5}No, I really need help.}{190}{subsection.A.3.5}
+\contentsline {chapter}{\numberline {B}Analysis of Algorithms}{191}{appendix.B}
+\contentsline {section}{\numberline {B.1}Order of growth}{192}{section.B.1}
+\contentsline {section}{\numberline {B.2}Analysis of basic Python operations}{194}{section.B.2}
+\contentsline {section}{\numberline {B.3}Analysis of search algorithms}{195}{section.B.3}
+\contentsline {section}{\numberline {B.4}Hashtables}{196}{section.B.4}
+\contentsline {section}{\numberline {B.5}Glossary}{199}{section.B.5}
