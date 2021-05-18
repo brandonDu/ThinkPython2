@@ -684,7 +684,7 @@ Kuang He, Wei Huang, Karen Barber, and Eric Ransom。
 
 \item[数学计算:] 加减乘除等数学运算。
 
-\item[条件选择:] 只能在命运分支的安排下，被推动前进。
+\item[条件选择:] 只能在命运分支的安排下，低头前进。
 
 \item[循环执行:] 在宿命轮回中不断改变，以摆脱命运的枷锁。
 
@@ -2988,19 +2988,16 @@ def polyline(t, n, length, angle):
 
 \chapter{条件和递归}
 
-The main topic of this chapter is the {\tt if} statement, which
-executes different code depending on the state of the program.
-But first I want to introduce two new operators: floor division
-and modulus.
+本章重点是{\tt if}语句，
+基于程序状态，从而执行不同的代码。
+但首先我要先介绍两个新的运算符: 向下取整和取模。
 
+\section{向下取整和求模}
 
-\section{Floor division and modulus}
-
-The {\bf floor division} operator, \verb"//", divides
-two numbers and rounds down to an integer.  For example, suppose the
-run time of a movie is 105 minutes.  You might want to know how
-long that is in hours.  Conventional division
-returns a floating-point number:
+{\bf 向下取整} 运算符,即 \verb"//", 
+两数相除，结果向下取整。
+例如，假设某电影时长105分钟，你想知道按小时计，是多长时间。
+一般除法返回的是浮点数:
 
 \begin{verbatim}
 >>> minutes = 105
@@ -3008,8 +3005,8 @@ returns a floating-point number:
 1.75
 \end{verbatim}
 
-But we don't normally write hours with decimal points.  Floor
-division returns the integer number of hours, rounding down:
+但一般我们表示小时，不用小数格式。
+向下取整返回的就是整的小时数，舍弃了小数部分:
 
 \begin{verbatim}
 >>> minutes = 105
@@ -3018,7 +3015,7 @@ division returns the integer number of hours, rounding down:
 1
 \end{verbatim}
 
-To get the remainder, you could subtract off one hour in minutes:
+要想知道舍弃部分的分钟数，只需减去一小时，剩下的便是了:
 
 \begin{verbatim}
 >>> remainder = minutes - hours * 60
@@ -3033,8 +3030,8 @@ To get the remainder, you could subtract off one hour in minutes:
 \index{modulus operator}
 \index{operator!modulus}
 
-An alternative is to use the {\bf modulus operator}, \verb"%", which
-divides two numbers and returns the remainder.
+还可以使用 {\bf 求模运算符}， \verb"%"， 
+两数相除，返回余数。
 
 \begin{verbatim}
 >>> remainder = minutes % 60
@@ -3042,33 +3039,29 @@ divides two numbers and returns the remainder.
 45
 \end{verbatim}
 %
-The modulus operator is more useful than it seems.  For
-example, you can check whether one number is divisible by another---if
-{\tt x \% y} is zero, then {\tt x} is divisible by {\tt y}.
+求模运算的用途不止于此。例如，看一个数字是否可以被另一个整除--如果
+{\tt x \% y}结果为0, 则{\tt x}可以被{\tt y}整除.
 \index{divisibility}
 
-Also, you can extract the right-most digit
-or digits from a number.  For example, {\tt x \% 10} yields the
-right-most digit of {\tt x} (in base 10).  Similarly {\tt x \% 100}
-yields the last two digits.
+同样方法，便可以从数字提取一位或多位余数。
+例如， {\tt x \% 10}获取的便是{\tt x} 除以10后剩下的余数。
+同样的，{\tt x \% 100}获取的就是两位余数。
 
-If you are using Python 2, division works differently.  The
-division operator, \verb"/", performs floor division if both
-operands are integers, and floating-point division if either
-operand is a {\tt float}.
+如果你使用的是Python 2, 除法略有不同。
+其除法运算符，\verb"/"， 会在两个整数相除时，自动向下取整，
+如果有一个是{\tt 浮点数}，那么结果才是浮点格式。
 \index{Python 2}
 
 
-\section{Boolean expressions}
+\section{布尔表达式}
 \index{boolean expression}
 \index{expression!boolean}
 \index{logical operator}
 \index{operator!logical}
 
-A {\bf boolean expression} is an expression that is either true
-or false.  The following examples use the 
-operator {\tt ==}, which compares two operands and produces
-{\tt True} if they are equal and {\tt False} otherwise:
+{\bf 布尔表达式} 是用来表示结果是对或错的表达式。
+下面例子使用运算符{\tt ==}， 比较两个操作数，
+如果相等，则结果为{\tt True}, 否则为{\tt False}:
 
 \begin{verbatim}
 >>> 5 == 5
@@ -3077,8 +3070,7 @@ True
 False
 \end{verbatim}
 %
-{\tt True} and {\tt False} are special
-values that belong to the type {\tt bool}; they are not strings:
+{\tt True} 和 {\tt False} 都是{\tt  布尔}格式的值，不是字符串:
 \index{True special value}
 \index{False special value}
 \index{special value!True}
@@ -3093,36 +3085,32 @@ values that belong to the type {\tt bool}; they are not strings:
 <class 'bool'>
 \end{verbatim}
 %
-The {\tt ==} operator is one of the {\bf relational operators}; the
-others are:
+ {\tt ==}运算符是{\bf 关系运算符}的一种，其他还有:
 
 \begin{verbatim}
-      x != y               # x is not equal to y
-      x > y                # x is greater than y
-      x < y                # x is less than y
-      x >= y               # x is greater than or equal to y
-      x <= y               # x is less than or equal to y
+      x != y               # x不等于 y
+      x > y                # x 大于 y
+      x < y                # x 小于 y
+      x >= y               # x 大于等于 y
+      x <= y               # x 小于等于 y
 \end{verbatim}
 %
-Although these operations are probably familiar to you, the Python
-symbols are different from the mathematical symbols.  A common error
-is to use a single equal sign ({\tt =}) instead of a double equal sign
-({\tt ==}).  Remember that {\tt =} is an assignment operator and
-{\tt ==} is a relational operator.   There is no such thing as
-{\tt =<} or {\tt =>}.
+虽然这些运算符对你来说并不陌生，但是Python中的运算符和数学里的不同。
+一个很常见的错误就是混淆单等号({\tt =})和双等号({\tt ==})。
+要知道， {\tt =}是赋值运算符，而{\tt ==}是关系运算符。
+而且也没有{\tt =<} 和 {\tt =>}这种等号在左侧的比较运算符。
 \index{relational operator}
 \index{operator!relational}
 
 
-\section {Logical operators}
+\section {逻辑运算符}
 \index{logical operator}
 \index{operator!logical}
 
-There are three {\bf logical operators}: {\tt and}, {\tt
-or}, and {\tt not}.  The semantics (meaning) of these operators is
-similar to their meaning in English.  For example,
-{\tt x > 0 and x < 10} is true only if {\tt x} is greater than 0
-{\em and} less than 10.
+有三种{\bf 逻辑运算符}: {\tt and}, {\tt or}, he  {\tt not}.
+其语义和英文中的意思很相似。例如
+{\tt x > 0 and x < 10} 只有在 {\tt x} 大于0
+{\em 且}小于10时才为真.
 \index{and operator}
 \index{or operator}
 \index{not operator}
@@ -3130,29 +3118,26 @@ similar to their meaning in English.  For example,
 \index{operator!or}
 \index{operator!not}
 
-{\tt n\%2 == 0 or n\%3 == 0} is true if {\em either or both} of the
-conditions is true, that is, if the number is divisible by 2 {\em or}
-3.
+{\tt n\%2 == 0 or n\%3 == 0} 在{\em 一个或者全部}条件都成立时为真，
+也就是说，被2整除{\em 或}被3整除。
 
-Finally, the {\tt not} operator negates a boolean
-expression, so {\tt not (x > y)} is true if {\tt x > y} is false,
-that is, if {\tt x} is less than or equal to {\tt y}.
+最后，{\tt not}运算符是个对布尔表达式取反的操作。
+所以，当{\tt x > y}为假， {\tt not (x > y)}便为真，
+也就表示{\tt x}小于或者等于{\tt y}时，为真.
 
-Strictly speaking, the operands of the logical operators should be
-boolean expressions, but Python is not very strict.
-Any nonzero number is interpreted as {\tt True}:
+严格来说，逻辑运算符的操作数都应该是布尔表达式，不过Python在这方面不太严格。
+任何非零的数都当作{\tt True}:
 
 \begin{verbatim}
 >>> 42 and True
 True
 \end{verbatim}
 %
-This flexibility can be useful, but there are some subtleties to
-it that might be confusing.  You might want to avoid it (unless
-you know what you are doing).
+这种灵活性固然有用，但是一些细微差异，会令人困惑。
+尽量不要如此使用(除非你知道你在做什么).
 
 
-\section{Conditional execution}
+\section{条件执行}
 \label{conditional.execution}
 
 \index{conditional statement}
@@ -3160,50 +3145,44 @@ you know what you are doing).
 \index{if statement}
 \index{statement!if}
 \index{conditional execution}
-In order to write useful programs, we almost always need the ability
-to check conditions and change the behavior of the program
-accordingly.  {\bf Conditional statements} give us this ability.  The
-simplest form is the {\tt if} statement:
+若想写出实用性强的程序，就必然需要程序可以根据条件，进行选择处理。
+{\bf 条件语句} 便可以解决此难题。
+最简单的便是{\tt if} 语句:
 
 \begin{verbatim}
 if x > 0:
     print('x is positive')
 \end{verbatim}
 %
-The boolean expression after {\tt if} is
-called the {\bf condition}.  If it is true, the indented
-statement runs.  If not, nothing happens.
+{\tt if}后面的布尔表达式，叫在{\bf 条件}。
+如果为真，则缩进的语句执行，如果为假，则不执行。
 \index{condition}
 \index{compound statement}
 \index{statement!compound}
 
-{\tt if} statements have the same structure as function definitions:
-a header followed by an indented body.  Statements like this are
-called {\bf compound statements}.
+{\tt if} 语句和函数定义的结构一样: 头部和紧随其后的缩进体。
+这样的语句统称为{\bf 复合语句}.
 
-There is no limit on the number of statements that can appear in
-the body, but there has to be at least one.
-Occasionally, it is useful to have a body with no statements (usually
-as a place keeper for code you haven't written yet).  In that
-case, you can use the {\tt pass} statement, which does nothing.
+缩进体中对于语句行数没有限制，但是至少要有一行。
+但是有时候，缩进体暂时不想写语句(类似于待写代码的占位符)，
+这种情况，可以使用 {\tt pass}语句，表示不做任何操作.
 \index{pass statement}
 \index{statement!pass}
 
 \begin{verbatim}
 if x < 0:
-    pass          # TODO: need to handle negative values!
+    pass          # TODO:需处理负数!
 \end{verbatim}
 %
 
-\section{Alternative execution}
+\section{选择执行}
 \label{alternative.execution}
 \index{alternative execution}
 \index{else keyword}
 \index{keyword!else}
-
-A second form of the {\tt if} statement is ``alternative execution'',
-in which there are two possibilities and the condition determines
-which one runs.  The syntax looks like this:
+{\tt if} 语句第二种使用场景，便是``选择执行",
+一般有两种选择，根据条件判断，具体执行哪个。
+语义结构如下:
 
 \begin{verbatim}
 if x % 2 == 0:
@@ -3212,23 +3191,19 @@ else:
     print('x is odd')
 \end{verbatim}
 %
-If the remainder when {\tt x} is divided by 2 is 0, then we know that
-{\tt x} is even, and the program displays an appropriate message.  If
-the condition is false, the second set of statements runs.
-Since the condition must be true or false, exactly one of the
-alternatives will run.  The alternatives are called {\bf
-  branches}, because they are branches in the flow of execution.
+如果 {\tt x}对2取余后，结果为0,则{\tt x}为偶数，并输出相应信息。
+如果不为0, 则执行第二组语句。
+这种条件非真即假，必然有相应方案会执行。这些方案，叫做{\bf 分支}，
+因为它们属于执行流程上的分叉。
 \index{branch}
 
 
 
-\section{Chained conditionals}
+\section{链式条件}
 \index{chained conditional}
 \index{conditional!chained}
-
-Sometimes there are more than two possibilities and we need more than
-two branches.  One way to express a computation like that is a {\bf
-chained conditional}:
+有时候，会遇到多种可能方案，便需要更多的分支。
+一种方式是采用{\bf 链式条件}进行处理:
 
 \begin{verbatim}
 if x < y:
@@ -3239,10 +3214,9 @@ else:
     print('x and y are equal')
 \end{verbatim}
 %
-{\tt elif} is an abbreviation of ``else if''.  Again, exactly one
-branch will run.  There is no limit on the number of {\tt
-elif} statements.  If there is an {\tt else} clause, it has to be
-at the end, but there doesn't have to be one.
+{\tt elif}  是``else if''的缩写。同样，上述代码也只有一个分支会运行。
+对于{\tt elif}语句的数量，没有限制。
+至于{\tt else}，不是必须的，但如果有的话，则必须放到结尾.
 \index{elif keyword}
 \index{keyword!elif}
 
@@ -3255,19 +3229,17 @@ elif choice == 'c':
     draw_c()
 \end{verbatim}
 %
-Each condition is checked in order.  If the first is false,
-the next is checked, and so on.  If one of them is
-true, the corresponding branch runs and the statement
-ends.  Even if more than one condition is true, only the
-first true branch runs.  
+这些条件都是顺序检验。如果一个为假，则检验下一个，依此类推。
+如果条件为真，则相应分支执行，同时这些判断语句也都结束。
+即使存在多个条件为真，那也只会执行第一个为真的分支.  
 
 
-\section{Nested conditionals}
+\section{嵌套条件}
 \index{nested conditional}
 \index{conditional!nested}
 
-One conditional can also be nested within another.  We could have
-written the example in the previous section like this:
+条件判断也是可以嵌套于其他条件内的。
+可以将上一章的例子改写如下:
 
 \begin{verbatim}
 if x == y:
@@ -3279,19 +3251,16 @@ else:
         print('x is greater than y')
 \end{verbatim}
 %
-The outer conditional contains two branches.  The
-first branch contains a simple statement.  The second branch
-contains another {\tt if} statement, which has two branches of its
-own.  Those two branches are both simple statements,
-although they could have been conditional statements as well.
+外部的条件判断包含两个分支。
+第一个只包含一个简单语句。
+第二个则包含另外一个{\tt if}语句，
+这个语句又包含两个分支，这两个分支也都很简单，只是简单语句。
+同样，它们的位置也可以继续放条件语句.
 
-Although the indentation of the statements makes the structure
-apparent, {\bf nested conditionals} become difficult to read very
-quickly.  It is a good idea to avoid them when you can.
+虽然语句的缩进可以使代码结构清晰，但是{\bf 嵌套条件}的语句阅读起来却很麻烦。
+所以，最好还是尽量不用。
 
-Logical operators often provide a way to simplify nested conditional
-statements.  For example, we can rewrite the following code using a
-single conditional:
+逻辑运算符可以有效简化嵌套条件语句，例如，可以用一行条件语句来重写下面的代码:
 
 \begin{verbatim}
 if 0 < x:
@@ -3299,15 +3268,14 @@ if 0 < x:
         print('x is a positive single-digit number.')
 \end{verbatim}
 %
-The {\tt print} statement runs only if we make it past both
-conditionals, so we can get the same effect with the {\tt and} operator:
+只有两个条件都满足，{\tt print} 语句才会运行，这恰恰和{\tt and}运算符的作用一样:
 
 \begin{verbatim}
 if 0 < x and x < 10:
     print('x is a positive single-digit number.')
 \end{verbatim}
 
-For this kind of condition, Python provides a more concise option:
+对于这种条件判断，Python提供了更简洁的方案:
 
 \begin{verbatim}
 if 0 < x < 10:
@@ -3315,15 +3283,13 @@ if 0 < x < 10:
 \end{verbatim}
 
 
-\section{Recursion}
+\section{递归}
 \label{recursion}
 \index{recursion}
 
-It is legal for one function to call another;
-it is also legal for a function to call itself.  It may not be obvious
-why that is a good thing, but it turns out to be one of the most
-magical things a program can do.
-For example, look at the following function:
+一个函数可以调用另一个函数，那么，函数也就可以调用自身。
+虽然目前还未看到其用途，但是这却是程序最神奇的功能之一了。
+看看以下示例:
 
 \begin{verbatim}
 def countdown(n):
@@ -3334,43 +3300,39 @@ def countdown(n):
         countdown(n-1)
 \end{verbatim}
 %
-If {\tt n} is 0 or negative, it outputs the word, ``Blastoff!''
-Otherwise, it outputs {\tt n} and then calls a function named {\tt
-countdown}---itself---passing {\tt n-1} as an argument.
+如果{\tt n} 为0或负数，输出单词 ``Blastoff!''。
+否则，输出{ \tt n} ，然后调用函数自身{\tt countdonw}并以{\tt n-1}为实参。
 
-What happens if we call this function like this?
+如果像下面一样，调用此函数，会如何？
 
 \begin{verbatim}
 >>> countdown(3)
 \end{verbatim}
 %
-The execution of {\tt countdown} begins with {\tt n=3}, and since
-{\tt n} is greater than 0, it outputs the value 3, and then calls itself...
+
+调用{\tt countdown}，并且{\tt n=3}，由于{\tt n}大于0, 输出3并以{\tt n-1}为参数
+调用自身...
 
 \begin{quote}
-The execution of {\tt countdown} begins with {\tt n=2}, and since
-{\tt n} is greater than 0, it outputs the value 2, and then calls itself...
+调用{\tt countdown}， 并且{\tt n=2}，由于{\tt n}大于0, 输出2并调用自身...
 
 \begin{quote}
-The execution of {\tt countdown} begins with {\tt n=1}, and since
-{\tt n} is greater than 0, it outputs the value 1, and then calls itself...
+调用{\tt countdown}， 并且{\tt n=1}，由于{\tt n}大于0, 输出1并调用自身...
 
 \begin{quote}
-The execution of {\tt countdown} begins with {\tt n=0}, and since {\tt
-n} is not greater than 0, it outputs the word, ``Blastoff!'' and then
-returns.
+调用{\tt countdown}， 并且{\tt n=0}，由于{\tt n}不大于0, 输出``Blastoff!"，
+然会返回。
 \end{quote}
 
-The {\tt countdown} that got {\tt n=1} returns.
+{\tt n=1}的 {\tt countdown}执行完结，返回。
 \end{quote}
 
-The {\tt countdown} that got {\tt n=2} returns.
+{\tt n=2}的 {\tt countdown}执行完结，返回。
 \end{quote}
 
-The {\tt countdown} that got {\tt n=3} returns.
+{\tt n=3}的 {\tt countdown}执行完结，返回。
 
-And then you're back in \verb"__main__".  So, the
-total output looks like this:
+然后会回到 \verb"__main__"中， 所有输出如下:
 \index{main}
 
 \begin{verbatim}
@@ -3380,13 +3342,12 @@ total output looks like this:
 Blastoff!
 \end{verbatim}
 %
-A function that calls itself is {\bf recursive}; the process of
-executing it is called {\bf recursion}.
+函数内部调用了自身，这种函数便是{\bf 可递归的};
+其执行过程叫做{\bf 递归}.
 \index{recursion}
 \index{function!recursive}
 
-As another example, we can write a function that prints a
-string {\tt n} times.
+再举个例子，我们写个使用print输出{\tt n} 次的函数.
 
 \begin{verbatim}
 def print_n(s, n):
@@ -3396,89 +3357,75 @@ def print_n(s, n):
     print_n(s, n-1)
 \end{verbatim}
 %
-If {\tt n <= 0} the {\bf return statement} exits the function.  The
-flow of execution immediately returns to the caller, and the remaining
-lines of the function don't run.
+如果{\tt n<=0}, 则 {\bf return 语句}终止函数运行。
+运行流程立刻返回到调用者，函数其他代码不执行。
 \index{return statement}
 \index{statement!return}
 
-The rest of the function is similar to {\tt countdown}: it displays
-{\tt s} and then calls itself to display {\tt s} $n-1$ additional
-times.  So the number of lines of output is {\tt 1 + (n - 1)}, which
-adds up to {\tt n}.
+函数其余部分代码和{\tt countdown}类似: 
+输出{\tt s}， 以 $n-1$ 为参数，调用自己，并输出{\tt s}，再重复$n-1$次。
+那么，所有输出的行数便是 {\tt 1 + (n - 1)}， 其和为{\tt n}。
 
-For simple examples like this, it is probably easier to use a {\tt
-for} loop.  But we will see examples later that are hard to write
-with a {\tt for} loop and easy to write with recursion, so it is
-good to start early.
+对于这种，用{\tt for} 循环更加方便。
+但是后续我们会遇到一些问题，用{\tt for}循环会比较难写，而用递归却轻而易举，
+所以，这不啻为一个好的开始。
 \index{for loop}
 \index{loop!for}
 
 
-\section{Stack diagrams for recursive functions}
+\section{递归函数的栈图}
 \label{recursive.stack}
 \index{stack diagram}
 \index{function frame}
 \index{frame}
 
-In Section~\ref{stackdiagram}, we used a stack diagram to represent
-the state of a program during a function call.  The same kind of
-diagram can help interpret a recursive function.
+在章节~\ref{stackdiagram}, 我们使用栈图来描述函数调用时
+程序的状态。
+同样，栈图也有助于我们更好理解递归函数。
 
-Every time a function gets called, Python creates a
-frame to contain the function's local variables and parameters.
-For a recursive function, there might be more than one frame on the
-stack at the same time.
+一旦函数调用，Python都会创建一个包含函数局部变量以及参数的框。
+所以对于递归函数，可能会同时创建多个框。
 
-Figure~\ref{fig.stack2} shows a stack diagram for {\tt countdown} called with
-{\tt n = 3}.
+图~\ref{fig.stack2} 便是{\tt countdown}以{\tt n = 3}为参数，被调用时的栈图。
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/stack2.pdf}}
-\caption{Stack diagram.}
+\caption{栈图.}
 \label{fig.stack2}
 \end{figure}
 
-
-As usual, the top of the stack is the frame for \verb"__main__".
-It is empty because we did not create any variables in 
-\verb"__main__" or pass any arguments to it.
+通常，最顶层的框属于\verb"__main__"。
+其为空，是因为没有在\verb"__main__"内创建变量或者传入实参。
 \index{base case}
 \index{recursion!base case}
 
-The four {\tt countdown} frames have different values for the
-parameter {\tt n}.  The bottom of the stack, where {\tt n=0}, is
-called the {\bf base case}.  It does not make a recursive call, so
-there are no more frames.
+四个{\tt countdown}的框分别对应不同的{\tt n}值，最底层的{\tt n=0}的栈，叫做
+{\tt 边界条件}， 也就是不再进行递归调用的栈，所以下面也不会再有其他框了。
 
-As an exercise, draw a stack diagram for \verb"print_n" called with
-\verb"s = 'Hello'" and {\tt n=2}.
-Then write a function called \verb"do_n" that takes a function
-object and a number, {\tt n}, as arguments, and that calls
-the given function {\tt n} times.
+做个练习，以\verb"s = 'Hello'"和{\tt n=2}为参数，绘制\verb"print_n"调用的栈图。
+然后编写名为 \verb"do_n" 的函数，参数为一个函数对象，和一个数值{\tt n}。
+使其调用传入的函数{\tt n} 次。
 
 
-\section{Infinite recursion}
+\section{无穷递归}
 \index{infinite recursion}
 \index{recursion!infinite}
 \index{runtime error}
 \index{error!runtime}
 \index{traceback}
 
-If a recursion never reaches a base case, it goes on making
-recursive calls forever, and the program never terminates.  This is
-known as {\bf infinite recursion}, and it is generally not
-a good idea.  Here is a minimal program with an infinite recursion:
+如果递归一直无法触及边界条件，则会一直调用，永不终止。
+这便叫做{\bf 无穷递归}, 出现这种情况，往往意味着前路坎坷。
+下面是个无穷递归的小程序:
 
 \begin{verbatim}
 def recurse():
     recurse()
 \end{verbatim}
 %
-In most programming environments, a program with infinite recursion
-does not really run forever.  Python reports an error
-message when the maximum recursion depth is reached:
+多数编程环境中，无穷递归的程序不会一直运行。
+在Python中，当达到了最大递归深度，便会报错:
 \index{exception!RuntimeError}
 \index{RuntimeError}
 
@@ -3493,28 +3440,21 @@ message when the maximum recursion depth is reached:
 RuntimeError: Maximum recursion depth exceeded
 \end{verbatim}
 %
-This traceback is a little bigger than the one we saw in the
-previous chapter.  When the error occurs, there are 1000
-{\tt recurse} frames on the stack!
+这次的追踪信息比以往的要长一些。这个错误发生时，栈中已经有1000个{\tt 递归}框了!
 
-If you encounter an infinite recursion by accident, review
-your function to confirm that there is a base case that does not
-make a recursive call.  And if there is a base case, check whether
-you are guaranteed to reach it.
+如若不幸遇到无穷递归，最好仔细检查一下函数，确保存在一个边界条件，来终止递归调用。
+如果已有边界条件，要确保其被触达。
 
 
-\section{Keyboard input}
+\section{键盘输入}
 \index{keyboard input}
 
-The programs we have written so far accept no input from the user.
-They just do the same thing every time.
+目前涉及的程序，千篇一律，基本都没有涉及用户输入。
 
-Python provides a built-in function called {\tt input} that
-stops the program and
-waits for the user to type something.  When the user presses {\sf
-  Return} or {\sf Enter}, the program resumes and \verb"input"
-returns what the user typed as a string.  In Python 2, the same
-function is called \verb"raw_input".
+Python提供了内置函数{\tt input}， 以暂停程序运行，等待用户键入信息。
+当用户敲击{\sf  Return} 或 {\sf Enter}键时，程序恢复运行，
+同时\verb"input"将用户输入作为字符串返回。
+在Python 2中，同样作用的函数叫做\verb"raw_input".
 \index{Python 2}
 \index{input function}
 \index{function!input}
@@ -3526,9 +3466,8 @@ What are you waiting for?
 'What are you waiting for?'
 \end{verbatim}
 %
-Before getting input from the user, it is a good idea to print a
-prompt telling the user what to type.  \verb"input" can take a
-prompt as an argument:
+在接收用户输入时，最好给用户以提示，使其知晓要输入的内容。
+ \verb"input" 的参数便是提示信息内容:
 \index{prompt}
 
 \begin{verbatim}
@@ -3539,12 +3478,11 @@ Arthur, King of the Britons!
 'Arthur, King of the Britons!'
 \end{verbatim}
 %
-The sequence \verb"\n" at the end of the prompt represents a {\bf
-  newline}, which is a special character that causes a line break.
-That's why the user's input appears below the prompt.  \index{newline}
+提示信息末尾的\verb"\n"是个{\bf 换行符}， 表示另起一行的特殊字符。
+所以用户的输入信息会处于提示信息下面.  
+\index{newline}
 
-If you expect the user to type an integer, you can try to convert
-the return value to {\tt int}:
+如果想要一个整数，那就要将返回值转为{\tt int}:
 
 \begin{verbatim}
 >>> prompt = 'What...is the airspeed velocity of an unladen swallow?\n'
@@ -3555,8 +3493,7 @@ What...is the airspeed velocity of an unladen swallow?
 42
 \end{verbatim}
 %
-But if the user types something other than a string of digits,
-you get an error:
+但如果用户输入的不是数字类型的字符串，那便要报错了:
 
 \begin{verbatim}
 >>> speed = input(prompt)
@@ -3566,31 +3503,29 @@ What do you mean, an African or a European swallow?
 ValueError: invalid literal for int() with base 10
 \end{verbatim}
 %
-We will see how to handle this kind of error later.
+后续我们会学习如何应对这种错误。
 \index{ValueError}
 \index{exception!ValueError}
 
 
-\section{Debugging}
+\section{调试}
 \label{whitespace}
 \index{debugging}
 \index{traceback}
 
-When a syntax or runtime error occurs, the error message contains
-a lot of information, but it can be overwhelming.  The most
-useful parts are usually:
+当遇到句法异常或者运行时异常，其报错信息庞大而繁杂，
+但可以对其进行提炼。一般最有用的也就下面两部分:
 
 \begin{itemize}
 
-\item What kind of error it was, and
+\item 哪种错误
 
-\item Where it occurred.
+\item 发生何处
 
 \end{itemize}
 
-Syntax errors are usually easy to find, but there are a few
-gotchas.  Whitespace errors can be tricky because spaces and
-tabs are invisible and we are used to ignoring them.
+句法错误通常容易识别，但是有些则略显迷惑。
+空格异常一般比较麻烦，因为空格和制表({\tt Tab})符都看不到，所以容易被忽视。
 \index{whitespace}
 
 \begin{verbatim}
@@ -3602,18 +3537,16 @@ tabs are invisible and we are used to ignoring them.
 IndentationError: unexpected indent
 \end{verbatim}
 %
-In this example, the problem is that the second line is indented by
-one space.  But the error message points to {\tt y}, which is
-misleading.  In general, error messages indicate where the problem was
-discovered, but the actual error might be earlier in the code,
-sometimes on a previous line.
+此例中，问题在于，第二行多了一个空格。
+但是错误信息指向 {\tt y}，便舞蹈了我们。
+通常，错误信息只标识了错误发生的位置，但是问题代码可能在
+此位置之前甚至是前行代码。
 \index{error!runtime}
 \index{runtime error}
 
-The same is true of runtime errors.  Suppose you are trying
-to compute a signal-to-noise ratio in decibels.  The formula
-is $SNR_{db} = 10 \log_{10} (P_{signal} / P_{noise})$.  In Python,
-you might write something like this:
+运行时错误也如此，假设以分贝为单位，计算信噪比。
+公式是$SNR_{db} = 10 \log_{10} (P_{signal} / P_{noise})$。
+在Python中，编码如下:
 
 \begin{verbatim}
 import math
@@ -3624,7 +3557,7 @@ decibels = 10 * math.log10(ratio)
 print(decibels)
 \end{verbatim}
 %
-When you run this program, you get an exception:
+运行代码，错误如下:
 %
 \index{exception!OverflowError}
 \index{OverflowError}
@@ -3636,98 +3569,79 @@ Traceback (most recent call last):
 ValueError: math domain error
 \end{verbatim}
 %
-The error message indicates line 5, but there is nothing
-wrong with that line.  To find the real error, it might be
-useful to print the value of {\tt ratio}, which turns out to
-be 0.  The problem is in line 4, which uses floor division
-instead of floating-point division.
+错误信息显示，问题出在第5行，
+但是这行代码看不出任何问题。
+为了确定具体问题，输出{\tt ratio}值，显示为0.
+那问题便出在第4行，浮点数除法，误用了整除.
 \index{floor division}
 \index{division!floor}
 
-You should take the time to read error messages carefully, but don't
-assume that everything they say is correct.
+对错误信息要仔细阅读，但也不能完全偏信。
 
 
-\section{Glossary}
+\section{术语表}
 
 \begin{description}
 
-\item[floor division:] An operator, denoted {\tt //}, that divides two
-  numbers and rounds down (toward negative infinity) to an integer.
+\item[向下取整(floor division):] 两数相除，结果向下(负无穷方向)取整.
   \index{floor division} 
   \index{division!floor}
 
-\item[modulus operator:]  An operator, denoted with a percent sign
-({\tt \%}), that works on integers and returns the remainder when one
-number is divided by another.
+\item[求模运算符(modulus operator):]  百分号({\tt \%})表示的运算符，用来表示两整数相除后的余数。
 \index{modulus operator}
 \index{operator!modulus}
 
-\item[boolean expression:]  An expression whose value is either 
-{\tt True} or {\tt False}.
+\item[布尔表达式(boolean expression):]  结果为{\tt True} 或 {\tt False}的表达式.
 \index{boolean expression}
 \index{expression!boolean}
 
-\item[relational operator:] One of the operators that compares
-its operands: {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=}, and {\tt <=}.
+\item[关系运算符(relational operator):] 比较操作数的运算符: {\tt ==}, {\tt !=}, {\tt >}, {\tt <}, {\tt >=}, 和 {\tt <=}.
 
-\item[logical operator:] One of the operators that combines boolean
-expressions: {\tt and}, {\tt or}, and {\tt not}.
+\item[逻辑运算符(logical operator):]  拼接布尔表达式的运算符: {\tt and}, {\tt or}, 以及 {\tt not}.
 
-\item[conditional statement:]  A statement that controls the flow of
-execution depending on some condition.
+\item[条件语句(conditional statement):]  根据条件，确定程序运行流程的语句.
 \index{conditional statement}
 \index{statement!conditional}
 
-\item[condition:] The boolean expression in a conditional statement
-that determines which branch runs.
+\item[条件(condition):] 条件语句中的布尔表达式，确定分支走向.
 \index{condition}
 
-\item[compound statement:]  A statement that consists of a header
-and a body.  The header ends with a colon (:).  The body is indented
-relative to the header.
+\item[复合语句(compound statement):]  由头部和缩进体构成的语句，头部以冒号(:)结尾，
+缩进体紧临头部，并以缩进为标识.
 \index{compound statement}
 
-\item[branch:] One of the alternative sequences of statements in
-a conditional statement.
+\item[分支(branch):] 条件语句中可选的一系列语句中的一种。
 \index{branch}
 
-\item[chained conditional:]  A conditional statement with a series
-of alternative branches.
+\item[链式条件(chained conditional):] 一系列可选分支构成的条件语句。
 \index{chained conditional}
 \index{conditional!chained}
 
-\item[nested conditional:]  A conditional statement that appears
-in one of the branches of another conditional statement.
+\item[嵌套条件(nested conditional):]  条件语句的分支中，又有条件语句。
 \index{nested conditional}
 \index{conditional!nested}
 
-\item[return statement:] A statement that causes a function to
-end immediately and return to the caller.
+\item[返回语句(return statement):] 令函数立刻终止并跳转到调用方的语句。
+\index{return statement}
 
-\item[recursion:]  The process of calling the function that is
-currently executing.
+\item[递归(recursion):]  函数调用自身的过程。
 \index{recursion}
 
-\item[base case:]  A conditional branch in a
-recursive function that does not make a recursive call.
+\item[边界条件(base case):]  递归函数中用来终止递归调用的条件分支。
 \index{base case}
 
-\item[infinite recursion:]  A recursion that doesn't have a
-base case, or never reaches it.  Eventually, an infinite recursion
-causes a runtime error.
+\item[无穷递归(infinite recursion):]  不存在或者永远无法触及边界条件的递归，最终，无穷递归会报运行时异常.
 \index{infinite recursion}
 
 \end{description}
 
-\section{Exercises}
+\section{习题集}
 
 \begin{exercise}
 
-The {\tt time} module provides a function, also named {\tt time}, that
-returns the current Greenwich Mean Time in ``the epoch'', which is
-an arbitrary time used as a reference point.  On UNIX systems, the
-epoch is 1 January 1970.
+{\tt time}模块提供同样名为{\tt time}的函数，此函数以某个``时间点"为基准，
+返回当前格林威治时间戳。理论上，可以以任意时间为参考点，而在Unix系统中，
+一般以1970年1月1日为参考``时间点"。
 
 \begin{verbatim}
 >>> import time
@@ -3735,9 +3649,8 @@ epoch is 1 January 1970.
 1437746094.5735958
 \end{verbatim}
 
-Write a script that reads the current time and converts it to
-a time of day in hours, minutes, and seconds, plus the number of
-days since the epoch.
+编写脚本，实现将当前时间转换为一天中的时间(以时分秒为格式)，
+以及基准时间点以来的天数。
 
 \end{exercise}
 
@@ -3745,29 +3658,26 @@ days since the epoch.
 \begin{exercise}
 \index{Fermat's Last Theorem}
 
-Fermat's Last Theorem says that there are no positive integers
-$a$, $b$, and $c$ such that
+费马大定理说，没有任何正整数
+$a$, $b$, 和 $c$ 满足
 
 \[ a^n + b^n = c^n \]
 %
-for any values of $n$ greater than 2.
+当$n$大于2时.
 
 \begin{enumerate}
 
-\item Write a function named \verb"check_fermat" that takes four
-parameters---{\tt a}, {\tt b}, {\tt c} and {\tt n}---and
-checks to see if Fermat's theorem holds.  If
-$n$ is greater than 2 and 
+\item 编写函数 \verb"check_fermat" ，四个入参---{\tt a}, {\tt b}, {\tt c} 和 {\tt n}---
+以检验费马大定理是否成立。
+如果$n$大于2同时满足
 
 \[a^n + b^n = c^n \]
 %
-the program should print, ``Holy smokes, Fermat was wrong!''
-Otherwise the program should print, ``No, that doesn't work.''
+那么程序应输出， ``Holy smokes, Fermat was wrong!''，
+否则，输出``No, that doesn't work.''
 
-\item Write a function that prompts the user to input values
-for {\tt a}, {\tt b}, {\tt c} and {\tt n}, converts them to
-integers, and uses \verb"check_fermat" to check whether they
-violate Fermat's theorem.
+\item 编写函数，令用户输入 {\tt a}, {\tt b}, {\tt c} 和 {\tt n}，
+并将其转换为整数，然后用\verb"check_fermat" 来检验是否违背了费马大定理。
 
 \end{enumerate}
 
@@ -3777,39 +3687,28 @@ violate Fermat's theorem.
 \begin{exercise}
 \index{triangle}
 
-If you are given three sticks, you may or may not be able to arrange
-them in a triangle.  For example, if one of the sticks is 12 inches
-long and the other two are one inch long, you will
-not be able to get the short sticks to meet in the middle.  For any
-three lengths, there is a simple test to see if it is possible to form
-a triangle:
+给你三根木棍，你不一定可以将其拼成三角形，比如，一根12英寸长，
+其余两根1英寸长，这两根太短，以至于都到不了长的那根的中间。
+所以，对于三根任意长度的木棍，有个简单方案，可以检验其是否可以拼成三角形:
 
 \begin{quotation}
-If any of the three lengths is greater than the sum of the other
-  two, then you cannot form a triangle.  Otherwise, you
-  can.  (If the sum of two lengths equals the third, they form
-    what is called a ``degenerate'' triangle.)
+三根木棍中，如果有任意一根长度大于另外两根之和，便拼不成三角形。
+否则，便可以拼成三角形。(如果两边之和等于第三边，便称其为``退化"三角形。)
 \end{quotation}
 
 \begin{enumerate}
 
-\item Write a function named \verb"is_triangle" that takes three
-  integers as arguments, and that prints either ``Yes'' or ``No'', depending
-  on whether you can or cannot form a triangle from sticks with the
-  given lengths.
+\item 编写\verb"is_triangle" 函数，以三个整数变量为入参，
+同时根据三个特定长度的木棍是否可以拼成三角形，来输出 ``Yes'' 或 ``No''。
 
-\item Write a function that prompts the user to input three stick
-  lengths, converts them to integers, and uses \verb"is_triangle" to
-  check whether sticks with the given lengths can form a triangle.
-
+\item 编写函数，提示用户输入三个木棍的长度，并将其转换为整数，
+然后用\verb"is_triangle"检测这三个值是否可以拼成三角形。
 \end{enumerate}
 
 \end{exercise}
 
 \begin{exercise}
-What is the output of the following program?
-Draw a stack diagram that shows the state of the program
-when it prints the result.
+下面的程序会输出什么？绘制栈图，表示输出结果时，程序状态.
 
 \begin{verbatim}
 def recurse(n, s):
@@ -3823,26 +3722,20 @@ recurse(3, 0)
 
 \begin{enumerate}
 
-\item What would happen if you called this function like this: {\tt
-  recurse(-1, 0)}?
+\item 调用 {\tt  recurse(-1, 0)}，会发生什么?
 
-\item Write a docstring that explains everything someone would need to
-  know in order to use this function (and nothing else).
+\item 为此函数编写帮助文档，告知使用函数所须了解的相关信息(仅此而已).
 
 \end{enumerate}
 
 \end{exercise}
 
-
-The following exercises use the {\tt turtle} module, described in
-Chapter~\ref{turtlechap}:
+以下练习需要用到章节~\ref{turtlechap}提到的{\tt turtle}模块:
 \index{turtle module}
 
 \begin{exercise}
-
-Read the following function and see if you can figure out
-what it does (see the examples in Chapter~\ref{turtlechap}).  Then run it 
-and see if you got it right.
+阅读下面函数，看看是否能明白其功能(参阅章节~\ref{turtlechap}中的案例)。
+运行并看看是否正确。
 
 \begin{verbatim}
 def draw(t, length, n):
@@ -3864,58 +3757,55 @@ def draw(t, length, n):
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/koch.pdf}}
-\caption{A Koch curve.}
+\caption{科赫曲线.}
 \label{fig.koch}
 \end{figure}
 
 \begin{exercise}
 \index{Koch curve}
 
-The Koch curve is a fractal that looks something like
-Figure~\ref{fig.koch}.  To draw a Koch curve with length $x$, all you
-have to do is
+科赫曲线(The Koch curve) 是类似图~\ref{fig.koch}的一种分形几何。
+要想绘制长度为$x$的曲线，下面是需要做的:
 
 \begin{enumerate}
 
-\item Draw a Koch curve with length $x/3$.
+\item 绘制长为$x/3$的科赫曲线。
 
-\item Turn left 60 degrees.
+\item 左转60度。
 
-\item Draw a Koch curve with length $x/3$.
+\item 继续绘制长 $x/3$的曲线。
 
-\item Turn right 120 degrees.
+\item 右转120度。
 
-\item Draw a Koch curve with length $x/3$.
+\item 再绘制长 $x/3$的曲线。
 
-\item Turn left 60 degrees.
+\item 左转60度。
 
-\item Draw a Koch curve with length $x/3$.
+\item 绘制长为 $x/3$的曲线。
 
 \end{enumerate}
 
-The exception is if $x$ is less than 3: in that case,
-you can just draw a straight line with length $x$.
+当$x$小于3时，会有所不同:  在此情况下，绘制所得为长$x$的一段直线。
 
 \begin{enumerate}
 
-\item Write a function called {\tt koch} that takes a turtle and
-a length as parameters, and that uses the turtle to draw a Koch
-curve with the given length.
+\item 编写{\tt koch}函数，以 turtle 和长度length为参数，使用turtle，根据指定长度，绘制
+科赫曲线。
 
-\item Write a function called {\tt snowflake} that draws three
-Koch curves to make the outline of a snowflake.
+\item 编写{\tt snowflake}函数，使其绘制三条科赫曲线，
+从而构成雪花的轮廓.
 
-Solution: \url{http://thinkpython2.com/code/koch.py}.
+参阅: \url{http://thinkpython2.com/code/koch.py}.
 
-\item The Koch curve can be generalized in several ways.  See
-\url{http://en.wikipedia.org/wiki/Koch_snowflake} for examples and
-implement your favorite.
+\item 生成科赫曲线有多种方法。参看
+\url{http://en.wikipedia.org/wiki/Koch_snowflake} 上的案例，选择你喜欢的进行实现。
+
 
 \end{enumerate}
 \end{exercise}
 
 
-\chapter{Fruitful functions}
+\chapter{有值返回函数}
 \label{fruitchap}
 
 Many of the Python functions we have used, such as the math
