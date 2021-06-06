@@ -76,16 +76,16 @@
 \contentsline {section}{\numberline {6.10}术语表}{49}{section.6.10}
 \contentsline {section}{\numberline {6.11}习题集}{49}{section.6.11}
 \contentsline {chapter}{\numberline {7}迭代}{51}{chapter.7}
-\contentsline {section}{\numberline {7.1}Reassignment}{51}{section.7.1}
-\contentsline {section}{\numberline {7.2}Updating variables}{52}{section.7.2}
-\contentsline {section}{\numberline {7.3}The {\tt while} statement}{52}{section.7.3}
-\contentsline {section}{\numberline {7.4}{\tt break}}{54}{section.7.4}
-\contentsline {section}{\numberline {7.5}Square roots}{54}{section.7.5}
-\contentsline {section}{\numberline {7.6}Algorithms}{55}{section.7.6}
-\contentsline {section}{\numberline {7.7}Debugging}{56}{section.7.7}
-\contentsline {section}{\numberline {7.8}Glossary}{56}{section.7.8}
-\contentsline {section}{\numberline {7.9}Exercises}{57}{section.7.9}
-\contentsline {chapter}{\numberline {8}Strings}{59}{chapter.8}
+\contentsline {section}{\numberline {7.1}再赋值}{51}{section.7.1}
+\contentsline {section}{\numberline {7.2}变量更新}{52}{section.7.2}
+\contentsline {section}{\numberline {7.3}{\tt while} 语句}{52}{section.7.3}
+\contentsline {section}{\numberline {7.4}{\tt 中断}}{53}{section.7.4}
+\contentsline {section}{\numberline {7.5}平方根}{54}{section.7.5}
+\contentsline {section}{\numberline {7.6}算法}{55}{section.7.6}
+\contentsline {section}{\numberline {7.7}调试}{55}{section.7.7}
+\contentsline {section}{\numberline {7.8}术语表}{56}{section.7.8}
+\contentsline {section}{\numberline {7.9}习题集}{56}{section.7.9}
+\contentsline {chapter}{\numberline {8}字符串}{59}{chapter.8}
 \contentsline {section}{\numberline {8.1}A string is a sequence}{59}{section.8.1}
 \contentsline {section}{\numberline {8.2}{\tt len}}{60}{section.8.2}
 \contentsline {section}{\numberline {8.3}Traversal with a {\tt for} loop}{60}{section.8.3}

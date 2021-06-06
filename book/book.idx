@@ -508,41 +508,41 @@
 \indexentry{while loop|hyperpage}{52}
 \indexentry{loop!while|hyperpage}{52}
 \indexentry{iteration|hyperpage}{52}
-\indexentry{flow of execution|hyperpage}{53}
+\indexentry{flow of execution|hyperpage}{52}
 \indexentry{condition|hyperpage}{53}
 \indexentry{loop|hyperpage}{53}
 \indexentry{body|hyperpage}{53}
 \indexentry{infinite loop|hyperpage}{53}
 \indexentry{loop!infinite|hyperpage}{53}
 \indexentry{Collatz conjecture|hyperpage}{53}
-\indexentry{break statement|hyperpage}{54}
-\indexentry{statement!break|hyperpage}{54}
+\indexentry{break statement|hyperpage}{53}
+\indexentry{statement!break|hyperpage}{53}
 \indexentry{square root|hyperpage}{54}
 \indexentry{Newton's method|hyperpage}{54}
-\indexentry{update|hyperpage}{55}
+\indexentry{update|hyperpage}{54}
 \indexentry{floating-point|hyperpage}{55}
 \indexentry{epsilon|hyperpage}{55}
 \indexentry{algorithm|hyperpage}{55}
-\indexentry{addition with carrying|hyperpage}{56}
-\indexentry{carrying, addition with|hyperpage}{56}
-\indexentry{subtraction!with borrowing|hyperpage}{56}
-\indexentry{borrowing, subtraction with|hyperpage}{56}
-\indexentry{debugging!by bisection|hyperpage}{56}
-\indexentry{bisection, debugging by|hyperpage}{56}
+\indexentry{addition with carrying|hyperpage}{55}
+\indexentry{carrying, addition with|hyperpage}{55}
+\indexentry{subtraction!with borrowing|hyperpage}{55}
+\indexentry{borrowing, subtraction with|hyperpage}{55}
+\indexentry{debugging!by bisection|hyperpage}{55}
+\indexentry{bisection, debugging by|hyperpage}{55}
 \indexentry{reassignment|hyperpage}{56}
-\indexentry{update|hyperpage}{57}
-\indexentry{initialization!variable|hyperpage}{57}
-\indexentry{increment|hyperpage}{57}
-\indexentry{decrement|hyperpage}{57}
-\indexentry{iteration|hyperpage}{57}
-\indexentry{infinite loop|hyperpage}{57}
-\indexentry{algorithm|hyperpage}{57}
-\indexentry{algorithm!square root|hyperpage}{57}
-\indexentry{encapsulation|hyperpage}{57}
-\indexentry{eval function|hyperpage}{57}
-\indexentry{function!eval|hyperpage}{57}
-\indexentry{Ramanujan, Srinivasa|hyperpage}{58}
-\indexentry{pi|hyperpage}{58}
+\indexentry{update|hyperpage}{56}
+\indexentry{initialization!variable|hyperpage}{56}
+\indexentry{increment|hyperpage}{56}
+\indexentry{decrement|hyperpage}{56}
+\indexentry{iteration|hyperpage}{56}
+\indexentry{infinite loop|hyperpage}{56}
+\indexentry{algorithm|hyperpage}{56}
+\indexentry{algorithm!square root|hyperpage}{56}
+\indexentry{encapsulation|hyperpage}{56}
+\indexentry{eval function|hyperpage}{56}
+\indexentry{function!eval|hyperpage}{56}
+\indexentry{Ramanujan, Srinivasa|hyperpage}{57}
+\indexentry{pi|hyperpage}{57}
 \indexentry{sequence|hyperpage}{59}
 \indexentry{sequence|hyperpage}{59}
 \indexentry{character|hyperpage}{59}
