@@ -5077,47 +5077,41 @@ a   mysqrt(a)     math.sqrt(a)  diff
 \chapter{字符串}
 \label{strings}
 
-Strings are not like integers, floats, and booleans.  A string
-is a {\bf sequence}, which means it is
-an ordered collection of other values.  In this chapter you'll see
-how to access the characters that make up a string, and you'll
-learn about some of the methods strings provide.
+字符串不同于整数，浮点数以及布尔值。
+一个字符串就是一个{\bf 序列}, 也就是说，字符串就是将值进行有序排列。
+本章你将学习如何通过字符构造字符串，以及字符操作相关方法。
 \index{sequence}
 
 
-\section{A string is a sequence}
+\section{字符串即序列}
 
 \index{sequence}
 \index{character}
 \index{bracket operator}
 \index{operator!bracket}
-A string is a sequence of characters.  
-You can access the characters one at a time with the
-bracket operator:
+字符串便是字符系列。
+通过中括号，可以获取其中的字符:
 
 \begin{verbatim}
 >>> fruit = 'banana'
 >>> letter = fruit[1]
 \end{verbatim}
 %
-The second statement selects character number 1 from {\tt
-fruit} and assigns it to {\tt letter}.  
+第二句表达式会从{\tt fruit}中选择在位置1处的字符，并赋给{\tt letter}。
 \index{index}
+括号中的表达式，叫做{\bf 索引}.
+索引标识了你将从序列中获取哪个字符(类似名字).
 
-The expression in brackets is called an {\bf index}.  
-The index indicates which character in the sequence you
-want (hence the name).
-
-But you might not get what you expect:
+但有时候你所得非所愿:
 
 \begin{verbatim}
 >>> letter
 'a'
 \end{verbatim}
 %
-For most people, the first letter of \verb"'banana'" is {\tt b}, not
-{\tt a}.  But for computer scientists, the index is an offset from the
-beginning of the string, and the offset of the first letter is zero.
+如众人所知， \verb"'banana'" 的第一个字母是{\tt b}，
+而不是{\tt a}。但是，对于计算机科学家来说，索引是从字符串开始位置的偏移量，
+所以第一个字符的偏移量是0.
 
 \begin{verbatim}
 >>> letter = fruit[0]
@@ -5125,13 +5119,11 @@ beginning of the string, and the offset of the first letter is zero.
 'b'
 \end{verbatim}
 %
-So {\tt b} is the 0th letter (``zero-eth'') of \verb"'banana'", {\tt
-  a} is the 1th letter (``one-eth''), and {\tt n} is the 2th letter
-(``two-eth'').  \index{index!starting at zero} \index{zero, index
+所以{\tt b}是\verb"'banana'"的第0个字母， {\tt a}是第1个，{\tt n}是第2个。
+\index{index!starting at zero} \index{zero, index
   starting at}
 
-As an index you can use an expression that contains variables and
-operators:
+你可以使用包括变量和操作符的表达式作为索引:
 \index{index}
 
 \begin{verbatim}
@@ -5142,9 +5134,7 @@ operators:
 'n'
 \end{verbatim}
 %
-
-But the value of the index has to be an integer.  Otherwise you
-get:
+但索引的值必须是整数。否则，会遇到错误:
 \index{exception!TypeError}
 \index{TypeError}
 
@@ -5158,8 +5148,7 @@ TypeError: string indices must be integers
 \index{len function}
 \index{function!len}
 
-{\tt len} is a built-in function that returns the number of characters
-in a string:
+{\tt len} 是内置函数，可以返回字符串中的字符数量:
 
 \begin{verbatim}
 >>> fruit = 'banana'
@@ -5167,8 +5156,7 @@ in a string:
 6
 \end{verbatim}
 %
-To get the last letter of a string, you might be tempted to try something
-like this:
+想要获得字符串最后一个字符，可以尝试下面的操作:
 \index{exception!IndexError}
 \index{IndexError}
 
@@ -5178,10 +5166,10 @@ like this:
 IndexError: string index out of range
 \end{verbatim}
 %
-The reason for the {\tt IndexError} is that there is no letter in {\tt
-'banana'} with the index 6.  Since we started counting at zero, the
-six letters are numbered 0 to 5.  To get the last character, you have
-to subtract 1 from {\tt length}:
+报出{\tt IndexError} 的原因是 {\tt
+'banana'}中索引6的位置没有字母。
+因为索引从0开始，那6个字母对应的数字是0至5.
+想获取最后一个字符，需要字符串{\tt 长度}减1:
 
 \begin{verbatim}
 >>> last = fruit[length-1]
@@ -5189,14 +5177,14 @@ to subtract 1 from {\tt length}:
 'a'
 \end{verbatim}
 %
-Or you can use negative indices, which count backward from
-the end of the string.  The expression {\tt fruit[-1]} yields the last
-letter, {\tt fruit[-2]} yields the second to last, and so on.
+你也可以使用负数索引，从字符串末尾向开始数。
+表达式{\tt fruit[-1]}给出最后一个字母，
+{\tt fruit[-2]} 给出了倒数第二个字母，以此类推。
 \index{index!negative}
 \index{negative index}
 
 
-\section{Traversal with a {\tt for} loop}
+\section{用{\tt for} 循环遍历}
 \label{for}
 \index{traversal}
 \index{loop!traversal}
@@ -5204,12 +5192,10 @@ letter, {\tt fruit[-2]} yields the second to last, and so on.
 \index{loop!for}
 \index{statement!for}
 \index{traversal}
-
-A lot of computations involve processing a string one character at a
-time.  Often they start at the beginning, select each character in
-turn, do something to it, and continue until the end.  This pattern of
-processing is called a {\bf traversal}.  One way to write a traversal
-is with a {\tt while} loop:
+很多操作一次仅操作字符中的一个字符。
+一般从头部开始，顺序获取字符，做些操作，直到末尾。
+这个流程叫做{\bf 遍历}.
+可以用{\tt while}循环进行遍历:
 
 \begin{verbatim}
 index = 0
@@ -5219,36 +5205,32 @@ while index < len(fruit):
     index = index + 1
 \end{verbatim}
 %
-This loop traverses the string and displays each letter on a line by
-itself.  The loop condition is {\tt index < len(fruit)}, so
-when {\tt index} is equal to the length of the string, the
-condition is false, and the body of the loop doesn't run.  The
-last character accessed is the one with the index {\tt len(fruit)-1},
-which is the last character in the string.
+此循环遍历字符串，并将每个字符各显示一行。
+循环条件是{\tt index < len(fruit)}，
+所以当{\tt index} 等于字符串长度时，条件为假， 循环体终止。
+最后字符获取时，索引为{\tt len(fruit)-1}, 说明这就是最后一个字符。
 
-As an exercise, write a function that takes a string as an argument
-and displays the letters backward, one per line.
+做个练习，写个函数，以字符串为入参，倒序输出每个字符，一行一个。
 
-Another way to write a traversal is with a {\tt for} loop:
+遍历字符串的另一种方法是用{\tt for}循环:
 
 \begin{verbatim}
 for letter in fruit:
     print(letter)
 \end{verbatim}
 %
-Each time through the loop, the next character in the string is assigned
-to the variable {\tt letter}.  The loop continues until no characters are
-left.
+每次循环后，字符串中下一个字符会赋值给变量{\tt letter}。
+直到没有字符，循环终止。
 \index{concatenation}
 \index{abecedarian}
 \index{McCloskey, Robert}
 
-The following example shows how to use concatenation (string addition)
-and a {\tt for} loop to generate an abecedarian series (that is, in
-alphabetical order).  In Robert McCloskey's book {\em Make
-Way for Ducklings}, the names of the ducklings are Jack, Kack, Lack,
-Mack, Nack, Ouack, Pack, and Quack.  This loop outputs these names in
-order:
+下面的例子，展示了如何用拼接(字符串相加)以及{\tt for}循环，来构建
+一个简单序列(按照字母顺序)。
+在Robert McCloskey的书{\em Make
+Way for Ducklings}中，小鸭子们的名字便是Jack, Kack, Lack,
+Mack, Nack, Ouack, Pack, 和 Quack.
+循环依次输出名字如下:
 
 \begin{verbatim}
 prefixes = 'JKLMNOPQ'
@@ -5258,7 +5240,7 @@ for letter in prefixes:
     print(letter + suffix)
 \end{verbatim}
 %
-The output is:
+输出如下:
 
 \begin{verbatim}
 Jack
@@ -5271,18 +5253,18 @@ Pack
 Qack
 \end{verbatim}
 %
-Of course, that's not quite right because ``Ouack'' and ``Quack'' are
-misspelled.  As an exercise, modify the program to fix this error.
+显然，上面结果并不是全部正确，因为 ``Ouack'' 和 ``Quack'' 都拼错了。
+做个练习，修改程序，使其正常。
 
 
 
-\section{String slices}
+\section{字符串切片}
 \label{slice}
 \index{slice operator} \index{operator!slice} \index{index!slice}
 \index{string!slice} \index{slice!string}
 
-A segment of a string is called a {\bf slice}.  Selecting a slice is
-similar to selecting a character:
+字符串的一部分，叫做{\bf 切片}.
+选择切片和从字符串中选择字符很像:
 
 \begin{verbatim}
 >>> s = 'Monty Python'
@@ -5292,11 +5274,10 @@ similar to selecting a character:
 'Python'
 \end{verbatim}
 %
-The operator {\tt [n:m]} returns the part of the string from the 
-``n-eth'' character to the ``m-eth'' character, including the first but
-excluding the last.  This behavior is counterintuitive, but it might
-help to imagine the indices pointing {\em between} the
-characters, as in Figure~\ref{fig.banana}.
+操作符{\tt [n:m]} ，会返回字符串从第n个位置到第m个位置的字符，
+包括开头的第n个字符，但是不包括最后第m个字符。
+可能有点反常识，但想象一下如图~\ref{fig.banana} 所示
+的索引点之间的字符，可能更好理解。
 
 \begin{figure}
 \centerline
@@ -5304,10 +5285,8 @@ characters, as in Figure~\ref{fig.banana}.
 \caption{Slice indices.}
 \label{fig.banana}
 \end{figure}
-
-If you omit the first index (before the colon), the slice starts at
-the beginning of the string.  If you omit the second index, the slice
-goes to the end of the string:
+如果缺失第一个索引(冒号前)，则切片从字符串头部开始。
+如果忽略了第二个索引，切片到末尾结束:
 
 \begin{verbatim}
 >>> fruit = 'banana'
@@ -5317,8 +5296,7 @@ goes to the end of the string:
 'ana'
 \end{verbatim}
 %
-If the first index is greater than or equal to the second the result
-is an {\bf empty string}, represented by two quotation marks:
+若第一个索引值大于或等于第二个，则结果为{\bf 空字符串}，用两个单引号表示:
 \index{quotation mark}
 
 \begin{verbatim}
@@ -5327,24 +5305,23 @@ is an {\bf empty string}, represented by two quotation marks:
 ''
 \end{verbatim}
 %
-An empty string contains no characters and has length 0, but other
-than that, it is the same as any other string.
+空字符串一般不包括任何字符，同时长度为0，除此之外，
+和其他字符串一样。
 
-Continuing this example, what do you think 
-{\tt fruit[:]} means?  Try it and see.
+继续上面的例子，思考一下{\tt fruit[:]}会得到什么？
+试试吧。
 \index{copy!slice}
 \index{slice!copy}
 
 
 
-\section{Strings are immutable}
+\section{字符串不可变}
 \index{mutability}
 \index{immutability}
 \index{string!immutable}
 
-It is tempting to use the {\tt []} operator on the left side of an
-assignment, with the intention of changing a character in a string.
-For example:
+尝试在表达式左侧用 {\tt []}操作符修改字符串中的字符。
+例如:
 \index{TypeError}
 \index{exception!TypeError}
 
@@ -5354,20 +5331,17 @@ For example:
 TypeError: 'str' object does not support item assignment
 \end{verbatim}
 %
-The ``object'' in this case is the string and the ``item'' is
-the character you tried to assign.  For now, an object is
-the same thing as a value, but we will refine that definition
-later (Section~\ref{equivalence}).  
+``object''在这里指字符串，``item'' 指试图赋值的字符。
+到目前为止，你可以认为对象和值一样，但是后续
+(章节~\ref{equivalence})中，会对此描述详细讨论。
 \index{object}
 \index{item}
 \index{item assignment}
 \index{assignment!item}
 \index{immutability}
-
-The reason for the error is that
-strings are {\bf immutable}, which means you can't change an
-existing string.  The best you can do is create a new string
-that is a variation on the original:
+错误的原因在于字符串是{\bf 不可变的}，
+也就是说，你无法改变一个既有的字符串。
+你能做的，是在原来字符串基础上，新建一个不同的字符串:
 
 \begin{verbatim}
 >>> greeting = 'Hello, world!'
@@ -5376,16 +5350,14 @@ that is a variation on the original:
 'Jello, world!'
 \end{verbatim}
 %
-This example concatenates a new first letter onto
-a slice of {\tt greeting}.  It has no effect on
-the original string.
+上述代码是用新的首字母和{\tt greeting}的切片进行了拼接，
+而这并不会改变原来的字符串。
 \index{concatenation}
 
 
-\section{Searching}
+\section{查找}
 \label{find}
-
-What does the following function do?
+下面的函数什么用途?
 \index{find function}
 \index{function!find}
 
@@ -5399,39 +5371,33 @@ def find(word, letter):
     return -1
 \end{verbatim}
 %
-In a sense, {\tt find} is the inverse of the {\tt []} operator.
-Instead of taking an index and extracting the corresponding character,
-it takes a character and finds the index where that character
-appears.  If the character is not found, the function returns {\tt
--1}.
+可以认为，{\tt find}是{\tt []}操作符的逆操作。
+此操作，不同于根据索引获取对应字符，
+而是根据字符，查找其索引。如果字符没有搜索到，
+则返回{\tt -1}。
 
-This is the first example we have seen of a {\tt return} statement
-inside a loop.  If {\tt word[index] == letter}, the function breaks
-out of the loop and returns immediately.
+这是我们第一次见到，在循环内使用{\tt return}语句。
+如果{\tt word[index] == letter}，函数会跳出循环，并立刻返回结果。
 
-If the character doesn't appear in the string, the program
-exits the loop normally and  returns {\tt -1}.
+如果字符串中未搜索到想要的字符，程序一直执行到循环结束，并
+返回{\tt -1}.
 
-This pattern of computation---traversing a sequence and returning
-when we find what we are looking for---is called a {\bf search}.
+这种算法--遍历序列并返回预期结果--叫做{\bf 查找}。
 \index{traversal}
 \index{search pattern}
 \index{pattern!search}
 
-As an exercise, modify {\tt find} so that it has a
-third parameter, the index in {\tt word} where it should start
-looking.
+做个练习，为{\tt find}函数加入第三个参数，一个索引值，
+使其从{\tt word}的此索引处开始查找。
 
 
-\section{Looping and counting}
+\section{循环和计数}
 \label{counter}
 \index{counter}
 \index{counting and looping}
 \index{looping and counting}
 \index{looping!with strings}
-
-The following program counts the number of times the letter {\tt a}
-appears in a string:
+以下程序会统计字符串中{\tt a}出现的次数:
 
 \begin{verbatim}
 word = 'banana'
@@ -5442,35 +5408,28 @@ for letter in word:
 print(count)
 \end{verbatim}
 %
-This program demonstrates another pattern of computation called a {\bf
-counter}.  The variable {\tt count} is initialized to 0 and then
-incremented each time an {\tt a} is found.
-When the loop exits, {\tt count}
-contains the result---the total number of {\tt a}'s.
+此程序描述了另一种算法，称之为{\bf 计数}.
+初始化变量{\tt count}为0, 其后每找到一次{\tt a}，就加1.
+循环结束后， {\tt count}便包含了结果-- {\tt a}的数量.
 
 \index{encapsulation}
-As an exercise, encapsulate this code in a function named {\tt
-count}, and generalize it so that it accepts the string and the
-letter as arguments.
+做个练习，封装以上代码为{\tt count}函数，使其以字符串和字母
+为参数，从而普遍通用。
 
-Then rewrite the function so that instead of
-traversing the string, it uses the three-parameter version of {\tt
-find} from the previous section.
+然后重写函数，用上一节的{\tt find}函数替换字符串遍历操作。
 
 
-\section{String methods}
+\section{字符串方法}
 \label{optional}
-
-Strings provide methods that perform a variety of useful operations.
-A method is similar to a function---it takes arguments and
-returns a value---but the syntax is different.  For example, the
-method {\tt upper} takes a string and returns a new string with
-all uppercase letters.
+字符串提供了诸多有用的方法，方法类似于函数--输入参数并返回结果--但是
+句法有些不同。
+例如，{\tt upper}方法，会读取字符串，
+并返回一个全部字母大写后的字符串。
 \index{method}
 \index{string!method}
 
-Instead of the function syntax {\tt upper(word)}, it uses
-the method syntax {\tt word.upper()}.
+与函数句法{\tt upper(word)}不同的是，
+方法句法写作 {\tt word.upper()}.
 
 \begin{verbatim}
 >>> word = 'banana'
@@ -5479,19 +5438,17 @@ the method syntax {\tt word.upper()}.
 'BANANA'
 \end{verbatim}
 %
-This form of dot notation specifies the name of the method, {\tt
-upper}, and the name of the string to apply the method to, {\tt
-word}.  The empty parentheses indicate that this method takes no
-arguments.
+这种点标法，声明了方法名字， {\tt upper}，
+和要使用此方法的字符串的名字，{\tt word}。
+括号为空表明此方法没有参数。
 \index{parentheses!empty}
 \index{dot notation}
-
-A method call is called an {\bf invocation}; in this case, we would
-say that we are invoking {\tt upper} on {\tt word}.
+令函数运行，叫做{\bf 调用};
+此例中，我们说调用{\tt word}的{\tt upper}方法。
 \index{invocation}
 
-As it turns out, there is a string method named {\tt find} that
-is remarkably similar to the function we wrote:
+你会发现，字符串实际内置了{\tt find}方法，但和我们写的函数
+惊人相似:
 
 \begin{verbatim}
 >>> word = 'banana'
@@ -5500,19 +5457,19 @@ is remarkably similar to the function we wrote:
 1
 \end{verbatim}
 %
-In this example, we invoke {\tt find} on {\tt word} and pass
-the letter we are looking for as a parameter.
+此例中，调用{\tt word}的{\tt find}方法，将要查找的字母作为入参。
 
-Actually, the {\tt find} method is more general than our function;
-it can find substrings, not just characters:
+实际上，{\tt find}函数比我们写的要更通用;
+它不仅可以定位字符，也能定位字符串段落:
 
 \begin{verbatim}
 >>> word.find('na')
 2
 \end{verbatim}
 %
-By default, {\tt find} starts at the beginning of the string, but
-it can take a second argument, the index where it should start:
+默认情况，{\tt find} 从字符串开头进行查找，不过也可以给其传入索引值
+作为第二个参数，
+使其从既定位置开始:
 \index{optional argument}
 \index{argument!optional}
 
@@ -5521,9 +5478,8 @@ it can take a second argument, the index where it should start:
 4
 \end{verbatim}
 %
-This is an example of an {\bf optional argument};
-{\tt find} can
-also take a third argument, the index where it should stop:
+这是一个{\bf 可选惨素}的例子;
+{\tt find}方法也可以接收第三个索引参数，使其在某处结束:
 
 \begin{verbatim}
 >>> name = 'bob'
@@ -5531,22 +5487,21 @@ also take a third argument, the index where it should stop:
 -1
 \end{verbatim}
 %
-This search fails because {\tt b} does not
-appear in the index range from {\tt 1} to {\tt 2}, not including {\tt
-2}.  Searching up to, but not including, the second index makes
-{\tt find} consistent with the slice operator.
+{\tt b}没有出现在字符串索引{\tt 1}和{\tt 2}且不包括{\tt 2}的范围内，
+所以搜索失败。
+而这种到达第二个索引位但不包括此索引的规则，和切片操作一样。
 
 
-
-\section{The {\tt in} operator}
+\section{操作符 {\tt in}}
 \label{inboth}
 \index{in operator}
 \index{operator!in}
 \index{boolean operator}
 \index{operator!boolean}
 
-The word {\tt in} is a boolean operator that takes two strings and
-returns {\tt True} if the first appears as a substring in the second:
+单词 {\tt in}是一个布尔运算符，其比较两个字符串，
+如果前者是后者的一部分，
+则返回{\tt True}:
 
 \begin{verbatim}
 >>> 'a' in 'banana'
@@ -5555,8 +5510,7 @@ True
 False
 \end{verbatim}
 %
-For example, the following function prints all the
-letters from {\tt word1} that also appear in {\tt word2}:
+例如，下面的函数会输出同在{\tt word1}和{\tt word2}中出现的字母:
 
 \begin{verbatim}
 def in_both(word1, word2):
@@ -5565,12 +5519,12 @@ def in_both(word1, word2):
             print(letter)
 \end{verbatim}
 %
-With well-chosen variable names,
-Python sometimes reads like English.  You could read
-this loop, ``for (each) letter in (the first) word, if (the) letter 
+
+变量名选择得足够好的话，Python读起来便如同英语。
+读一下这个循环，for (each) letter in (the first) word, if (the) letter 
 (appears) in (the second) word, print (the) letter.''
 
-Here's what you get if you compare apples and oranges:
+此处为apples和oranges比较的结果:
 
 \begin{verbatim}
 >>> in_both('apples', 'oranges')
@@ -5580,19 +5534,20 @@ s
 \end{verbatim}
 %
 
-\section{String comparison}
+\section{字符串比较}
 \index{string!comparison}
 \index{comparison!string}
 
-The relational operators work on strings.  To see if two strings are equal:
+关系运算符同样适用于字符串。
+比如要判断两字符串是否相等:
 
 \begin{verbatim}
 if word == 'banana':
     print('All right, bananas.')
 \end{verbatim}
 %
-Other relational operations are useful for putting words in alphabetical
-order:
+
+其他的关系运算符也适用于按照字母顺序进行比较:
 
 \begin{verbatim}
 if word < 'banana':
@@ -5603,29 +5558,24 @@ else:
     print('All right, bananas.')
 \end{verbatim}
 %
-Python does not handle uppercase and lowercase letters the same way
-people do.  All the uppercase letters come before all the
-lowercase letters, so:
+Python处理大小写的方式同人类思维不同，在其看来，大写字母都排在消协字母之前，
+所以:
 
 \begin{verbatim}
-Your word, Pineapple, comes before banana.
+ Pineapple 在前， banana 在后.
 \end{verbatim}
 %
-A common way to address this problem is to convert strings to a
-standard format, such as all lowercase, before performing the
-comparison.  Keep that in mind in case you have to defend yourself
-against a man armed with a Pineapple.
+通常来说，一般在比较前，先统一字符串的格式，比如都转小写。
+谨记这一点，以免遇到Pineapple时，变得一团糟。
 
 
-\section{Debugging}
+\section{调试}
 \index{debugging}
 \index{traversal}
 
-When you use indices to traverse the values in a sequence,
-it is tricky to get the beginning and end of the traversal
-right.  Here is a function that is supposed to compare two
-words and return {\tt True} if one of the words is the reverse
-of the other, but it contains two errors:
+想要用索引来遍历序列中值，难点在于确定遍历的起点和终点。
+下面是一个比较字符串的函数，如果某字符串恰好是另一字符串的倒序排列，
+则返回{\tt True}， 但是代码中有两处错误:
 
 \begin{verbatim}
 def is_reverse(word1, word2):
@@ -5644,23 +5594,20 @@ def is_reverse(word1, word2):
     return True
 \end{verbatim}
 %
-The first {\tt if} statement checks whether the words are the
-same length.  If not, we can return {\tt False} immediately.
-Otherwise, for the rest of the function, we can assume that the words
-are the same length.  This is an example of the guardian pattern
-in Section~\ref{guardian}.
+第一个 {\tt if} 语句会判断两个单词的长度是否一样。
+如果不同，立刻返回{\tt False}，
+现在假设单词长度相同，执行后续。
+这是一个哨兵模式，在章节~\ref{guardian}中已经介绍过。
 \index{guardian pattern}
 \index{pattern!guardian}
 \index{index}
 
-{\tt i} and {\tt j} are indices: {\tt i} traverses {\tt word1}
-forward while {\tt j} traverses {\tt word2} backward.  If we find
-two letters that don't match, we can return {\tt False} immediately.
-If we get through the whole loop and all the letters match, we
-return {\tt True}.
+{\tt i} 和 {\tt j}是索引:  {\tt i} 正向遍历{\tt word1}，同时{\tt j} 倒序遍历
+{\tt word2}。如果遇到两个字母不同，则即刻返回{\tt False}。
+如果通过循环检验，则所有字母都匹配，返回{\tt True}。
 
-If we test this function with the words ``pots'' and ``stop'', we
-expect the return value {\tt True}, but we get an IndexError:
+用``pots'' 和 ``stop'' 测试函数，我们期望得到{\tt True}，
+但是会遇到索引错误:
 \index{IndexError}
 \index{exception!IndexError}
 
@@ -5672,9 +5619,7 @@ expect the return value {\tt True}, but we get an IndexError:
 IndexError: string index out of range
 \end{verbatim}
 %
-For debugging this kind of error, my first move is to
-print the values of the indices immediately before the line
-where the error appears.
+调试此种异常，第一步就是在错误出现位置前，先输出索引的值。
 
 \begin{verbatim}
     while j > 0:
@@ -5686,7 +5631,7 @@ where the error appears.
         j = j-1
 \end{verbatim}
 %
-Now when I run the program again, I get more information:
+再次运行程序，得到如下信息:
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -5695,12 +5640,12 @@ Now when I run the program again, I get more information:
 IndexError: string index out of range
 \end{verbatim}
 %
-The first time through the loop, the value of {\tt j} is 4,
-which is out of range for the string \verb"'pots'".
-The index of the last character is 3, so the
-initial value for {\tt j} should be {\tt len(word2)-1}.
+首次循环， {\tt j} 的值是4,
+超出了\verb"'pots'"的索引范围。
+最后一个字符的索引应该是3,
+所以{\tt j} 的初始值应该是{\tt len(word2)-1}.
 
-If I fix that error and run the program again, I get:
+如果修复此错误，并再次执行，输出如下:
 
 \begin{verbatim}
 >>> is_reverse('pots', 'stop')
@@ -5710,101 +5655,89 @@ If I fix that error and run the program again, I get:
 True
 \end{verbatim}
 %
-This time we get the right answer, but it looks like the loop only ran
-three times, which is suspicious.  To get a better idea of what is
-happening, it is useful to draw a state diagram.  During the first
-iteration, the frame for \verb"is_reverse" is shown in
-Figure~\ref{fig.state4}.  \index{state diagram} \index{diagram!state}
+这次我们的到了正确结果，但是循环只运行了三次，有点奇怪。
+为了弄清怎么回事，可以绘制栈图来辅助理解。
+第一次迭代，\verb"is_reverse"的框见图~\ref{fig.state4}.  
+\index{state diagram} \index{diagram!state}
 
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/state4.pdf}}
-\caption{State diagram.}
+\caption{栈图.}
 \label{fig.state4}
 \end{figure}
 
-I took some license by arranging the variables in the frame
-and adding dotted lines to show that the values of {\tt i} and
-{\tt j} indicate characters in {\tt word1} and {\tt word2}.
+我尝试在框中对齐变量，并用虚线标识{\tt i} 和
+{\tt j}的值，以表示{\tt word1} 和 {\tt word2}中的字符，
+从而帮助理解。
 
-Starting with this diagram, run the program on paper, changing the
-values of {\tt i} and {\tt j} during each iteration.  Find and fix the
-second error in this function.
+根据程序流转，以及每次迭代中{\tt i} 和 {\tt j}值的变化，继续绘制栈图。
+请在此函数中继续寻找并修复第二个错误。
 \label{isreverse}
 
 
-\section{Glossary}
+\section{术语表}
 
 \begin{description}
 
-\item[object:] Something a variable can refer to.  For now,
-you can use ``object'' and ``value'' interchangeably.
+\item[对象(object):] 变量引用的东西，目前，可以将
+``对象'' 与 ``值'' 同样看待。
 \index{object}
 
-\item[sequence:] An ordered collection of
-values where each value is identified by an integer index.
+\item[序列(sequence):] 一些值的有序集合，每个值都对应一个整数索引。
 \index{sequence}
 
-\item[item:] One of the values in a sequence.
+\item[元素(item):] 序列中的一个值.
 \index{item}
 
-\item[index:] An integer value used to select an item in
-a sequence, such as a character in a string.  In Python
-indices start from 0.
+\item[索引(index):] 一个整数值，用来选择序列中的元素，
+比如选择字符串中某个字符。Python中的索引都是从0开始。
 \index{index}
 
-\item[slice:] A part of a string specified by a range of indices.
+\item[切片(slice):] 字符串中一部分，通过索引范围确定。
 \index{slice}
 
-\item[empty string:] A string with no characters and length 0, represented
-by two quotation marks.
+\item[空字符串(empty string):] 没有字符并且长度为0,同时用两个引号表示的字符串。
 \index{empty string}
 
-\item[immutable:] The property of a sequence whose items cannot
-be changed.
+\item[不可变(immutable):] 序列中元素不可改变的特性。
 \index{immutability}
 
-\item[traverse:] To iterate through the items in a sequence,
-performing a similar operation on each.
+\item[遍历(traverse):] 迭代序列中每个元素，并执行相似操作的过程。
 \index{traversal}
 
-\item[search:] A pattern of traversal that stops
-when it finds what it is looking for.
+\item[查找(search):] 寻找预期目标的遍历模式。
 \index{search pattern}
 \index{pattern!search}
 
-\item[counter:] A variable used to count something, usually initialized
-to zero and then incremented.
+\item[计数器(counter):] 用来计数的变量，一般起于0，而不断递增。
 \index{counter}
 
-\item[invocation:] A statement that calls a method.
+\item[调用(invocation):] 运行方法的语句.
 \index{invocation}
 
-\item[optional argument:] A function or method argument that is not
-required.
+\item[可选参数(optional argument):] 函数或者方法中的不必需参数。
 \index{optional argument}
 \index{argument!optional}
 
 \end{description}
 
 
-\section{Exercises}
+\section{习题集}
 
 \begin{exercise}
 \index{string method}
 \index{method!string}
 
-Read the documentation of the string methods at
-\url{http://docs.python.org/3/library/stdtypes.html#string-methods}.
-You might want to experiment with some of them to make sure you
-understand how they work.  {\tt strip} and {\tt replace} are
-particularly useful.
+阅读文档\url{http://docs.python.org/3/library/stdtypes.html#string-methods}
+中的字符串方法，
+可能你会想试试其中一些方法，尽量弄明白它们的工作原理。
+{\tt strip} 和 {\tt replace} 特别有用。
 
-The documentation uses a syntax that might be confusing.
-For example, in \verb"find(sub[, start[, end]])", the brackets
-indicate optional arguments.  So {\tt sub} is required, but
-{\tt start} is optional, and if you include {\tt start},
-then {\tt end} is optional.
+文档中的语法可能难以理解。
+比如\verb"find(sub[, start[, end]])"方法，方括号标识了可选参数。
+ {\tt sub} 是必需的，但是{\tt start}是可选的，
+如果包含了 {\tt start}，{\tt end} 便是可选的。
 \index{optional argument}
 \index{argument!optional}
 
@@ -5815,11 +5748,9 @@ then {\tt end} is optional.
 \index{count method}
 \index{method!count}
 
-There is a string method called {\tt count} that is similar
-to the function in Section~\ref{counter}.  Read the documentation
-of this method
-and write an invocation that counts the number of {\tt a}'s
-in \verb"'banana'".
+有个{\tt count}方法，和章节~\ref{counter}中的函数很相似。
+阅读此方法文档，编写调用此方法的代码，实现对\verb"'banana'"中
+{\tt a}个数的统计.
 \end{exercise}
 
 
@@ -5828,32 +5759,31 @@ in \verb"'banana'".
 \index{slice operator}
 \index{operator!slice}
 
-A string slice can take a third index that specifies the ``step
-size''; that is, the number of spaces between successive characters.
-A step size of 2 means every other character; 3 means every third,
-etc.
+字符串切片也可以有第三个参数，叫做``步长";
+也就是，在连续字符中，字符间的间距。
+步长为2表示每隔一个字符取一个;
+步长为3表示每第三个取一个，以此类推。
 
 \begin{verbatim}
 >>> fruit = 'banana'
 >>> fruit[0:5:2]
 'bnn'
 \end{verbatim}
-
-A step size of -1 goes through the word backwards, so
-the slice \verb"[::-1]" generates a reversed string.
+步长为-1,则表示倒序读取，所以 \verb"[::-1]" 切片，
+便会产生一个倒序的字符串。
 \index{palindrome}
 
-Use this idiom to write a one-line version of \verb"is_palindrome"
-from Exercise~\ref{palindrome}.
+用这个神奇魔法，将习题~\ref{palindrome}中的 \verb"is_palindrome"
+修改为一行版本吧。
 \end{exercise}
 
 
 \begin{exercise}
 
-The following functions are all {\em intended} to check whether a
-string contains any lowercase letters, but at least some of them are
-wrong.  For each function, describe what the function actually does
-(assuming that the parameter is a string).
+下面的函数都是{\em 试图}检验字符串中是否包含小写字母，
+但是肯定有函数存在问题。
+仔细分析每个函数并明了其用途
+(假设入参都是字符串).
 
 \begin{verbatim}
 def any_lowercase1(s):
@@ -5896,46 +5826,41 @@ def any_lowercase5(s):
 \index{rotation, letter}
 
 \label{exrotate}
-A Caesar cypher is a weak form of encryption that involves ``rotating'' each
-letter by a fixed number of places.  To rotate a letter means
-to shift it through the alphabet, wrapping around to the beginning if
-necessary, so 'A' rotated by 3 is 'D' and 'Z' rotated by 1 is 'A'.
+凯撒加密(Caesar cypher )是一种通过对每个字母进行特定数值的``移位"操作，
+而实现的简单加密方案。
+对字母移位，也就是按照字母顺序，进行移动，如果直到末尾，位数不足，则从头继续。
+所以'A'移位3，得到 'D' ，  'Z' 移位1,得到'A'。
 
-To rotate a word, rotate each letter by the same amount.
-For example, ``cheer'' rotated by 7 is ``jolly'' and ``melon'' rotated
-by -10 is ``cubed''.  In the movie {\em 2001: A Space Odyssey}, the 
-ship computer is called HAL, which is IBM rotated by -1.
+对一个单词移位，就是针对每个字母，都进行相同的移位数量。
+例如``cheer'' 移位7,则为``jolly''， ``melon''移位-10, 则为 ``cubed''。
+在电影{\em 2001: A Space Odyssey}中，飞船电脑名叫HAL，
+就是IBM移位-1得到的。
 
 %For example ``sleep''
 %rotated by 9 is ``bunny'' and ``latex'' rotated by 7 is ``shale''.
 
-Write a function called \verb"rotate_word"
-that takes a string and an integer as parameters, and returns
-a new string that contains the letters from the original string
-rotated by the given amount.  
+编写\verb"rotate_word"函数，以字符串和整数为参数，
+对字符串中的字符进行数值移位，得到新字符串，并返回。
 
-You might want to use the built-in function {\tt ord}, which converts
-a character to a numeric code, and {\tt chr}, which converts numeric
-codes to characters.  Letters of the alphabet are encoded in alphabetical
-order, so for example:
+你可能会想用内置的{\tt ord}函数，此函数可以将字符转为数字码，
+而{\tt chr}则可以将数字码转回字符。
+字母表中的字母会按顺序进行编码，比如:
 
 \begin{verbatim}
 >>> ord('c') - ord('a')
 2
 \end{verbatim}
+因\verb"'c'"在字母表中是第2个(从0开始)，所以结果为2。
+但要注意：大写字母的数字码和小写的不同。
 
-Because \verb"'c'" is the two-eth letter of the alphabet.  But
-beware: the numeric codes for upper case letters are different.
-
-Potentially offensive jokes on the Internet are sometimes encoded in
-ROT13, which is a Caesar cypher with rotation 13.  If you are not
-easily offended, find and decode some of them.  Solution:
+网络上一些嘲弄都是采用了ROT13进行加密，也就是移位值13的凯撒加密。
+如果你不会太介意，试试解密它们吧。参阅:
 \url{http://thinkpython2.com/code/rotate.py}.
 
 \end{exercise}
 
 
-\chapter{Case study: word play}
+\chapter{案例学习: word play}
 \label{wordplay}
 
 This chapter presents the second case study, which involves
@@ -6028,7 +5953,7 @@ for line in fin:
 \end{verbatim}
 %
 
-\section{Exercises}
+\section{练习}
 
 There are solutions to these exercises in the next section.
 You should at least attempt each one before you read the solutions.
@@ -6298,7 +6223,7 @@ def is_palindrome(word):
 Using \verb"is_reverse" from Section~\ref{isreverse}.
 
 
-\section{Debugging}
+\section{调试}
 \index{debugging}
 \index{testing!is hard}
 \index{program testing}
@@ -6343,7 +6268,7 @@ show their absence!
 \index{Dijkstra, Edsger}
 
 
-\section{Glossary}
+\section{术语表}
 
 \begin{description}
 
@@ -6363,7 +6288,7 @@ show their absence!
 \end{description}
 
 
-\section{Exercises}
+\section{习题集}
 
 \begin{exercise}
 \index{Car Talk}

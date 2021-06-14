@@ -575,8 +575,8 @@
 \indexentry{string!slice|hyperpage}{61}
 \indexentry{slice!string|hyperpage}{61}
 \indexentry{quotation mark|hyperpage}{61}
-\indexentry{copy!slice|hyperpage}{62}
-\indexentry{slice!copy|hyperpage}{62}
+\indexentry{copy!slice|hyperpage}{61}
+\indexentry{slice!copy|hyperpage}{61}
 \indexentry{mutability|hyperpage}{62}
 \indexentry{immutability|hyperpage}{62}
 \indexentry{string!immutable|hyperpage}{62}
@@ -593,59 +593,59 @@
 \indexentry{traversal|hyperpage}{62}
 \indexentry{search pattern|hyperpage}{62}
 \indexentry{pattern!search|hyperpage}{62}
-\indexentry{counter|hyperpage}{63}
-\indexentry{counting and looping|hyperpage}{63}
-\indexentry{looping and counting|hyperpage}{63}
-\indexentry{looping!with strings|hyperpage}{63}
+\indexentry{counter|hyperpage}{62}
+\indexentry{counting and looping|hyperpage}{62}
+\indexentry{looping and counting|hyperpage}{62}
+\indexentry{looping!with strings|hyperpage}{62}
 \indexentry{encapsulation|hyperpage}{63}
 \indexentry{method|hyperpage}{63}
 \indexentry{string!method|hyperpage}{63}
 \indexentry{parentheses!empty|hyperpage}{63}
 \indexentry{dot notation|hyperpage}{63}
 \indexentry{invocation|hyperpage}{63}
-\indexentry{optional argument|hyperpage}{64}
-\indexentry{argument!optional|hyperpage}{64}
-\indexentry{in operator|hyperpage}{64}
-\indexentry{operator!in|hyperpage}{64}
-\indexentry{boolean operator|hyperpage}{64}
-\indexentry{operator!boolean|hyperpage}{64}
+\indexentry{optional argument|hyperpage}{63}
+\indexentry{argument!optional|hyperpage}{63}
+\indexentry{in operator|hyperpage}{63}
+\indexentry{operator!in|hyperpage}{63}
+\indexentry{boolean operator|hyperpage}{63}
+\indexentry{operator!boolean|hyperpage}{63}
 \indexentry{string!comparison|hyperpage}{64}
 \indexentry{comparison!string|hyperpage}{64}
-\indexentry{debugging|hyperpage}{65}
-\indexentry{traversal|hyperpage}{65}
+\indexentry{debugging|hyperpage}{64}
+\indexentry{traversal|hyperpage}{64}
 \indexentry{guardian pattern|hyperpage}{65}
 \indexentry{pattern!guardian|hyperpage}{65}
 \indexentry{index|hyperpage}{65}
 \indexentry{IndexError|hyperpage}{65}
 \indexentry{exception!IndexError|hyperpage}{65}
-\indexentry{state diagram|hyperpage}{66}
-\indexentry{diagram!state|hyperpage}{66}
+\indexentry{state diagram|hyperpage}{65}
+\indexentry{diagram!state|hyperpage}{65}
 \indexentry{object|hyperpage}{66}
 \indexentry{sequence|hyperpage}{66}
-\indexentry{item|hyperpage}{67}
-\indexentry{index|hyperpage}{67}
-\indexentry{slice|hyperpage}{67}
-\indexentry{empty string|hyperpage}{67}
-\indexentry{immutability|hyperpage}{67}
-\indexentry{traversal|hyperpage}{67}
-\indexentry{search pattern|hyperpage}{67}
-\indexentry{pattern!search|hyperpage}{67}
-\indexentry{counter|hyperpage}{67}
-\indexentry{invocation|hyperpage}{67}
-\indexentry{optional argument|hyperpage}{67}
-\indexentry{argument!optional|hyperpage}{67}
-\indexentry{string method|hyperpage}{67}
-\indexentry{method!string|hyperpage}{67}
-\indexentry{optional argument|hyperpage}{67}
-\indexentry{argument!optional|hyperpage}{67}
-\indexentry{count method|hyperpage}{67}
-\indexentry{method!count|hyperpage}{67}
-\indexentry{step size|hyperpage}{67}
-\indexentry{slice operator|hyperpage}{67}
-\indexentry{operator!slice|hyperpage}{67}
+\indexentry{item|hyperpage}{66}
+\indexentry{index|hyperpage}{66}
+\indexentry{slice|hyperpage}{66}
+\indexentry{empty string|hyperpage}{66}
+\indexentry{immutability|hyperpage}{66}
+\indexentry{traversal|hyperpage}{66}
+\indexentry{search pattern|hyperpage}{66}
+\indexentry{pattern!search|hyperpage}{66}
+\indexentry{counter|hyperpage}{66}
+\indexentry{invocation|hyperpage}{66}
+\indexentry{optional argument|hyperpage}{66}
+\indexentry{argument!optional|hyperpage}{66}
+\indexentry{string method|hyperpage}{66}
+\indexentry{method!string|hyperpage}{66}
+\indexentry{optional argument|hyperpage}{66}
+\indexentry{argument!optional|hyperpage}{66}
+\indexentry{count method|hyperpage}{66}
+\indexentry{method!count|hyperpage}{66}
+\indexentry{step size|hyperpage}{66}
+\indexentry{slice operator|hyperpage}{66}
+\indexentry{operator!slice|hyperpage}{66}
 \indexentry{palindrome|hyperpage}{67}
-\indexentry{letter rotation|hyperpage}{68}
-\indexentry{rotation, letter|hyperpage}{68}
+\indexentry{letter rotation|hyperpage}{67}
+\indexentry{rotation, letter|hyperpage}{67}
 \indexentry{Moby Project|hyperpage}{69}
 \indexentry{crosswords|hyperpage}{69}
 \indexentry{open function|hyperpage}{69}

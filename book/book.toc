@@ -86,20 +86,20 @@
 \contentsline {section}{\numberline {7.8}术语表}{56}{section.7.8}
 \contentsline {section}{\numberline {7.9}习题集}{56}{section.7.9}
 \contentsline {chapter}{\numberline {8}字符串}{59}{chapter.8}
-\contentsline {section}{\numberline {8.1}A string is a sequence}{59}{section.8.1}
+\contentsline {section}{\numberline {8.1}字符串即序列}{59}{section.8.1}
 \contentsline {section}{\numberline {8.2}{\tt len}}{60}{section.8.2}
-\contentsline {section}{\numberline {8.3}Traversal with a {\tt for} loop}{60}{section.8.3}
-\contentsline {section}{\numberline {8.4}String slices}{61}{section.8.4}
-\contentsline {section}{\numberline {8.5}Strings are immutable}{62}{section.8.5}
-\contentsline {section}{\numberline {8.6}Searching}{62}{section.8.6}
-\contentsline {section}{\numberline {8.7}Looping and counting}{63}{section.8.7}
-\contentsline {section}{\numberline {8.8}String methods}{63}{section.8.8}
-\contentsline {section}{\numberline {8.9}The {\tt in} operator}{64}{section.8.9}
-\contentsline {section}{\numberline {8.10}String comparison}{64}{section.8.10}
-\contentsline {section}{\numberline {8.11}Debugging}{65}{section.8.11}
-\contentsline {section}{\numberline {8.12}Glossary}{66}{section.8.12}
-\contentsline {section}{\numberline {8.13}Exercises}{67}{section.8.13}
-\contentsline {chapter}{\numberline {9}Case study: word play}{69}{chapter.9}
+\contentsline {section}{\numberline {8.3}用{\tt for} 循环遍历}{60}{section.8.3}
+\contentsline {section}{\numberline {8.4}字符串切片}{61}{section.8.4}
+\contentsline {section}{\numberline {8.5}字符串不可变}{62}{section.8.5}
+\contentsline {section}{\numberline {8.6}查找}{62}{section.8.6}
+\contentsline {section}{\numberline {8.7}循环和计数}{62}{section.8.7}
+\contentsline {section}{\numberline {8.8}字符串方法}{63}{section.8.8}
+\contentsline {section}{\numberline {8.9}操作符 {\tt in}}{63}{section.8.9}
+\contentsline {section}{\numberline {8.10}字符串比较}{64}{section.8.10}
+\contentsline {section}{\numberline {8.11}调试}{64}{section.8.11}
+\contentsline {section}{\numberline {8.12}术语表}{66}{section.8.12}
+\contentsline {section}{\numberline {8.13}习题集}{66}{section.8.13}
+\contentsline {chapter}{\numberline {9}案例学习: word play}{69}{chapter.9}
 \contentsline {section}{\numberline {9.1}Reading word lists}{69}{section.9.1}
 \contentsline {section}{\numberline {9.2}Exercises}{70}{section.9.2}
 \contentsline {section}{\numberline {9.3}Search}{70}{section.9.3}
