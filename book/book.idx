@@ -658,29 +658,29 @@
 \indexentry{method!readline|hyperpage}{69}
 \indexentry{strip method|hyperpage}{69}
 \indexentry{method!strip|hyperpage}{69}
-\indexentry{open function|hyperpage}{70}
-\indexentry{function!open|hyperpage}{70}
+\indexentry{open function|hyperpage}{69}
+\indexentry{function!open|hyperpage}{69}
 \indexentry{whitespace|hyperpage}{70}
 \indexentry{lipogram|hyperpage}{70}
 \indexentry{abecedarian|hyperpage}{70}
 \indexentry{search pattern|hyperpage}{70}
 \indexentry{pattern!search|hyperpage}{70}
+\indexentry{traversal|hyperpage}{70}
+\indexentry{in operator|hyperpage}{70}
+\indexentry{operator!in|hyperpage}{70}
+\indexentry{generalization|hyperpage}{70}
 \indexentry{traversal|hyperpage}{71}
-\indexentry{in operator|hyperpage}{71}
-\indexentry{operator!in|hyperpage}{71}
-\indexentry{generalization|hyperpage}{71}
-\indexentry{traversal|hyperpage}{71}
-\indexentry{reduction to a   previously solved problem|hyperpage}{71}
+\indexentry{reduction to a previously solved problem|hyperpage}{71}
 \indexentry{development plan!reduction|hyperpage}{71}
-\indexentry{looping!with indices|hyperpage}{72}
-\indexentry{index!looping with|hyperpage}{72}
+\indexentry{looping!with indices|hyperpage}{71}
+\indexentry{index!looping with|hyperpage}{71}
 \indexentry{palindrome|hyperpage}{72}
-\indexentry{reduction to a previously solved problem|hyperpage}{73}
-\indexentry{development plan!reduction|hyperpage}{73}
-\indexentry{debugging|hyperpage}{73}
-\indexentry{testing!is hard|hyperpage}{73}
-\indexentry{program testing|hyperpage}{73}
-\indexentry{special case|hyperpage}{73}
+\indexentry{reduction to a previously solved problem|hyperpage}{72}
+\indexentry{development plan!reduction|hyperpage}{72}
+\indexentry{debugging|hyperpage}{72}
+\indexentry{testing!is hard|hyperpage}{72}
+\indexentry{program testing|hyperpage}{72}
+\indexentry{special case|hyperpage}{72}
 \indexentry{testing!and absence of bugs|hyperpage}{73}
 \indexentry{Dijkstra, Edsger|hyperpage}{73}
 \indexentry{file object|hyperpage}{73}
@@ -688,16 +688,16 @@
 \indexentry{reduction to a previously solved problem|hyperpage}{73}
 \indexentry{development plan!reduction|hyperpage}{73}
 \indexentry{special case|hyperpage}{73}
-\indexentry{Car Talk|hyperpage}{74}
-\indexentry{Puzzler|hyperpage}{74}
-\indexentry{double letters|hyperpage}{74}
-\indexentry{Car Talk|hyperpage}{74}
-\indexentry{Puzzler|hyperpage}{74}
-\indexentry{odometer|hyperpage}{74}
-\indexentry{palindrome|hyperpage}{74}
-\indexentry{Car Talk|hyperpage}{74}
-\indexentry{Puzzler|hyperpage}{74}
-\indexentry{palindrome|hyperpage}{74}
+\indexentry{Car Talk|hyperpage}{73}
+\indexentry{Puzzler|hyperpage}{73}
+\indexentry{double letters|hyperpage}{73}
+\indexentry{Car Talk|hyperpage}{73}
+\indexentry{Puzzler|hyperpage}{73}
+\indexentry{odometer|hyperpage}{73}
+\indexentry{palindrome|hyperpage}{73}
+\indexentry{Car Talk|hyperpage}{73}
+\indexentry{Puzzler|hyperpage}{73}
+\indexentry{palindrome|hyperpage}{73}
 \indexentry{list|hyperpage}{75}
 \indexentry{type!list|hyperpage}{75}
 \indexentry{element|hyperpage}{75}

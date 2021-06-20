@@ -5863,34 +5863,29 @@ def any_lowercase5(s):
 \chapter{案例学习: word play}
 \label{wordplay}
 
-This chapter presents the second case study, which involves
-solving word puzzles by searching for words that have certain
-properties.  For example, we'll find the longest palindromes
-in English and search for words whose letters appear in
-alphabetical order.  And I will present another program development
-plan: reduction to a previously solved problem.
+本章学习第二个案例，主要研究如何通过搜索特定词汇，进行猜迷。
+比如，查找最长回字文，以及寻找按照字母表顺序排列的单词。
+同时，我将介绍一种新的程序开发模式: 降低复杂度，仍然能够解决以前的问题。
 
 
-\section{Reading word lists}
+\section{读取单词列表}
 \label{wordlist}
-
-For the exercises in this chapter we need a list of English words.
-There are lots of word lists available on the Web, but the one most
-suitable for our purpose is one of the word lists collected and
-contributed to the public domain by Grady Ward as part of the Moby
-lexicon project (see \url{http://wikipedia.org/wiki/Moby_Project}).  It
-is a list of 113,809 official crosswords; that is, words that are
-considered valid in crossword puzzles and other word games.  In the
-Moby collection, the filename is {\tt 113809of.fic}; you can download
-a copy, with the simpler name {\tt words.txt}, from
-\url{http://thinkpython2.com/code/words.txt}.
+本章的练习，需要准备一个英文单词列表。
+网上有很多可用的单词列表，但是对我们来说，最理想的莫过于
+Grady Ward 收集整理，作为Moby词典项目，分享给公告领域的单词列表
+(详见\url{http://wikipedia.org/wiki/Moby_Project})。这是
+包含113,809 个游戏填词的单词列表; 也就是说，这些单词，已经被
+填词游戏和其他单词游戏证明了有效。
+在Moby项目中，这个文件名为 {\tt 113809of.fic};
+你可以从\url{http://thinkpython2.com/code/words.txt} 下载一个副本，
+其名字简称 {\tt words.txt}。
 \index{Moby Project}
 \index{crosswords}
 
-This file is in plain text, so you can open it with a text
-editor, but you can also read it from Python.  The built-in
-function {\tt open} takes the name of the file as a parameter
-and returns a {\bf file object} you can use to read the file.
+此文件为纯文本文件，你可以用文本编辑器打开，
+但你也可以用Python读取。
+内置函数{\tt open}，以文件名为入参，返回一个 {\bf 文件对象}，
+可以用来读取文件内容。
 \index{open function}
 \index{function!open}
 \index{plain text}
@@ -5902,10 +5897,9 @@ and returns a {\bf file object} you can use to read the file.
 >>> fin = open('words.txt')
 \end{verbatim}
 %
-{\tt fin} is a common name for a file object used for input.  The file
-object provides several methods for reading, including {\tt readline},
-which reads characters from the file until it gets to a newline and
-returns the result as a string: \index{readline method}
+{\tt fin} 是表示输入的文件对象的通用名称。
+文件对象针对读取提供了多个方法，包括 {\tt readline}，此方法会读取文件的一整行
+字符，并作为字符串返回: \index{readline method}
 \index{method!readline}
 
 \begin{verbatim}
@@ -5913,22 +5907,19 @@ returns the result as a string: \index{readline method}
 'aa\n'
 \end{verbatim}
 %
-The first word in this particular list is ``aa'', which is a kind of
-lava.  The sequence \verb"\n" represents the newline character that 
-separates this word from the next.
+单词列表中第一个单词是``aa''，这是一种岩浆。
+后面的\verb"\n" 是换行符，用来断行。
 
-The file object keeps track of where it is in the file, so
-if you call {\tt readline} again, you get the next word:
+文件对象会跟踪目前读到哪里了，从而，再次运行
+{\tt readline}，会得到下面单词:
 
 \begin{verbatim}
 >>> fin.readline()
 'aah\n'
 \end{verbatim}
 %
-The next word is ``aah'', which is a perfectly legitimate
-word, so stop looking at me like that.
-Or, if it's the newline character that's bothering you,
-we can get rid of it with the string method {\tt strip}:
+下一个单词是``aah''， 这是个绝对正确的单词，所以别用异样眼光看我。
+另外，如果换行符令你厌烦，可以用字符串方法{\tt strip}移除:
 \index{strip method}
 \index{method!strip}
 
@@ -5939,9 +5930,8 @@ we can get rid of it with the string method {\tt strip}:
 'aahed'
 \end{verbatim}
 %
-You can also use a file object as part of a {\tt for} loop.
-This program reads {\tt words.txt} and prints each word, one
-per line:
+你也可以将文件对象置于{\tt for}循环中。
+这样程序便会读取 {\tt words.txt}，然后逐行输出每个单词:
 \index{open function}
 \index{function!open}
 
@@ -5954,35 +5944,30 @@ for line in fin:
 %
 
 \section{练习}
-
-There are solutions to these exercises in the next section.
-You should at least attempt each one before you read the solutions.
+下一节有这些习题的答案，但尽量在看答案之前尽力一试吧。
 
 \begin{exercise}
-Write a program that reads {\tt words.txt} and prints only the
-words with more than 20 characters (not counting whitespace).
+编写程序，读取{\tt words.txt}，同时打印多于20个字符的单词
+(不包括空格)。
 \index{whitespace}
 
 \end{exercise}
 
 \begin{exercise}
 
-In 1939 Ernest Vincent Wright published a 50,000 word novel called
-{\em Gadsby} that does not contain the letter ``e''.  Since ``e'' is
-the most common letter in English, that's not easy to do.
+1939年Ernest Vincent Wright出版了一部50,000单词的小说，名叫
+{\em Gadsby}，本书不包括字母``e"。而英文中最常用的便是``e''，所以
+太难得了。
 
-In fact, it is difficult to construct a solitary thought without using
-that most common symbol.  It is slow going at first, but with caution
-and hours of training you can gradually gain facility.
+事实上，若不考虑通用的字符，甚至难以独立思考。
+不过，开始虽然进展缓慢，但是，训练几个小时，你便会慢慢习惯。
 
-All right, I'll stop now.
+好了，闲言少叙。
 
-Write a function called \verb"has_no_e" that returns {\tt True} if
-the given word doesn't have the letter ``e'' in it.
+编写 \verb"has_no_e" 函数，如果输入单词不包括``e''， 则返回{\tt True}。
 
-Write a program that reads {\tt words.txt} and prints only the words
-that have no ``e''.  Compute the percentage of words in the list
-that have no ``e''.
+编写程序，读取{\tt words.txt}，只打印不包含``e''的单词。
+统计列表中，不包含``e''的单词的比例。
 \index{lipogram}
 
 \end{exercise}
@@ -5990,16 +5975,13 @@ that have no ``e''.
 
 \begin{exercise} 
 
-Write a function named {\tt avoids}
-that takes a word and a string of forbidden letters, and
-that returns {\tt True} if the word doesn't use any of the forbidden
-letters.
+编写{\tt avoids}函数，以单词和禁用字母字符串为输入，当单词不包含任何禁用字母时，
+返回 {\tt True}。
 
-Write a program that prompts the user to enter a string
-of forbidden letters and then prints the number of words that
-don't contain any of them.
-Can you find a combination of 5 forbidden letters that
-excludes the smallest number of words?
+编写程序，令用户输入禁用字母字符串，
+统计不含有这些字母的单词数量。
+看看你是否可以找出一个包含5个禁用字母的组合，
+从而排除的单词数量最少?
 
 \end{exercise}
 
@@ -6007,45 +5989,40 @@ excludes the smallest number of words?
 
 \begin{exercise}
 
-Write a function named \verb"uses_only" that takes a word and a
-string of letters, and that returns {\tt True} if the word contains
-only letters in the list.  Can you make a sentence using only the
-letters {\tt acefhlo}?  Other than ``Hoe alfalfa''?
+编写函数\verb"uses_only" ，以一个单词和一串字母组合为输入，
+如果单词的字母都在这个字母组合中，则返回{\tt True}.
+你是否可以只用{\tt acefhlo}这些字母，构造出句子来？
+换成 ``Hoe alfalfa''这些字母呢？
 
 \end{exercise}
 
 
 \begin{exercise} 
 
-Write a function named \verb"uses_all" that takes a word and a
-string of required letters, and that returns {\tt True} if the word
-uses all the required letters at least once.  How many words are there
-that use all the vowels {\tt aeiou}?  How about {\tt aeiouy}?
+编写函数\verb"uses_all" ，输入为一个单词和一个必需字母的字符串，
+如果单词对必需字母，都至少使用了一次，则返回{\tt True}。
+看看有多少单词同时包含{\tt aeiou}？又有多少同时包含 {\tt aeiouy}呢?
 
 \end{exercise}
 
 
 \begin{exercise}
-
-Write a function called \verb"is_abecedarian" that returns
-{\tt True} if the letters in a word appear in alphabetical order
-(double letters are ok).  
-How many abecedarian words are there?
+编写函数\verb"is_abecedarian"，如果单词中的字母是按照字母表顺序排列，
+则返回 {\tt True}(字母相同，视为顺序)。看看有多少这种单词?
 
 \index{abecedarian}
 
 \end{exercise}
 
 
-
-\section{Search}
+\section{检索}
 \label{search}
 \index{search pattern}
 \index{pattern!search}
 
-All of the exercises in the previous section have something
-in common; they can be solved with the search pattern we saw
-in Section~\ref{find}.  The simplest example is:
+上一章节中，所有的练习，有个共同之处;
+它们都可以采用章节~\ref{find}中的检索方法来解决。
+举个简单例子:
 
 \begin{verbatim}
 def has_no_e(word):
@@ -6055,21 +6032,20 @@ def has_no_e(word):
     return True
 \end{verbatim}
 %
-The {\tt for} loop traverses the characters in {\tt word}.  If we find
-the letter ``e'', we can immediately return {\tt False}; otherwise we
-have to go to the next letter.  If we exit the loop normally, that
-means we didn't find an ``e'', so we return {\tt True}.
+{\tt for}循环会遍历 {\tt word}中所有字母。
+如果遇到 ``e''，则即刻返回{\tt False};
+否则继续下一个字母。
+如果循环正常结束，也就是说没有遇到``e''， 则返回{\tt True}.
 \index{traversal}
 
 \index{in operator}
 \index{operator!in}
-You could write this function more concisely using the {\tt in}
-operator, but I started with this version because it 
-demonstrates the logic of the search pattern.
+你也可以使用{\tt in}运算符来精简程序，
+我先介绍此上述版本，主要是阐述清楚检索方法的逻辑。
 
 \index{generalization}
-{\tt avoids} is a more general version of \verb"has_no_e" but it
-has the same structure:
+{\tt avoids} 函数相比 \verb"has_no_e" 版本，功能更加通用，
+但结构相同:
 
 \begin{verbatim}
 def avoids(word, forbidden):
@@ -6079,11 +6055,10 @@ def avoids(word, forbidden):
     return True
 \end{verbatim}
 %
-We can return {\tt False} as soon as we find a forbidden letter;
-if we get to the end of the loop, we return {\tt True}.
+在此函数中，一旦遇到禁止字母，即刻返回{\tt False}，
+如果循环终了，则返回{\tt True}。
 
-\verb"uses_only" is similar except that the sense of the condition
-is reversed:
+\verb"uses_only" 与之极为相似，无非条件相反:
 
 \begin{verbatim}
 def uses_only(word, available):
@@ -6093,12 +6068,11 @@ def uses_only(word, available):
     return True
 \end{verbatim}
 %
-Instead of a list of forbidden letters, we have a list of available
-letters.  If we find a letter in {\tt word} that is not in
-{\tt available}, we can return {\tt False}.
+这里不再是禁用字母列表了，而是可用字母列表。
+如果 {\tt word}中出现了不在可用列表中的字母，返回{\tt False}.
 
-\verb"uses_all" is similar except that we reverse the role
-of the word and the string of letters:
+\verb"uses_all"和上述函数也较为相似，不同之处在于，
+我们交换了单词和字母组合的角色:
 
 \begin{verbatim}
 def uses_all(word, required):
@@ -6108,37 +6082,34 @@ def uses_all(word, required):
     return True
 \end{verbatim}
 %
-Instead of traversing the letters in {\tt word}, the loop
-traverses the required letters.  If any of the required letters
-do not appear in the word, we can return {\tt False}.
+不再是遍历 {\tt word}中的字母，
+而是遍历必需字母表。
+如果字母列表中有字母未出现在单词中，返回{\tt False}.
 \index{traversal}
 
-If you were really thinking like a computer scientist, you would
-have recognized that \verb"uses_all" was an instance of a
-previously solved problem, and you would have written:
+如若你已像计算机科学家一样去思考，你会发现 \verb"uses_all" 
+不过是以前一个已解决的问题的另一种表现形式，你可能会这么写:
 
 \begin{verbatim}
 def uses_all(word, required):
     return uses_only(required, word)
 \end{verbatim}
 %
-This is an example of a program development plan called {\bf
-  reduction to a previously solved problem}, which means that you
-recognize the problem you are working on as an instance of a solved
-problem and apply an existing solution.  \index{reduction to a
-  previously solved problem} \index{development plan!reduction}
+此案例便是一个{\bf 抽离纷扰，回归已知}的程序开发模式的实践，
+这种模式是将遇到的问题，映射为已解决的问题，
+从而用已有的解决方案来解决当前问题。  
+\index{reduction to a previously solved problem} 
+\index{development plan!reduction}
 
 
-\section{Looping with indices}
+\section{索引循环}
 \index{looping!with indices}
 \index{index!looping with}
+前一章节中，我用{\tt for}循环编写了大量函数，这是因为我
+只需字符串中的字符;所以无需关注索引。
 
-I wrote the functions in the previous section with {\tt for}
-loops because I only needed the characters in the strings; I didn't
-have to do anything with the indices.
-
-For \verb"is_abecedarian" we have to compare adjacent letters,
-which is a little tricky with a {\tt for} loop:
+ 但\verb"is_abecedarian"函数中，我们不得不比较相邻的字母，
+用{\tt for}循环便不太方便:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6150,7 +6121,7 @@ def is_abecedarian(word):
     return True
 \end{verbatim}
 
-An alternative is to use recursion:
+用递归来实现:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6161,7 +6132,7 @@ def is_abecedarian(word):
     return is_abecedarian(word[1:])
 \end{verbatim}
 
-Another option is to use a {\tt while} loop:
+还可以使用 {\tt while} 循环:
 
 \begin{verbatim}
 def is_abecedarian(word):
@@ -6173,28 +6144,23 @@ def is_abecedarian(word):
     return True
 \end{verbatim}
 %
-The loop starts at {\tt i=0} and ends when {\tt i=len(word)-1}.  Each
-time through the loop, it compares the $i$th character (which you can
-think of as the current character) to the $i+1$th character (which you
-can think of as the next).
+此循环始于 {\tt i=0}，终于{\tt i=len(word)-1}。
+每次循环都会比较第 $i$个字符(可以看作当前字符)
+和第$i+1$个字符(可以看作后一个字符)。
 
-If the next character is less than (alphabetically before) the current
-one, then we have discovered a break in the abecedarian trend, and
-we return {\tt False}.
+如果后一个字符小于(在字母表顺序中前于)当前字符，
+我们会发现这和要求不符，便返回{\tt False}.
 
-If we get to the end of the loop without finding a fault, then the
-word passes the test.  To convince yourself that the loop ends
-correctly, consider an example like \verb"'flossy'".  The
-length of the word is 6, so
-the last time the loop runs is when {\tt i} is 4, which is the
-index of the second-to-last character.  On the last iteration,
-it compares the second-to-last character to the last, which is
-what we want.
+如果直到循环末尾，仍然无异常，则单词合格。
+为确信循环正常结束，可以试试\verb"'flossy'"。
+单词长度为6, 所以{\tt i} 为 4时，便是最后一次循环，
+因为这是倒数第二个字符的索引。最后一次循环中，
+比较了倒数第二个和倒数第一个字符，这恰恰符合了预期。
 \index{palindrome}
 
-Here is a version of \verb"is_palindrome" (see
-Exercise~\ref{palindrome}) that uses two indices; one starts at the
-beginning and goes up; the other starts at the end and goes down.
+下面是\verb"is_palindrome" 函数(参看习题~\ref{palindrome})的另一个版本，
+其使用了两个索引; 一个从开头到结尾，顺序前进;
+另一个从结尾到开头，倒序进行.
 
 \begin{verbatim}
 def is_palindrome(word):
@@ -6210,8 +6176,7 @@ def is_palindrome(word):
     return True
 \end{verbatim}
 
-Or we could reduce to a previously solved
-problem and write:
+或者，我们映射为前述问题，从而构建解决方案，进行重写:
 \index{reduction to a previously solved problem}
 \index{development plan!reduction}
 
@@ -6220,7 +6185,7 @@ def is_palindrome(word):
     return is_reverse(word, word)
 \end{verbatim}
 %
-Using \verb"is_reverse" from Section~\ref{isreverse}.
+此处使用了章节~\ref{isreverse}中的 \verb"is_reverse"函数.
 
 
 \section{调试}
@@ -6228,40 +6193,31 @@ Using \verb"is_reverse" from Section~\ref{isreverse}.
 \index{testing!is hard}
 \index{program testing}
 
-Testing programs is hard.  The functions in this chapter are
-relatively easy to test because you can check the results by hand.
-Even so, it is somewhere between difficult and impossible to choose a
-set of words that test for all possible errors.
+程序测试很难。本章的函数进行测试，相对简单，因为你可以手算来检验结果。
+但是如果选择一批单词，然后检验所有可能错误，那不仅困难，甚至难以完成。
 
-Taking \verb"has_no_e" as an example, there are two obvious
-cases to check: words that have an `e' should return {\tt False}, and
-words that don't should return {\tt True}.  You should have no
-trouble coming up with one of each.
+以\verb"has_no_e"为例， 需要检验两种情景: 含有`e'的单词，返回{\tt False}，
+以及不含有`e'的单词，返回{\tt True}。 对此，你应该很容易验证任何一种情况。
 
-Within each case, there are some less obvious subcases.  Among the
-words that have an ``e'', you should test words with an ``e'' at the
-beginning, the end, and somewhere in the middle.  You should test long
-words, short words, and very short words, like the empty string.  The
-empty string is an example of a {\bf special case}, which is one of
-the non-obvious cases where errors often lurk.
+对于每种情景，又有一些不太明显的子用例。
+对于包含 ``e''的单词，你又要检验 ``e''在开头的单词，在结尾的，甚至中间某些位置的单词。
+你要检验长单词，短单词，甚至非常短的单词，比如空字符串。
+空字符串是{\bf 特例}的一种, 也就是那种容易被忽视，却往往是错误频发之处的用例。
 \index{special case}
 
-In addition to the test cases you generate, you can also test
-your program with a word list like {\tt words.txt}.  By scanning
-the output, you might be able to catch errors, but be careful:
-you might catch one kind of error (words that should not be
-included, but are) and not another (words that should be included,
-but aren't).
+除了自己构建测试用例，你也可以用类似{\tt words.txt}的单词列表检验程序。
+通过扫描输出，你可能会发现错误，但要小心：
+你可能发现了某种错误(包含了不应包含的单词)， 而忽略了其他错误
+(没有包括应该包含的单词)。
 
-In general, testing can help you find bugs, but it is not easy to
-generate a good set of test cases, and even if you do, you can't
-be sure your program is correct.
-According to a legendary computer scientist:
+通常，程序测试可以帮助你发现异常，但是制作出好的测试用例，
+往往很难，即使通过了这些测试，你也不能百分百地确认你的程序正确。
+一位传奇的计算机科学家说过:
 \index{testing!and absence of bugs}
 
 \begin{quote}
-Program testing can be used to show the presence of bugs, but never to
-show their absence!
+
+测试只能表明代码异常的存在，却永远无法证明其不存在!
 
 --- Edsger W. Dijkstra
 \end{quote}
@@ -6272,17 +6228,16 @@ show their absence!
 
 \begin{description}
 
-\item[file object:] A value that represents an open file.
+\item[文件对象(file object):] 代表一个打开的文件的值.
 \index{file object}
 \index{object!file}
 
-\item[reduction to a previously solved problem:] A way of solving a
-  problem by expressing it as an instance of a previously solved
-  problem.  \index{reduction to a previously solved problem}
-  \index{development plan!reduction}
+\item[抽离纷绕，回归已知(reduction to a previously solved problem):] 一种通过映射以前类似的问题，从而参考已有方案，进而解决问题的方式.
+\index{reduction to a previously solved problem}
+\index{development plan!reduction}
 
-\item[special case:] A test case that is atypical or non-obvious
-(and less likely to be handled correctly).
+\item[特例(special case):] 非典型或者不明显的测试用例
+(往往容易犯错的地方).
 \index{special case}
 
 \end{description}
@@ -6295,93 +6250,87 @@ show their absence!
 \index{Puzzler}
 \index{double letters}
 
-This question is based on a Puzzler that was broadcast on the radio
-program {\em Car Talk} 
+这个问题源于一个在广播节目 {\em Car Talk} 中出现的迷题
 (\url{http://www.cartalk.com/content/puzzlers}):
 
 \begin{quote}
-Give me a word with three consecutive double letters. I'll give you a
-couple of words that almost qualify, but don't. For example, the word
-committee, c-o-m-m-i-t-t-e-e. It would be great except for the `i' that
-sneaks in there. Or Mississippi: M-i-s-s-i-s-s-i-p-p-i. If you could
-take out those i's it would work. But there is a word that has three
-consecutive pairs of letters and to the best of my knowledge this may
-be the only word. Of course there are probably 500 more but I can only
-think of one. What is the word?
+给我一个存在三个连续的双字母的单词。
+我会给你一些看似符合，其实不符的单词。
+例如，单词committee， c-o-m-m-i-t-t-e-e。 如果没有`i' 在中间，就很完美。
+又或者Mississippi: M-i-s-s-i-s-s-i-p-p-i.
+如果将其中的 i都移除，就完美了。
+但是有一个词恰好含有三个连续的双字母，而且据我所知，
+这可能是仅有的一个这样的单词。
+当然，实际上有可能有500多个这样的单词，但我只能想到一个。
+是哪个单词呢?
 \end{quote}
 
-Write a program to find it.
-Solution: \url{http://thinkpython2.com/code/cartalk1.py}.
+编写程序来寻找一下吧。
+答案: \url{http://thinkpython2.com/code/cartalk1.py}.
 
 \end{exercise}
 
 
 \begin{exercise}
-Here's another {\em Car Talk}
-Puzzler (\url{http://www.cartalk.com/content/puzzlers}):
+这也是一个 {\em Car Talk}的迷题(\url{http://www.cartalk.com/content/puzzlers}):
 \index{Car Talk}
 \index{Puzzler}
 \index{odometer}
 \index{palindrome}
 
 \begin{quote}
-``I was driving on the highway the other day and I happened to
-notice my odometer. Like most odometers, it shows six digits,
-in whole miles only. So, if my car had 300,000
-miles, for example, I'd see 3-0-0-0-0-0.
 
-``Now, what I saw that day was very interesting. I noticed that the
-last 4 digits were palindromic; that is, they read the same forward as
-backward. For example, 5-4-4-5 is a palindrome, so my odometer
-could have read 3-1-5-4-4-5.
+``某天我在高速上开车，碰巧注意到里程表。
+同多数里程表一样，有6个数字，只能表示整里数。
+所以，如果我的车跑了300,000英里，那显示的就是
+3-0-0-0-0-0.
 
-``One mile later, the last 5 numbers were palindromic. For example, it
-could have read 3-6-5-4-5-6.  One mile after that, the middle 4 out of
-6 numbers were palindromic.  And you ready for this? One mile later,
-all 6 were palindromic!
+``现在，我看到的很有意思。最后4个数字是回文;也就是说，从前往后读
+和从后往前读都一样。比如5-4-4-5 便是个回文，
+所以我的里程表可能显示的是3-1-5-4-4-5.
 
-``The question is, what was on the odometer when I first looked?''
+``一英里后，最后的5个数字也是回文。
+例如显示为3-6-5-4-5-6。然后又跑了1英里，6个数字中间的4位是回文了。
+准备好玩这个了吗？ 那又跑了1英里，所有6个数字是回文了!
+
+``问题来了，我开始在里程表上看到的数字是什么?''
 \end{quote}
 
-Write a Python program that tests all the six-digit numbers and prints
-any numbers that satisfy these requirements.  
-Solution: \url{http://thinkpython2.com/code/cartalk2.py}.
+编写个Python程序，检验所有的6位数字，然后输出满足上述要求的任意数字。
+参阅: \url{http://thinkpython2.com/code/cartalk2.py}.
 
 \end{exercise}
 
 
 \begin{exercise}
-Here's another {\em Car Talk} Puzzler you can solve with a
-search (\url{http://www.cartalk.com/content/puzzlers}):
+再来一个{\em Car Talk}上的迷题，你可以用检索法来
+解决 (\url{http://www.cartalk.com/content/puzzlers}):
 \index{Car Talk}
 \index{Puzzler}
 \index{palindrome}
 
 \begin{quote}
-``Recently I had a visit with my mom and we realized that
-the two digits that make up my age when reversed resulted in her
-age. For example, if she's 73, I'm 37. We wondered how often this has
-happened over the years but we got sidetracked with other topics and
-we never came up with an answer.
+``最近我去看望母亲，我们发现我的年龄倒过来，正好是母亲的年龄。
+比如，若她是73, 我是37. 我们想知道在过去这些年，有多少次这种情况发生，
+但后来我们岔开了话题，没有得到答案。
 
-``When I got home I figured out that the digits of our ages have been
-reversible six times so far. I also figured out that if we're lucky it
-would happen again in a few years, and if we're really lucky it would
-happen one more time after that. In other words, it would have
-happened 8 times over all. So the question is, how old am I now?''
+``我回到家后，我发现到目前为止，我们的年龄已经相逆了6次。
+同时，我也意识到，如果我们幸运的话，稍后几年，我们又会年龄互逆一次，
+如果我们特别幸运，就还会有一次机会。换句话说，这样的情况，我们一共会
+遇到8次。所以，请问，我现在多少岁了?''
 
 \end{quote}
 
-Write a Python program that searches for solutions to this Puzzler.
-Hint: you might find the string method {\tt zfill} useful.
+编写Python程序，寻找这个迷题的答案。
+提示: 你可能会用到字符串的 {\tt zfill} 方法。
 
-Solution: \url{http://thinkpython2.com/code/cartalk3.py}.
+参阅: \url{http://thinkpython2.com/code/cartalk3.py}.
 
 \end{exercise}
 
 
 
-\chapter{Lists}
+\chapter{列表}
 
 This chapter presents one of Python's most useful built-in types, lists.
 You will also learn more about objects and what can happen when you have

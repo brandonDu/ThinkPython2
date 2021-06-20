@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.5.16)  14 JUN 2021 10:42
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.5.16)  20 JUN 2021 17:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1950,16 +1950,29 @@ lmtt/m/it/10 http : / / docs . python . org / 3 / library / stdtypes . html #
 
 [66] [67] [68]
 Chapter 9.
-[69
 
-] [70] [71] [72] [73]
-Underfull \hbox (badness 1968) in paragraph at lines 6320--6326
-[]\T1/ppl/b/n/10 Exercise 9.8. \T1/ppl/m/it/10 Here's an-other \T1/ppl/m/n/10 C
-ar Talk \T1/ppl/m/it/10 Puz-zler ([]$\T1/lmtt/m/it/10 http : / / www . cartalk 
-. com / content /
+Underfull \hbox (badness 1430) in paragraph at lines 5900--5904
+\T1/lmtt/m/n/10 fin \TU/FandolSong-Regular(0)/m/n/10 是 表 示 输 入 的 文 件 对 象 的 通 用 
+名 称。|  文 件 对 象 针 对 读 取 提 供 了 多 个 方 法，|  包 括
  []
 
-[74]
+[69
+
+] [70] [71] [72]
+Underfull \hbox (badness 1097) in paragraph at lines 6253--6255
+[]\T1/ppl/b/n/10 Exercise 9.7. \TU/FandolSong-Regular(0)/m/it/10 这 个 问 题 源 于 一 
+个 在 广 播 节 目 \T1/ppl/m/n/10 Car Talk \TU/FandolSong-Regular(0)/m/it/10 中 出 现 的 迷
+ 题 \T1/ppl/m/it/10 ([]$\T1/lmtt/m/it/10 http : / / www .
+ []
+
+
+Underfull \hbox (badness 3354) in paragraph at lines 6275--6280
+[]\T1/ppl/b/n/10 Exercise 9.8. \TU/FandolSong-Regular(0)/m/it/10 这 也 是 一 个 \T1/
+ppl/m/n/10 Car Talk \TU/FandolSong-Regular(0)/m/it/10 的 迷 题 \T1/ppl/m/it/10 ([]
+$\T1/lmtt/m/it/10 http : / / www . cartalk . com / content /
+ []
+
+[73] [74]
 Chapter 10.
 [75
 
@@ -2001,7 +2014,7 @@ File: figs/tuple1.pdf Graphic file (type pdf)
 File: figs/dict2.pdf Graphic file (type pdf)
 <use figs/dict2.pdf>
  [106] [107] [108]
-Underfull \hbox (badness 1571) in paragraph at lines 9375--9377
+Underfull \hbox (badness 1571) in paragraph at lines 9324--9326
 []\T1/ppl/b/n/10 Exercise 12.4. \T1/ppl/m/it/10 Here's an-other Car Talk Puz-zl
 er ([]$\T1/lmtt/m/it/10 http : / / www . cartalk . com / content /
  []
@@ -2011,18 +2024,18 @@ Chapter 13.
 [111
 
 ] [112]
-Underfull \hbox (badness 1430) in paragraph at lines 9659--9664
+Underfull \hbox (badness 1430) in paragraph at lines 9608--9613
 [][]\T1/lmtt/m/n/10 process_file \T1/ppl/m/n/10 loops through the lines of the 
 file, pass-ing them one at a time to
  []
 
 [113] [114] [115]
-Underfull \hbox (badness 10000) in paragraph at lines 9953--9962
+Underfull \hbox (badness 10000) in paragraph at lines 9902--9911
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9953--9962
+Underfull \hbox (badness 10000) in paragraph at lines 9902--9911
 
  []
 
@@ -2031,7 +2044,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 9953--9962
 ]
 Chapter 14.
 [123] [124]
-Underfull \hbox (badness 1112) in paragraph at lines 10461--10465
+Underfull \hbox (badness 1112) in paragraph at lines 10410--10414
 \T1/lmtt/m/n/10 stdtypes . html # printf-[]style-[]string-[]formatting$[]\T1/pp
 l/m/n/10 . A more pow-er-ful al-ter-na-tive is
  []
@@ -2050,7 +2063,7 @@ File: figs/rectangle.pdf Graphic file (type pdf)
 File: figs/rectangle2.pdf Graphic file (type pdf)
 <use figs/rectangle2.pdf>
 
-Underfull \hbox (badness 2818) in paragraph at lines 11581--11587
+Underfull \hbox (badness 2818) in paragraph at lines 11530--11536
 []\T1/ppl/m/n/10 For most ap-pli-ca-tions, this is not what you want. In this e
 x-am-ple, in-vok-ing
  []
@@ -2066,18 +2079,18 @@ Chapter 17.
 [147
 
 ] [148] [149] [150]
-Underfull \hbox (badness 1502) in paragraph at lines 12625--12631
+Underfull \hbox (badness 1502) in paragraph at lines 12574--12580
 []\T1/ppl/m/n/10 By defin-ing other spe-cial meth-ods, you can spec-ify the be-
 hav-ior of op-er-a-tors on
  []
 
 [151] [152] [153] [154]
-Underfull \hbox (badness 1590) in paragraph at lines 12927--12931
+Underfull \hbox (badness 1590) in paragraph at lines 12876--12880
 []\T1/ppl/m/n/10 A lan-guage that pro-vides fea-tures, such as programmer-
  []
 
 [155]
-Underfull \hbox (badness 1817) in paragraph at lines 13000--13002
+Underfull \hbox (badness 1817) in paragraph at lines 12949--12951
 []\T1/ppl/m/it/10 A method named []\T1/lmtt/m/n/10 put_in_pouch \T1/ppl/m/it/10
  that takes an ob-ject of any type and adds it to
  []
@@ -2093,7 +2106,7 @@ File: figs/card1.pdf Graphic file (type pdf)
 File: figs/class1.pdf Graphic file (type pdf)
 <use figs/class1.pdf>
  [163] [164] [165]
-Underfull \hbox (badness 1173) in paragraph at lines 13766--13771
+Underfull \hbox (badness 1173) in paragraph at lines 13715--13720
 []\T1/ppl/m/n/10 As an ex-er-cise, down-load my Markov code from []$\T1/lmtt/m/
 n/10 http : / / thinkpython2 . com / code /
  []
@@ -2108,7 +2121,7 @@ Chapter 19.
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 14869.
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 14818.
  [180] [181] [182] [183] [184] [185] [186]
 附录 B.
 [187
@@ -2119,18 +2132,18 @@ File: figs/towers.pdf Graphic file (type pdf)
  [194] [195]
 No file book.ind.
 [196]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16114.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 16114.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 16063.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 16063.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 16114.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 16114.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16114.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 16063.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 16063.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 16063.
  ) 
 Here is how much of TeX's memory you used:
- 29403 strings out of 493007
- 577987 string characters out of 6136719
- 648327 words of memory out of 5000000
- 33045 multiletter control sequences out of 15000+600000
+ 29413 strings out of 493007
+ 578724 string characters out of 6136719
+ 648080 words of memory out of 5000000
+ 33055 multiletter control sequences out of 15000+600000
  567496 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,12n,74p,10491b,1039s stack positions out of 5000i,500n,10000p,200000b,80000s
