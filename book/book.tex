@@ -7489,12 +7489,11 @@ False
 
 \chapter{字典}
 
-This chapter presents another built-in type called a dictionary.
-Dictionaries are one of Python's best features; they are the
-building blocks of many efficient and elegant algorithms.
+本章讲述另一个内置类型，字典。
+字典作为Python最有特色的功能之一;  使其成为了诸多高校优雅算法的基石。
 
 
-\section{A dictionary is a mapping}
+\section{字典即映射}
 
 \index{dictionary}
 \index{dictionary}
@@ -7502,24 +7501,21 @@ building blocks of many efficient and elegant algorithms.
 \index{key}
 \index{key-value pair}
 \index{index}
-A {\bf dictionary} is like a list, but more general.  In a list,
-the indices have to be integers; in a dictionary they can
-be (almost) any type.
 
-A dictionary contains a collection of indices, which are called {\bf
-  keys}, and a collection of values.  Each key is associated with a
-single value.  The association of a key and a value is called a {\bf
-  key-value pair} or sometimes an {\bf item}.  \index{item}
+ {\bf 字典} 如同列表，但更加通用。列表中，索引必须是整数，
+而在字典中，索引(几乎)可以是任何类型。
 
-In mathematical language, a dictionary represents a {\bf mapping}
-from keys to values, so you can also say that each key
-``maps to'' a value.
-As an example, we'll build a dictionary that maps from English
-to Spanish words, so the keys and the values are all strings.
+字典包括一个索引集合，叫做{\bf 键(keys)}, 以及一个值的集合。
+每个键都和一个值相关联。键和值的这种对应关系，叫做{\bf 键值对(key-value pair)}
+或者叫做 {\bf 项(item)}.  \index{item}
 
-The function {\tt dict} creates a new dictionary with no items.
-Because {\tt dict} is the name of a built-in function, you
-should avoid using it as a variable name.
+数学语言中，字典代表了从键到值的{\bf 映射(mapping)}关系，
+所以你也可以说，每个键都``映射''了一个值。
+举个例子，我们构建个字典，使其将英语单词映射到西班牙语单词，
+这样，键和值都是字符串。
+
+{\tt dict}函数用来创建一个新的空字典。
+由于{\tt dict}是内置函数名，你要尽量避免将其用作变量名。
 \index{dict function}
 \index{function!dict}
 
@@ -7529,8 +7525,8 @@ should avoid using it as a variable name.
 {}
 \end{verbatim}
 
-The squiggly-brackets, \verb"{}", represent an empty dictionary.
-To add items to the dictionary, you can use square brackets:
+花括号 \verb"{}"，表示一个空字典。
+要想向其中添加项，可以用方括号:
 \index{squiggly bracket}
 \index{bracket!squiggly}
 
@@ -7538,48 +7534,43 @@ To add items to the dictionary, you can use square brackets:
 >>> eng2sp['one'] = 'uno'
 \end{verbatim}
 %
-This line creates an item that maps from the key
-\verb"'one'" to the value \verb"'uno'".  If we print the
-dictionary again, we see a key-value pair with a colon
-between the key and value:
+这行代码创建了一个表示从键\verb"'one'"到值\verb"'uno'"的映射的项。
+如果你再次打印字典，可以看到一个键值对，其键值用冒号隔开:
 
 \begin{verbatim}
 >>> eng2sp
 {'one': 'uno'}
 \end{verbatim}
 %
-This output format is also an input format.  For example,
-you can create a new dictionary with three items:
+
+输出的格式往往就是输入的格式。比如，用三个项创建一个新字典:
 
 \begin{verbatim}
 >>> eng2sp = {'one': 'uno', 'two': 'dos', 'three': 'tres'}
 \end{verbatim}
 %
-But if you print {\tt eng2sp}, you might be surprised:
+但你打印{\tt eng2sp}, 会感到意外:
 
 \begin{verbatim}
 >>> eng2sp
 {'one': 'uno', 'three': 'tres', 'two': 'dos'}
 \end{verbatim}
 %
-The order of the key-value pairs might not be the same.  If
-you type the same example on your computer, you might get a
-different result.  In general, the order of items in
-a dictionary is unpredictable.
+键值对的顺序不一样了。
+如果你在电脑输入上述代码，可能结果也不一样。
+通常，字典中项的顺序是很难确定的。
 
-But that's not a problem because
-the elements of a dictionary are never indexed with integer indices.
-Instead, you use the keys to look up the corresponding values:
+但是这往往不是个问题，因为字典的元素从来不是用整数索引去检索的。
+而是用键来寻找相应的值:
 
 \begin{verbatim}
 >>> eng2sp['two']
 'dos'
 \end{verbatim}
 %
-The key \verb"'two'" always maps to the value \verb"'dos'" so the order
-of the items doesn't matter.
+键\verb"'two'"总是映射到值\verb"'dos'" ，所以项的顺序就无关紧要了。
 
-If the key isn't in the dictionary, you get an exception:
+如果键不在字典中，你会得到异常:
 \index{exception!KeyError}
 \index{KeyError}
 
@@ -7588,8 +7579,7 @@ If the key isn't in the dictionary, you get an exception:
 KeyError: 'four'
 \end{verbatim}
 %
-The {\tt len} function works on dictionaries; it returns the
-number of key-value pairs:
+ {\tt len} 函数对于字典同样有效; 它会返回键-值对的数量:
 \index{len function}
 \index{function!len}
 
@@ -7598,9 +7588,8 @@ number of key-value pairs:
 3
 \end{verbatim}
 %
-The {\tt in} operator works on dictionaries, too; it tells you whether
-something appears as a {\em key} in the dictionary (appearing
-as a value is not good enough).
+{\tt in}运算符对字典也同样有效;
+它可以判断某个{\em key} 是否存在于字典的键中(而不是值中)。
 \index{membership!dictionary}
 \index{in operator}
 \index{operator!in}
@@ -7612,9 +7601,8 @@ True
 False
 \end{verbatim}
 %
-To see whether something appears as a value in a dictionary, you
-can use the method {\tt values}, which returns a collection of
-values, and then use the {\tt in} operator:
+若要确定值是否存在于字典中，可以用返回值的集合的{\tt values}方法，
+然后使用{\tt in}运算符:
 \index{values method}
 \index{method!values}
 
@@ -7624,56 +7612,46 @@ values, and then use the {\tt in} operator:
 True
 \end{verbatim}
 %
-The {\tt in} operator uses different algorithms for lists and
-dictionaries.  For lists, it searches the elements of the list in
-order, as in Section~\ref{find}.  As the list gets longer, the search
-time gets longer in direct proportion.
+{\tt in} 运算符在列表和字典中使用的算法不同。
+对于列表来说，它会如章节~\ref{find}中一样，按照顺序搜索列表中的元素。
+随着列表变长，确定目标的耗时也会更长。
 
-Python dictionaries use a data structure
-called a {\bf hashtable} that has a remarkable property: the
-{\tt in} operator takes about the same amount of time no matter how
-many items are in the dictionary.  I explain how that's possible
-in Section~\ref{hashtable}, but the explanation might not make
-sense until you've read a few more chapters.
+Python中的字典则使用了叫做{\bf 哈希表}的数据结构，使其具有了一个神奇特性: 
+无论字典中有多少项，{\tt in} 运算符都耗时相同。
+我会在章节~\ref{hashtable}中解释其原理，暂时这些还不重要。
 
-
-\section{Dictionary as a collection of counters}
+\section{以字典为计数器}
 \label{histogram}
 \index{counter}
 
-Suppose you are given a string and you want to count how many
-times each letter appears.  There are several ways you could do it:
+假设有个字符串，你需要统计每个字母出现的次数。
+有多种方法可以实现:
 
 \begin{enumerate}
 
-\item You could create 26 variables, one for each letter of the
-alphabet.  Then you could traverse the string and, for each
-character, increment the corresponding counter, probably using
-a chained conditional.
+\item 你可以新建26个变量，对应字母表中的每个字母。
+然后遍历字符串，遇到哪个字母，相应计数器就加一，
+可能会用到链式条件。
 
-\item You could create a list with 26 elements.  Then you could
-convert each character to a number (using the built-in function
-{\tt ord}), use the number as an index into the list, and increment
-the appropriate counter.
+\item 你也可以创建一个包含26个元素的列表。
+把每个字母转换成数字(使用内置函数{\tt ord})，用这些数字作为列表的索引，
+然后累加相应计数器。
 
-\item You could create a dictionary with characters as keys
-and counters as the corresponding values.  The first time you
-see a character, you would add an item to the dictionary.  After
-that you would increment the value of an existing item.
+\item 你也可以新建一个字典，这个字典将字母作为键，
+将计数器作为相应的值。
+首次遇到字母，便在字典中添加一个项，后面再遇到，便可以对
+已有的项累加即可。
 
 \end{enumerate}
 
-Each of these options performs the same computation, but each
-of them implements that computation in a different way.
+上述各个方案，目标相同，手段各异.
 \index{implementation}
 
-An {\bf implementation} is a way of performing a computation;
-some implementations are better than others.  For example,
-an advantage of the dictionary implementation is that we don't
-have to know ahead of time which letters appear in the string
-and we only have to make room for the letters that do appear.
+{\bf 实现}是执行计算的方式; 有好有坏。
+比如，字典实现的优势在于，我们无需提前知道字符串中存在哪些字母，
+我们只需要为每个出现的字母提供空间而已。
 
-Here is what the code might look like:
+下面是代码实现:
 
 \begin{verbatim}
 def histogram(s):
@@ -7686,21 +7664,18 @@ def histogram(s):
     return d
 \end{verbatim}
 %
-The name of the function is {\tt histogram}, which is a statistical
-term for a collection of counters (or frequencies).
+这个函数叫做 {\tt 直方图}，是个统计术语，表示计数(或者频次)的集合.
 \index{histogram}
 \index{frequency}
 \index{traversal}
 
-The first line of the
-function creates an empty dictionary.  The {\tt for} loop traverses
-the string.  Each time through the loop, if the character {\tt c} is
-not in the dictionary, we create a new item with key {\tt c} and the
-initial value 1 (since we have seen this letter once).  If {\tt c} is
-already in the dictionary we increment {\tt d[c]}.
+函数第一行新建了一个空字典。
+ {\tt for} 循环便利字符串。每次循环中，如果字符{\tt c}不在字典中，
+则创建一个新的项，{\tt c}为建，初始值为1（只遇到了一次）。
+如果{\tt c} 已经在字典中，则 {\tt d[c]}加一.
 \index{histogram}
 
-Here's how it works:
+下面为输出结果:
 
 \begin{verbatim}
 >>> h = histogram('brontosaurus')
@@ -7708,16 +7683,17 @@ Here's how it works:
 {'a': 1, 'b': 1, 'o': 2, 'n': 1, 's': 2, 'r': 2, 'u': 2, 't': 1}
 \end{verbatim}
 %
-The histogram indicates that the letters \verb"'a'" and \verb"'b'"
-appear once; \verb"'o'" appears twice, and so on.
+
+结果表明字母 \verb"'a'"和 \verb"'b'"只出现了一次;
+\verb"'o'"出现了两次，等等。
 
 
-\index{get method}
+\index{get 方法}
 \index{method!get}
-Dictionaries have a method called {\tt get} that takes a key
-and a default value.  If the key appears in the dictionary,
-{\tt get} returns the corresponding value; otherwise it returns
-the default value.  For example:
+字典有个方法，叫做{\tt get}，
+以键和默认值为参数。
+如果键在字典中，{\tt get} 则返回对应的值;否则，会返回默认值。
+如下:
 
 \begin{verbatim}
 >>> h = histogram('a')
@@ -7729,18 +7705,16 @@ the default value.  For example:
 0
 \end{verbatim}
 %
-As an exercise, use {\tt get} to write {\tt histogram} more concisely.  You
-should be able to eliminate the {\tt if} statement.
+做个练习，用{\tt get} 来精炼一下{\tt histogram}函数。
+尽量避免使用{\tt if}语句。
 
-
-\section{Looping and dictionaries}
+\section{循环和字典}
 \index{dictionary!looping with}
 \index{looping!with dictionaries}
 \index{traversal}
 
-If you use a dictionary in a {\tt for} statement, it traverses
-the keys of the dictionary.  For example, \verb"print_hist"
-prints each key and the corresponding value:
+如果你针对字典应用{\tt for}语句，它会遍历所有的键。
+比如，\verb"print_hist"函数会输出每个键以及其相应的值:
 
 \begin{verbatim}
 def print_hist(h):
@@ -7748,7 +7722,7 @@ def print_hist(h):
         print(c, h[c])
 \end{verbatim}
 %
-Here's what the output looks like:
+下面为输出结果:
 
 \begin{verbatim}
 >>> h = histogram('parrot')
@@ -7760,8 +7734,8 @@ t 1
 o 1
 \end{verbatim}
 %
-Again, the keys are in no particular order.  To traverse the keys
-in sorted order, you can use the built-in function {\tt sorted}:
+又是这样，这些键没有按照顺序输出。
+若要按顺序遍历键，可以用内置函数{\tt sorted}:
 \index{sorted!function}
 \index{function!sorted}
 
@@ -7778,26 +7752,22 @@ t 1
 %TODO: get this on Atlas
 
 
-\section{Reverse lookup}
+\section{反向查找}
 \label{raise}
 \index{dictionary!lookup}
 \index{dictionary!reverse lookup}
 \index{lookup, dictionary}
 \index{reverse lookup, dictionary}
 
-Given a dictionary {\tt d} and a key {\tt k}, it is easy to
-find the corresponding value {\tt v = d[k]}.  This operation
-is called a {\bf lookup}.
+给定字典{\tt d}以及键{\tt k}，很容易确定对应的值{\tt v = d[k]}。
+这种操作，叫做{\bf 查找}.
 
-But what if you have {\tt v} and you want to find {\tt k}?
-You have two problems: first, there might be more than one
-key that maps to the value {\tt v}.  Depending on the application,
-you might be able to pick one, or you might have to make
-a list that contains all of them.  Second, there is no
-simple syntax to do a {\bf reverse lookup}; you have to search.
+但是，如果你有{\tt v}，那么如何找到{\tt k}呢?
+面临两个难题：第一，可能有多个键的值为 {\tt v}。
+根据目标不同，可能你只需要选一个，也可能需要将所有的放入列表。
+第二，没有一个简单的句法可以{\bf 反向查找}; 你需要确定一下。
 
-Here is a function that takes a value and returns the first
-key that maps to that value:
+下面这个函数，可以根据输入的值，返回第一个映射该值的键:
 
 \begin{verbatim}
 def reverse_lookup(d, v):
@@ -7807,20 +7777,18 @@ def reverse_lookup(d, v):
     raise LookupError()
 \end{verbatim}
 %
-This function is yet another example of the search pattern, but it
-uses a feature we haven't seen before, {\tt raise}.  The 
-{\bf raise statement} causes an exception; in this case it causes a
-{\tt LookupError}, which is a built-in exception used to indicate
-that a lookup operation failed.
+这个函数也是一种搜索模式，但是它用到了目前还未接触的一个功能，
+ {\tt raise}。
+{\bf raise 语法}会制造一个异常;
+这里，它制造了{\tt LookupError}，是一个内置异常，用来表示查找失败。
 \index{search}
 \index{pattern!search} \index{raise statement} \index{statement!raise}
 \index{exception!LookupError} \index{LookupError}
 
-If we get to the end of the loop, that means {\tt v}
-doesn't appear in the dictionary as a value, so we raise an
-exception.
+如果运行到了循环结束，表示 {\tt v}没有出现在字典的值中，
+所以会引起异常。
 
-Here is an example of a successful reverse lookup:
+下面是一个成功的反查样例子:
 
 \begin{verbatim}
 >>> h = histogram('parrot')
@@ -7829,7 +7797,7 @@ Here is an example of a successful reverse lookup:
 'r'
 \end{verbatim}
 %
-And an unsuccessful one:
+以及一个不成功的:
 
 \begin{verbatim}
 >>> key = reverse_lookup(h, 3)
@@ -7839,13 +7807,13 @@ Traceback (most recent call last):
 LookupError
 \end{verbatim}
 %
-The effect when you raise an exception is the same as when
-Python raises one: it prints a traceback and an error message.
+自己创造的异常和Python抛出的异常效果一样：
+输出追溯信息以及错误信息。
 \index{traceback}
 \index{optional argument}
 \index{argument!optional}
 
-When you raise an exception, you can provide a detailed error message as an optional argument.  For example:
+当你自己抛出异常时，可以将详细错误信息作为可选参数。比如:
 
 \begin{verbatim}
 >>> raise LookupError('value does not appear in the dictionary')
@@ -7854,24 +7822,20 @@ Traceback (most recent call last):
 LookupError: value does not appear in the dictionary
 \end{verbatim}
 %
-A reverse lookup is much slower than a forward lookup; if you
-have to do it often, or if the dictionary gets big, the performance
-of your program will suffer.
+反向查找比正向查找要慢得多;
+如果经常使用，或者字典变大，都会对程序性能造成影响。
 
 
-\section{Dictionaries and lists}
+\section{字典和列表}
 \label{invert}
 
-Lists can appear as values in a dictionary.  For example, if you
-are given a dictionary that maps from letters to frequencies, you
-might want to invert it; that is, create a dictionary that maps
-from frequencies to letters.  Since there might be several letters
-with the same frequency, each value in the inverted dictionary
-should be a list of letters.
+列表可以作为值出现在字典中。比如，给定一个字典，映射了字母和其频次，
+你想倒过来看看; 也就是创建个字典，是从频次映射到字母的。
+所以，可能有些字母的频次相同，那么这个倒过来的字典中，每个值都应该是个字母列表。
 \index{invert dictionary}
 \index{dictionary!invert}
 
-Here is a function that inverts a dictionary:
+此处为一个颠倒字典的函数:
 
 \begin{verbatim}
 def invert_dict(d):
@@ -7885,14 +7849,12 @@ def invert_dict(d):
     return inverse
 \end{verbatim}
 %
-Each time through the loop, {\tt key} gets a key from {\tt d} and 
-{\tt val} gets the corresponding value.  If {\tt val} is not in {\tt
-  inverse}, that means we haven't seen it before, so we create a new
-item and initialize it with a {\bf singleton} (a list that contains a
-single element).  Otherwise we have seen this value before, so we
-append the corresponding key to the list.  \index{singleton}
+每次循环，{\tt key}  都从 {\tt d} 中获取一个键，{\tt val} 获取对应的值。
+如果{\tt val}不在{\tt  inverse}这个字典中，也就是说以前没有遇到过，
+那便创建一个新项，并用{\bf 单元素列表}(包含一个元素的列表) 来初始化它。
+如果在字典中，则将此键添加到对应列表中。\index{singleton}
 
-Here is an example:
+此为示例:
 
 \begin{verbatim}
 >>> hist = histogram('parrot')
@@ -7906,20 +7868,19 @@ Here is an example:
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.8]{figs/dict1.pdf}}
-\caption{State diagram.}
+\caption{状态图.}
 \label{fig.dict1}
 \end{figure}
 
-Figure~\ref{fig.dict1} is a state diagram showing {\tt hist} and {\tt inverse}.
-A dictionary is represented as a box with the type {\tt dict} above it
-and the key-value pairs inside.  If the values are integers, floats or
-strings, I draw them inside the box, but I usually draw lists
-outside the box, just to keep the diagram simple.
+图~\ref{fig.dict1} 是表示 {\tt hist}和 {\tt inverse}的状态图。
+字典用箱体表示，其上有{\tt dict}类型标识，其内是键值对。
+通常如果值是整树，浮点数或者字符串，我会将其绘制在箱体内部，
+但如果是列表，我会绘制在箱体外部，只是为了简单易懂。
 \index{state diagram}
 \index{diagram!state}
 
-Lists can be values in a dictionary, as this example shows, but they
-cannot be keys.  Here's what happens if you try:
+列表可以是字典的值，就像图中所示，但是字典不能作为键使用。
+下面是擅自使用遇到的错误:
 \index{TypeError}
 \index{exception!TypeError}
 
@@ -7933,71 +7894,59 @@ Traceback (most recent call last):
 TypeError: list objects are unhashable
 \end{verbatim}
 %
-I mentioned earlier that a dictionary is implemented using
-a hashtable and that means that the keys have to be {\bf hashable}.
+以前我讲过，字典的实现基于哈希表，意味着其键必须是{\bf 可散列的}.
 \index{hash function}
 \index{hashable}
 
-A {\bf hash} is a function that takes a value (of any kind)
-and returns an integer.  Dictionaries use these integers,
-called hash values, to store and look up key-value pairs.
+{\bf hash}是一个函数，其接收任意值(任何类型)，然后返回个整数。
+字典使用这些被称为哈希值的整数，来存储和查找键值对。
 \index{immutability}
 
-This system works fine if the keys are immutable.  But if the
-keys are mutable, like lists, bad things happen.  For example,
-when you create a key-value pair, Python hashes the key and 
-stores it in the corresponding location.  If you modify the
-key and then hash it again, it would go to a different location.
-In that case you might have two entries for the same key,
-or you might not be able to find a key.  Either way, the
-dictionary wouldn't work correctly.
+如果键不可变，则一切正常。
+如果键可变，像字典，那么便不太妙了。
+比如，你想创建个键值对，
+Python 计算键的哈希值，并将其存储于相应的位置。
+如果你修改了键，然后再次计算哈希值，那么位置不同了。
+这时候，一个键对应了两个不同的位置，或者说，你无法找到
+某个键。总之，字典不能正常使用了。
 
-That's why keys have to be hashable, and why mutable types like
-lists aren't.  The simplest way to get around this limitation is to
-use tuples, which we will see in the next chapter.
+这也就是键必须要可哈希的原因，以及为何像列表一样的可变类型不能用作键的
+原因。突破此限制的最简单方法是使用元组，这个在下一章节会学到。
 
-Since dictionaries are mutable, they can't be used as keys,
-but they {\em can} be used as values.
+因为字典是可变的，所以不能用作键，
+但是{\em 可以}用作值。
 
-
-\section{Memos}
+\section{备忘}
 \label{memoize}
 
-If you played with the {\tt fibonacci} function from
-Section~\ref{one.more.example}, you might have noticed that the bigger
-the argument you provide, the longer the function takes to run.
-Furthermore, the run time increases quickly.
+如果你已经学习了章节~\ref{one.more.example}中的 {\tt fibonacci} 函数，
+你会发现，随着参数越大，函数运行时间越长。同时，时间增长的速度很快。
 \index{fibonacci function}
 \index{function!fibonacci}
 
-To understand why, consider Figure~\ref{fig.fibonacci}, which shows
-the {\bf call graph} for {\tt fibonacci} with {\tt n=4}:
-
+若想理解其原由，参考图~\ref{fig.fibonacci}，此{\bf 调用图}展示了当
+{\tt n=4}时{\tt fibonacci} 函数的调用情况:
 \begin{figure}
 \centerline
 {\includegraphics[scale=0.7]{figs/fibonacci.pdf}}
-\caption{Call graph.}
+\caption{调用图.}
 \label{fig.fibonacci}
 \end{figure}
-
-A call graph shows a set of function frames, with lines connecting each
-frame to the frames of the functions it calls.  At the top of the
-graph, {\tt fibonacci} with {\tt n=4} calls {\tt fibonacci} with {\tt
-n=3} and {\tt n=2}.  In turn, {\tt fibonacci} with {\tt n=3} calls
-{\tt fibonacci} with {\tt n=2} and {\tt n=1}.  And so on.
+调用图是一堆函数框图，用框与框间的连线，表示调用关系。
+此图最顶层，表示 {\tt n=4} 的{\tt fibonacci}函数会调用{\tt n=3}和{\tt n=2}时的
+函数。同样， {\tt n=3}时的{\tt fibonacci}函数会调用{\tt n=2} 和 {\tt n=1}时的函数，
+以此类推。
 \index{function frame}
 \index{frame}
 \index{call graph}
 
-Count how many times {\tt fibonacci(0)} and {\tt fibonacci(1)} are
-called.  This is an inefficient solution to the problem, and it gets
-worse as the argument gets bigger.
+算算 {\tt fibonacci(0)} 和 {\tt fibonacci(1)} 会被调用多少次吧。
+此操作是如此低效，而且随着参数变大，效率更低。
 \index{memo}
 
-One solution is to keep track of values that have already been
-computed by storing them in a dictionary.  A previously computed value
-that is stored for later use is called a {\bf memo}.  Here is a
-``memoized'' version of {\tt fibonacci}:
+另一种思路是跟踪并记录已经计算过的数据，将其存储到字典中。
+将之前计算过的值存储起来，方便后续使用，这种操作叫做{\bf 备忘}.
+下面是 {\tt fibonacci}的``缓存''版本:
 
 \begin{verbatim}
 known = {0:0, 1:1}
@@ -8011,38 +7960,33 @@ def fibonacci(n):
     return res
 \end{verbatim}
 %
-{\tt known} is a dictionary that keeps track of the Fibonacci
-numbers we already know.  It starts with
-two items: 0 maps to 0 and 1 maps to 1.
+{\tt known} 是跟踪记录过往结果的字典。
+其初始包括两项：0对应0, 1对应1.
 
-Whenever {\tt fibonacci} is called, it checks {\tt known}.
-If the result is already there, it can return
-immediately.  Otherwise it has to 
-compute the new value, add it to the dictionary, and return it.
+每次{\tt fibonacci}被调用，总会先检查 {\tt known}。
+如果结果已经存在，则立刻返回结果。否则，计算结果，
+并保存到字典，然后返回结果。
 
-If you run this version of {\tt fibonacci} and compare it with
-the original, you will find that it is much faster.
+当你运行这个版本的 {\tt fibonacci}，同时和以前版本比较，
+你会发现，快了很多。
 
 
-
-\section{Global variables}
+\section{全局变量}
 \index{global variable}
 \index{variable!global}
-
-In the previous example, {\tt known} is created outside the function,
-so it belongs to the special frame called \verb"__main__".
-Variables in \verb"__main__" are sometimes called {\bf global}
-because they can be accessed from any function.  Unlike local
-variables, which disappear when their function ends, global variables
-persist from one function call to the next.
+上例中，{\tt known} 是在函数外创建，
+所以它属于\verb"__main__"函数的框内，这是一个特殊的框。
+\verb"__main__"函数中的变量，有时也被认为是{\bf 全局的}，
+因为可以从任意函数访问它们。
+不像局部变量，其运行的函数一旦结束，便会消失，
+全局变量可以在一个函数执行到另一个函数时，也保持存在。
 \index{flag}
 \index{main}
 
-It is common to use global variables for {\bf flags}; that is, 
-boolean variables that indicate (``flag'') whether a condition
-is true.  For example, some programs use
-a flag named {\tt verbose} to control the level of detail in the
-output:
+全局变量，一个常用的地方，便是作为{\bf 标识}使用;
+也就是作为布尔变量，来表示(``标识'')条件是否成立。
+比如，有些程序会使用 {\tt verbose}作为标识，来控制输出信息的
+详细程度:
 
 \begin{verbatim}
 verbose = True
@@ -8052,9 +7996,8 @@ def example1():
         print('Running example1')
 \end{verbatim}
 %
-If you try to reassign a global variable, you might be surprised.
-The following example is supposed to keep track of whether the
-function has been called:
+如果尝试重新赋值全局变量，可能会得到意外结果。
+下面的例子，用全局变量来跟踪函数是否被调用过:
 \index{reassignment}
 
 \begin{verbatim}
@@ -8064,16 +8007,14 @@ def example2():
     been_called = True         # WRONG
 \end{verbatim}
 %
-But if you run it you will see that the value of \verb"been_called"
-doesn't change.  The problem is that {\tt example2} creates a new local
-variable named \verb"been_called".  The local variable goes away when
-the function ends, and has no effect on the global variable.
+运行此程序，你会注意到\verb"been_called"的值没有改变。
+问题在于 {\tt example2} 内部又创建了名为\verb"been_called"的局部变量。
+而局部变量会在函数结束后释放，并不会对全局变量产生影响。
 \index{global statement}
 \index{statement!global}
 \index{declaration}
 
-To reassign a global variable inside a function you have to
-{\bf declare} the global variable before you use it:
+如果想在函数内部修改全局变量，你需要在赋值前，{\bf 声明}这是全局变量:
 
 \begin{verbatim}
 been_called = False
@@ -8083,13 +8024,12 @@ def example2():
     been_called = True
 \end{verbatim}
 %
-The {\bf global statement} tells the interpreter
-something like, ``In this function, when I say \verb"been_called", I
-mean the global variable; don't create a local one.''
+这个{\bf global 声明}会告诉解释器， ``在这个函数中，当我说\verb"been_called"，
+我指的是那个全局变量;而不是新建一个局部变量。''
 \index{update!global variable}
 \index{global variable!update}
 
-Here's an example that tries to update a global variable:
+下面是段尝试更新全局变量的代码:
 
 \begin{verbatim}
 count = 0
@@ -8098,7 +8038,7 @@ def example3():
     count = count + 1          # WRONG
 \end{verbatim}
 %
-If you run it you get:
+运行后，你会看到:
 \index{UnboundLocalError}
 \index{exception!UnboundLocalError}
 
@@ -8106,9 +8046,8 @@ If you run it you get:
 UnboundLocalError: local variable 'count' referenced before assignment
 \end{verbatim}
 %
-Python assumes that {\tt count} is local, and under that assumption
-you are reading it before writing it.  The solution, again,
-is to declare {\tt count} global.
+Python假设{\tt count} 是局部的，据此假设，需要在更新变量前先读取变量。
+解决方法依然是，声明{\tt count}为全局变量。
 \index{counter}
 
 \begin{verbatim}
@@ -8117,8 +8056,7 @@ def example3():
     count += 1
 \end{verbatim}
 %
-If a global variable refers to a mutable value, you can modify
-the value without declaring the variable:
+如果全局变量指向了可变数值，那你在修改前，无需声明全局变量:
 \index{mutability}
 
 \begin{verbatim}
@@ -8128,9 +8066,8 @@ def example4():
     known[2] = 1
 \end{verbatim}
 %
-So you can add, remove and replace elements of a global list or
-dictionary, but if you want to reassign the variable, you
-have to declare it:
+所以你可以在全局的列表或字典中，添加，移除以及替换元素，
+但是你若想对变量重新赋值，便不得不提前声明全局变量:
 
 \begin{verbatim}
 def example5():
@@ -8138,185 +8075,151 @@ def example5():
     known = dict()
 \end{verbatim}
 %
-Global variables can be useful, but if you have a lot of them,
-and you modify them frequently, they can make programs
-hard to debug.
+全局变量很有用，但是你使用了很多，并且还频繁修改，那么程序往往会
+难以调试。
 
-
-\section{Debugging}
+\section{调试}
 \index{debugging}
-
-As you work with bigger datasets it can become unwieldy to
-debug by printing and checking the output by hand.  Here are some
-suggestions for debugging large datasets:
+随着数据集越来越大，仅仅使用打印输出以及手工校验，很难满足需求。
+下面是调试大型数据集的一些建议:
 
 \begin{description}
 
-\item[Scale down the input:] If possible, reduce the size of the
-dataset.  For example if the program reads a text file, start with
-just the first 10 lines, or with the smallest example you can find.
-You can either edit the files themselves, or (better) modify the
-program so it reads only the first {\tt n} lines.
+\item[降低输入规模:] 如果可能，降低数据集大小。比如，读取文本文件，
+只读取前10行，或者使用最简样例。
+可以重新编辑文件，或者(更优的做法是)修改程序，只读取前{\tt n}行。
 
-If there is an error, you can reduce {\tt n} to the smallest
-value that manifests the error, and then increase it gradually
-as you find and correct errors.
+如果报错，可以将{\tt n}减小为刚好会报错的最小值，
+然后修正异常，并逐步增大{\tt n}值，往复循环。
 
-\item[Check summaries and types:] Instead of printing and checking the
-entire dataset, consider printing summaries of the data: for example,
-the number of items in a dictionary or the total of a list of numbers.
+\item[检验概要及类型:] 不要打印并检验全部数据集，只需输出数据的概要：
+比如，字典中项的数量，或者列表中数字之和。
 
-A common cause of runtime errors is a value that is not the right
-type.  For debugging this kind of error, it is often enough to print
-the type of a value.
+值类型错误，是产生运行时错误的常见原因。
+所以调试此类错误，通常打印值的类型即可。
 
-\item[Write self-checks:]  Sometimes you can write code to check
-for errors automatically.  For example, if you are computing the
-average of a list of numbers, you could check that the result is
-not greater than the largest element in the list or less than
-the smallest.  This is called a ``sanity check'' because it detects
-results that are ``insane''.
+\item[编写自检代码:]  有时候，你可以编写代码，自动检验异常。
+例如，你要计算数字列表的平均值，你可以检验一下，结果是不是没有
+比列表中最大值还要大，或者比最小值还要小。这叫做``合理性检验''，
+是因为要检查结果是否``不合理''。 
 \index{sanity check}
 \index{consistency check}
 
-Another kind of check compares the results of two different
-computations to see if they are consistent.  This is called a
-``consistency check''.
+另一种检验方法是比较两种不同解法的结果，看是否一致。
+这叫做``一致性检验''。
 
-\item[Format the output:] Formatting debugging output
-can make it easier to spot an error.  We saw an example in
-Section~\ref{factdebug}.  Another tool you might find useful is the {\tt pprint} module, which provides
-a {\tt pprint} function that displays built-in types in
-a more human-readable format ({\tt pprint} stands for
-``pretty print'').
+\item[格式化输出:] 格式化调试输出，可以更直观地展示错误。
+回忆章节~\ref{factdebug}中的案例。另一个好用的工具是 {\tt pprint} 模块，
+它提供了{\tt pprint}函数，可以将内置类型输出为更适合人类阅读的格式({\tt pprint}
+是``pretty pprint'' 的缩写).
 \index{pretty print}
 \index{pprint module}
 \index{module!pprint}
 
 \end{description}
 
-Again, time you spend building scaffolding can reduce
-the time you spend debugging.
+再次强调，构建脚手架花费时间越长，调试耗费时间越少。
 \index{scaffolding}
 
 
-\section{Glossary}
+\section{术语表}
 
 \begin{description}
 
-\item[mapping:] A relationship in which each element of one set
-corresponds to an element of another set.
+\item[映射(mapping):] 集合中每个元素都对应到另一个集合的单一元素的关系.
 \index{mapping}
 
-\item[dictionary:] A mapping from keys to their
-corresponding values.
+\item[字典(dictionary):] 从键到相应的值的映射。
 \index{dictionary}
 
-\item[key-value pair:] The representation of the mapping from
-a key to a value.
+\item[键值对(key-value pair):] 键到值的映射关系的表示。
 \index{key-value pair}
 
-\item[item:] In a dictionary, another name for a key-value
-  pair.
+\item[项(item):] 字典中，键值对的别名。
 \index{item!dictionary}
 
-\item[key:] An object that appears in a dictionary as the
-first part of a key-value pair.
+\item[键(key):] 字典中的一个对象，作为键值对的第一部分。
 \index{key}
 
-\item[value:] An object that appears in a dictionary as the
-second part of a key-value pair.  This is more specific than
-our previous use of the word ``value''.
+\item[值(value):] 字典中的一个对象，作为键值对的第二部分。
+这里的表示和以前用到的``值''相比，更加具体。
 \index{value}
 
-\item[implementation:] A way of performing a computation.
+\item[实现(implementation):] 实现计算的方式。
 \index{implementation}
 
-\item[hashtable:] The algorithm used to implement Python
-dictionaries.
+\item[哈希表(hashtable):] 实现Python字典的算法。
 \index{hashtable}
 
-\item[hash function:] A function used by a hashtable to compute the
-location for a key.
+\item[哈希函数(hash function):] 哈希表使用的函数，用来计算键的位置。
 \index{hash function}
 
-\item[hashable:] A type that has a hash function.  Immutable
-types like integers,
-floats and strings are hashable; mutable types like lists and
-dictionaries are not.
+\item[散列的(hashable):] 一种可以使用哈希函数的类型。
+不可变类型，像整型，浮点型和字符串型，都是可散列的;
+像列表和字典这种可变类型，都不是。
 \index{hashable}
 
-\item[lookup:] A dictionary operation that takes a key and finds
-the corresponding value.
+\item[查找(lookup):] 一种字典操作，根据键查找对应的值.
 \index{lookup}
 
-\item[reverse lookup:] A dictionary operation that takes a value and finds
-one or more keys that map to it.
+\item[反向查找(reverse lookup):] 一种字典操作，通过值来查找对应的一个或多个键.
 \index{reverse lookup}
 
-\item[raise statement:]  A statement that (deliberately) raises an exception.
+\item[raise语句(raise statement):]  主动抛出异常的语句.
 \index{raise statement}
 \index{statement!raise}
 
-\item[singleton:] A list (or other sequence) with a single element.
+\item[单元素集(singleton):] 只包含一个元素的列表(或者其他序列).
 \index{singleton}
 
-\item[call graph:] A diagram that shows every frame created during
-the execution of a program, with an arrow from each caller to
-each callee. 
+\item[调用图(call graph):] 一种用来展示程序执行流程的图，包括每步创建的框，
+用箭头连接调用者和被调用者。
 \index{call graph}
 \index{diagram!call graph}
 
-\item[memo:] A computed value stored to avoid unnecessary future 
-computation.
+\item[备忘(memo):] 存储计算过的值，避免后续计算的操作。
 \index{memo}
 
-\item[global variable:]  A variable defined outside a function.  Global
-variables can be accessed from any function.
+\item[全局变量(global variable):]  定义在函数之外的变量。
+全局变量可以被任何函数获取使用。
 \index{global variable}
 
-\item[global statement:]  A statement that declares a variable name
-global.
+\item[全局声明(global statement):] 声明变量是全局变量的语句.
 \index{global statement}
 \index{statement!global}
 
-\item[flag:] A boolean variable used to indicate whether a condition
-is true.
+\item[标识(flag):] 标识条件是否为真的布尔变量。
 \index{flag}
 
-\item[declaration:] A statement like {\tt global} that tells the
-interpreter something about a variable.
+\item[声明(declaration):] 像 {\tt global} 一样的语句，用来告知解释器
+变量的特点。
 \index{declaration}
 
 \end{description}
 
 
-\section{Exercises}
+\section{习题集}
 
 \begin{exercise}
 \label{wordlist2}
 \index{set membership}
 \index{membership!set}
 
-Write a function that reads the words in {\tt words.txt} and
-stores them as keys in a dictionary.  It doesn't matter what the
-values are.  Then you can use the {\tt in} operator
-as a fast way to check whether a string is in
-the dictionary.
+编写函数，读取{\tt words.txt}中的单词，
+将其作为键存储于字典中。值是什么无关紧要。
+然后便可以用{\tt in}运算符快速检验某个字符串是否在字典中。
 
-If you did Exercise~\ref{wordlist1}, you can compare the speed
-of this implementation with the list {\tt in} operator and the
-bisection search.
+如果做了习题~\ref{wordlist1}，可以比较一下这种实现，相比列表的{\tt in}运算，
+以及二分查找的速度。
 
 \end{exercise}
 
 
 \begin{exercise}
 \label{setdefault}
-
-Read the documentation of the dictionary method {\tt setdefault}
-and use it to write a more concise version of \verb"invert_dict".
-Solution: \url{http://thinkpython2.com/code/invert_dict.py}.
+阅读字典方法 {\tt setdefault}的文档，
+精简\verb"invert_dict"版本。
+参见: \url{http://thinkpython2.com/code/invert_dict.py}.
 \index{setdefault method}
 \index{method!setdefault}
 
@@ -8324,10 +8227,10 @@ Solution: \url{http://thinkpython2.com/code/invert_dict.py}.
 
 
 \begin{exercise}
-Memoize the Ackermann function from Exercise~\ref{ackermann} and see if
-memoization makes it possible to evaluate the function with bigger
-arguments.  Hint: no.
-Solution: \url{http://thinkpython2.com/code/ackermann_memo.py}.
+用字典备忘的方式重写习题~\ref{ackermann} 中的Ackermann函数，
+看看是否缓存方式可以使其处理较大参数。
+提示: 不能.
+参考: \url{http://thinkpython2.com/code/ackermann_memo.py}.
 \index{Ackermann function}
 \index{function!ack}
 
@@ -8338,14 +8241,11 @@ Solution: \url{http://thinkpython2.com/code/ackermann_memo.py}.
 \begin{exercise}
 \index{duplicate}
 
-If you did Exercise~\ref{duplicate}, you already have
-a function named \verb"has_duplicates" that takes a list
-as a parameter and returns {\tt True} if there is any object
-that appears more than once in the list.
+如果做过习题~\ref{duplicate}，你应该已经写过一个\verb"has_duplicates" 函数，
+输入一个列表，如果其中存在任意重复对象，则返回{\tt True}.
 
-Use a dictionary to write a faster, simpler version of
-\verb"has_duplicates". 
-Solution: \url{http://thinkpython2.com/code/has_duplicates.py}.
+使用字典来编写一个更简单高效的\verb"has_duplicates"版本。
+参考: \url{http://thinkpython2.com/code/has_duplicates.py}.
 
 \end{exercise}
 
@@ -8355,11 +8255,11 @@ Solution: \url{http://thinkpython2.com/code/has_duplicates.py}.
 \index{letter rotation}
 \index{rotation!letters}
 
-Two words are ``rotate pairs'' if you can rotate one of them
-and get the other (see \verb"rotate_word" in Exercise~\ref{exrotate}).
+两个单词，如果翻转其中一个，得到另一个，则称其为``翻转词组''
+(参见习题~\ref{exrotate}中的\verb"rotate_word" ).
 
-Write a program that reads a wordlist and finds all the rotate
-pairs.  Solution: \url{http://thinkpython2.com/code/rotate_pairs.py}.
+编写程序读取一个单词表，并找到所有的翻转词组。
+参考: \url{http://thinkpython2.com/code/rotate_pairs.py}.
 
 \end{exercise}
 
@@ -8368,56 +8268,51 @@ pairs.  Solution: \url{http://thinkpython2.com/code/rotate_pairs.py}.
 \index{Car Talk}
 \index{Puzzler}
 
-Here's another Puzzler from {\em Car Talk} 
+这是另一个来自{\em Car Talk}的迷题
 (\url{http://www.cartalk.com/content/puzzlers}):
 
 \begin{quote}
-This was sent in by a fellow named Dan O'Leary. He came upon a common
-one-syllable, five-letter word recently that has the following unique
-property. When you remove the first letter, the remaining letters form
-a homophone of the original word, that is a word that sounds exactly
-the same. Replace the first letter, that is, put it back and remove
-the second letter and the result is yet another homophone of the
-original word. And the question is, what's the word?
+这个谜题来自于一个名为Dan O'Leary的朋友。
+他最近发现一个单音节，五个字母的常用单词，其具有下述特征。
+当你移除首字母，剩下字母构成了一个和原单词发音完全一样的同音词。
+如果替换首字母，也就是把首字母放回去，移除第二个字母，然后得到的又是
+同音词。那么问题来了，这是什么词?
 
-Now I'm going to give you an example that doesn't work. Let's look at
-the five-letter word, `wrack.' W-R-A-C-K, you know like to `wrack with
-pain.' If I remove the first letter, I am left with a four-letter
-word, 'R-A-C-K.' As in, `Holy cow, did you see the rack on that buck!
-It must have been a nine-pointer!' It's a perfect homophone. If you
-put the `w' back, and remove the `r,' instead, you're left with the
-word, `wack,' which is a real word, it's just not a homophone of the
-other two words.
+现在，我给你展示一个错误的例子。
+咱们看一下这个五个字母的单词，`wrack'。 W-R-A-C-K，就是
+`wrack with pain.' 中的那个`wrack'。
+如果移除首字母，剩下四个字母的单词，'R-A-C-K.' 
+比如，`Holy cow, did you see the rack on that buck!
+It must have been a nine-pointer!'  发音完全一样。
+如果你放回`w'，移除`r', 得到一个单词, `wack'，
+这是一个真正的单词，只是发音和前两个不同。
 
-But there is, however, at least one word that Dan and we know of,
-which will yield two homophones if you remove either of the first two
-letters to make two, new four-letter words. The question is, what's
-the word?
+但是，至少有一个这样的单词，Dan和我们都认识，
+分别删除前两个字母，构成两个新的四个字母单词，发音完全相同。
+问题是，这个词是什么?
 \end{quote}
 \index{homophone}
 \index{reducible word}
 \index{word, reducible}
 
-You can use the dictionary from Exercise~\ref{wordlist2} to check
-whether a string is in the word list.
+你可以用习题~\ref{wordlist2} 中的字典来检验一个字符串是否在单词表中。
 
-To check whether two words are homophones, you can use the CMU
-Pronouncing Dictionary.  You can download it from
-\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict} or from
-\url{http://thinkpython2.com/code/c06d} and you can also download
-\url{http://thinkpython2.com/code/pronounce.py}, which provides a function
-named \verb"read_dictionary" that reads the pronouncing dictionary and
-returns a Python dictionary that maps from each word to a string that
-describes its primary pronunciation.
+若想检查两个单词是否是同音词，可以用CMU发音词典。
+这个词典可以从\url{http://www.speech.cs.cmu.edu/cgi-bin/cmudict}
+或\url{http://thinkpython2.com/code/c06d}下载。
+或者下载\url{http://thinkpython2.com/code/pronounce.py}代码，
+这个文件提供了一个 \verb"read_dictionary"函数，
+可以读取发音词典并返回一个Python字典，此字典将每个单词映射到了
+表示发音的字符串。
 
-Write a program that lists all the words that solve the Puzzler.
-Solution: \url{http://thinkpython2.com/code/homophone.py}.
+编写程序列出所有满足谜语条件的单词。
+答案: \url{http://thinkpython2.com/code/homophone.py}.
 
 \end{exercise}
 
 
 
-\chapter{Tuples}
+\chapter{元组}
 \label{tuplechap}
 
 This chapter presents one more built-in type, the tuple, and then

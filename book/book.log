@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.5.16)  4 JUL 2021 17:25
+This is XeTeX, Version 3.14159265-2.6-0.99998 (TeX Live 2017/Debian) (preloaded format=xelatex 2021.5.16)  18 JUL 2021 13:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2007,158 +2007,174 @@ Underfull \hbox (badness 4995) in paragraph at lines 7396--7399
 Chapter 11.
 [87
 
-] [88] [89] [90] [91]
+] [88] [89] [90]
 File: figs/dict1.pdf Graphic file (type pdf)
 <use figs/dict1.pdf>
- [92]
+ [91]
 File: figs/fibonacci.pdf Graphic file (type pdf)
 <use figs/fibonacci.pdf>
+ [92] [93] [94] [95]
+Underfull \hbox (badness 1874) in paragraph at lines 8300--8307
+[]\TU/FandolSong-Regular(0)/m/it/10 若 想 检 查 两 个 单 词 是 否 是 同 音 词，|  可 以 用 \T1/pp
+l/m/it/10 CMU \TU/FandolSong-Regular(0)/m/it/10 发 音 词 典。|  这 个 词 典 可 以 从[]$\T1/
+lmtt/m/it/10 http :
+ []
 
-Underfull \vbox (badness 2310) has occurred while \output is active []
 
- [93]
-[94] [95] [96] [97] [98
+Underfull \hbox (badness 3514) in paragraph at lines 8300--8307
+\T1/lmtt/m/it/10 / / www . speech . cs . cmu . edu / cgi-[]bin / cmudict$[] \TU
+/FandolSong-Regular(0)/m/it/10 或[]$\T1/lmtt/m/it/10 http : / / thinkpython2 . c
+om / code /
+ []
 
-]
+
+Underfull \hbox (badness 1946) in paragraph at lines 8308--8310
+[]\TU/FandolSong-Regular(0)/m/it/10 编 写 程 序 列 出 所 有 满 足 谜 语 条 件 的 单 词。|  答 案\T1
+/ppl/m/it/10 : []$\T1/lmtt/m/it/10 http : / / thinkpython2 . com / code /
+ []
+
+[96]
 Chapter 12.
-[99] [100] [101] [102] [103]
+[97
+
+] [98] [99] [100] [101]
 File: figs/tuple1.pdf Graphic file (type pdf)
 <use figs/tuple1.pdf>
 File: figs/dict2.pdf Graphic file (type pdf)
 <use figs/dict2.pdf>
- [104] [105] [106]
-Underfull \hbox (badness 1571) in paragraph at lines 9230--9232
+ [102] [103] [104]
+Underfull \hbox (badness 1571) in paragraph at lines 9125--9127
 []\T1/ppl/b/n/10 Exercise 12.4. \T1/ppl/m/it/10 Here's an-other Car Talk Puz-zl
 er ([]$\T1/lmtt/m/it/10 http : / / www . cartalk . com / content /
  []
 
-[107] [108]
+[105] [106]
 Chapter 13.
-[109
+[107
 
-] [110]
-Underfull \hbox (badness 1430) in paragraph at lines 9514--9519
+] [108]
+Underfull \hbox (badness 1430) in paragraph at lines 9409--9414
 [][]\T1/lmtt/m/n/10 process_file \T1/ppl/m/n/10 loops through the lines of the 
 file, pass-ing them one at a time to
  []
 
-[111] [112] [113]
-Underfull \hbox (badness 10000) in paragraph at lines 9808--9817
+[109] [110] [111]
+Underfull \hbox (badness 10000) in paragraph at lines 9703--9712
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 9808--9817
+Underfull \hbox (badness 10000) in paragraph at lines 9703--9712
 
  []
 
-[114] [115] [116] [117] [118] [119] [120
+[112] [113] [114] [115] [116] [117] [118
 
 ]
 Chapter 14.
-[121] [122]
-Underfull \hbox (badness 1112) in paragraph at lines 10316--10320
+[119] [120]
+Underfull \hbox (badness 1112) in paragraph at lines 10211--10215
 \T1/lmtt/m/n/10 stdtypes . html # printf-[]style-[]string-[]formatting$[]\T1/pp
 l/m/n/10 . A more pow-er-ful al-ter-na-tive is
  []
 
-[123] [124] [125] [126] [127] [128] [129] [130]
+[121] [122] [123] [124] [125] [126] [127] [128]
 Chapter 15.
-[131
+[129
 
 ]
 File: figs/point.pdf Graphic file (type pdf)
 <use figs/point.pdf>
- [132] [133]
+ [130] [131]
 File: figs/rectangle.pdf Graphic file (type pdf)
 <use figs/rectangle.pdf>
- [134] [135]
+ [132] [133]
 File: figs/rectangle2.pdf Graphic file (type pdf)
 <use figs/rectangle2.pdf>
 
-Underfull \hbox (badness 2818) in paragraph at lines 11436--11442
+Underfull \hbox (badness 2818) in paragraph at lines 11331--11337
 []\T1/ppl/m/n/10 For most ap-pli-ca-tions, this is not what you want. In this e
 x-am-ple, in-vok-ing
  []
 
-[136] [137] [138]
+[134] [135] [136]
 Chapter 16.
 File: figs/time.pdf Graphic file (type pdf)
 <use figs/time.pdf>
-[139
+[137
 
-] [140] [141] [142] [143] [144]
+] [138] [139] [140] [141] [142]
 Chapter 17.
-[145
+[143
 
-] [146] [147] [148]
-Underfull \hbox (badness 1502) in paragraph at lines 12480--12486
+] [144] [145] [146]
+Underfull \hbox (badness 1502) in paragraph at lines 12375--12381
 []\T1/ppl/m/n/10 By defin-ing other spe-cial meth-ods, you can spec-ify the be-
 hav-ior of op-er-a-tors on
  []
 
-[149] [150] [151] [152]
-Underfull \hbox (badness 1590) in paragraph at lines 12782--12786
+[147] [148] [149] [150]
+Underfull \hbox (badness 1590) in paragraph at lines 12677--12681
 []\T1/ppl/m/n/10 A lan-guage that pro-vides fea-tures, such as programmer-
  []
 
-[153]
-Underfull \hbox (badness 1817) in paragraph at lines 12855--12857
+[151]
+Underfull \hbox (badness 1817) in paragraph at lines 12750--12752
 []\T1/ppl/m/it/10 A method named []\T1/lmtt/m/n/10 put_in_pouch \T1/ppl/m/it/10
  that takes an ob-ject of any type and adds it to
  []
 
-[154]
+[152]
 Chapter 18.
-[155
+[153
 
-] [156]
+] [154]
 File: figs/card1.pdf Graphic file (type pdf)
 <use figs/card1.pdf>
- [157] [158] [159] [160]
+ [155] [156] [157] [158]
 File: figs/class1.pdf Graphic file (type pdf)
 <use figs/class1.pdf>
- [161] [162] [163]
-Underfull \hbox (badness 1173) in paragraph at lines 13621--13626
+ [159] [160] [161]
+Underfull \hbox (badness 1173) in paragraph at lines 13516--13521
 []\T1/ppl/m/n/10 As an ex-er-cise, down-load my Markov code from []$\T1/lmtt/m/
 n/10 http : / / thinkpython2 . com / code /
  []
 
-[164] [165] [166]
+[162] [163] [164]
 Chapter 19.
-[167
+[165
 
-] [168] [169] [170] [171] [172] [173] [174] [175] [176]
+] [166] [167] [168] [169] [170] [171] [172] [173] [174]
 附录 A.
-[177
+[175
 
 ]
 LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
-(Font)              Font shape `T1/ppl/b/n' tried instead on input line 14724.
- [178] [179] [180] [181] [182] [183] [184]
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 14619.
+ [176] [177] [178] [179] [180] [181] [182]
 附录 B.
-[185
+[183
 
-] [186] [187] [188] [189] [190] [191]
+] [184] [185] [186] [187] [188] [189]
 File: figs/towers.pdf Graphic file (type pdf)
 <use figs/towers.pdf>
- [192] [193]
+ [190] [191]
 No file book.ind.
-[194]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 15969.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 15969.
+[192]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 15864.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 15864.
  (./book.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 15969.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 15969.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 15969.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 15864.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 15864.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 15864.
  ) 
 Here is how much of TeX's memory you used:
  29423 strings out of 493007
  579461 string characters out of 6136719
- 647327 words of memory out of 5000000
+ 646654 words of memory out of 5000000
  33065 multiletter control sequences out of 15000+600000
  567496 words of font info for 104 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  57i,12n,74p,10491b,1039s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on book.pdf (216 pages).
+Output written on book.pdf (214 pages).
